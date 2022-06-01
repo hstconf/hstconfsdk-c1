@@ -360,9 +360,13 @@ public class FragJoin extends BaseFragment implements OnClickListener {
 
         if (position == 0){
             tvHistory.setText(getResources().getString(R.string.socialize_14));
+            tvHistory.setVisibility(View.VISIBLE);
         }
-        else
-            tvHistory.setText(getResources().getString(R.string.socialize_15));
+        else {
+            //tvHistory.setText(getResources().getString(R.string.socialize_15));
+            tvHistory.setVisibility(View.GONE);
+        }
+
     }
 
     public void enterFromItem(ConferenceBean conferenceBean) {
@@ -414,6 +418,7 @@ public class FragJoin extends BaseFragment implements OnClickListener {
             btnBCastList.invalidate();
 
             tvHistory.setText(getResources().getString(R.string.socialize_14));
+            tvHistory.setVisibility(View.VISIBLE);
 
         } else if (postion == 1) {
             //mConferencePagerNumber.resumeLayout();
@@ -428,7 +433,8 @@ public class FragJoin extends BaseFragment implements OnClickListener {
             btnConfList.invalidate();
             btnBCastList.invalidate();
 
-            tvHistory.setText(getResources().getString(R.string.socialize_15));
+            tvHistory.setVisibility(View.GONE);
+            //tvHistory.setText(getResources().getString(R.string.socialize_15));
         }
         //doSelect(postion);
     }

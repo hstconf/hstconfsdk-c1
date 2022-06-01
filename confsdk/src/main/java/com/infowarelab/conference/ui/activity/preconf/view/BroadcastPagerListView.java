@@ -188,7 +188,7 @@ public class BroadcastPagerListView extends ConferencePager {
                 mConfAdapter.setAdapterData(conferences);
             }
         }
-        lvRefresh.setTitle(LayoutInflater.from(mActivity).inflate(R.layout.meeting_list_page_title, lvRefresh, false));
+        //lvRefresh.setTitle(LayoutInflater.from(mActivity).inflate(R.layout.meeting_list_page_title, lvRefresh, false));
         lvRefresh.setAdapter(mConfAdapter);
 
         llLoading.setVisibility(View.GONE);
