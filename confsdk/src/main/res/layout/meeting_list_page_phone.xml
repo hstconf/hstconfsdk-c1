@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/ffv">
+
+    <com.infowarelab.conference.ui.view.ConfListRefreshView
+        android:id="@+id/confListRefresh"
+        style="@style/ff"
+        android:layout_weight="1"
+        android:choiceMode="singleChoice"
+        android:divider="@drawable/dividing_line"
+        android:dividerHeight="1dp"
+        android:listSelector="@android:color/transparent"
+        android:layout_gravity="center"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/meeting_list_load"
+        style="@style/wwh"
+        android:layout_gravity="center"
+        android:gravity="center">
+
+        <ProgressBar style="@style/ww" />
+
+        <TextView
+            style="@style/ww"
+            android:layout_marginLeft="3dp"
+            android:text="@string/conflist_data_refresh"
+            android:textSize="@dimen/textSize_06" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/noMeeting"
+        style="@style/ww"
+        android:layout_gravity="center"
+        android:background="@drawable/nomeeting"
+        android:visibility="gone" />
+
+</FrameLayout>

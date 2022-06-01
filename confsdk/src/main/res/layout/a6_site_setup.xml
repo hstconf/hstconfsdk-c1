@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/ffv"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:background="@color/app_main_hint_old">
+
+    <RelativeLayout style="@style/style_rl_titleBar">
+
+        <TextView
+            style="@style/style_tv_titleBar_mid"
+            android:text="@string/setsite" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/site_help_first"
+        style="@style/fwv"
+        android:layout_marginTop="@dimen/height_5_80"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/ww"
+            android:text="@string/site_help_notif"
+            android:textColor="@color/a6_txt_black2"
+            android:textSize="@dimen/textSize_07" />
+
+        <RelativeLayout
+            style="@style/ww"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/site_help_notif"
+                style="@style/ww"
+                android:layout_centerVertical="true"
+                android:text="@string/site_help_contact"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:id="@+id/site_help_contact"
+                style="@style/ww"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/site_help_notif"
+                android:paddingLeft="@dimen/width_2_80"
+                android:src="@drawable/help_button_on" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/style_ll_input"
+        android:layout_marginTop="@dimen/height_3_80">
+
+        <ImageView
+            style="@style/style_iv_inputicon_square"
+            android:src="@drawable/a6_icon_set" />
+
+        <EditText
+            android:id="@+id/site_setup_edit"
+            style="@style/style_et_input"
+            android:paddingLeft="@dimen/width_1_80"
+            android:paddingRight="@dimen/width_2_80"
+            android:hint="@string/site_input_hint" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/site_setup_button"
+        android:layout_marginTop="@dimen/height_3_80"
+        style="@style/style_btn_ok"
+        android:text="@string/confirm"
+        android:enabled="true" />
+
+    <LinearLayout
+        style="@style/style_common_input_and_btn"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/height_3_80">
+
+        <TextView
+            android:id="@+id/site_tv_errmsg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/a6_txt_red1"
+            android:textSize="@dimen/textSize_04"
+            android:text="@string/site_error_wrong"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/site_help_update"
+            style="@style/ww"
+            android:layout_marginTop="@dimen/height_1_80"
+            android:text="@string/site_help_update"
+            android:textColor="@color/a6_txt_black1"
+            android:textSize="@dimen/textSize_03"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/height_6_80"
+            android:textSize="@dimen/textSize_00"
+            android:textColor="@color/a6_txt_black1"
+            android:text="@string/about_mid6" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/textView1"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/height_1_80"
+            android:textSize="@dimen/textSize_00"
+            android:textColor="@color/a6_txt_black1"
+            android:text="@string/about_mid5" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/textView2"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/height_1_80"
+            android:textSize="@dimen/textSize_00"
+            android:textColor="@color/a6_txt_black1"
+            android:text="@string/about_mid3" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/textView3"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/height_2_80"
+            android:textSize="@dimen/textSize_03"
+            android:textColor="@color/a6_txt_black1"
+            android:text="@string/about_mid2" />
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/textView4"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/height_101_80"
+            android:src="@drawable/a6_icon_logo" />
+
+    </RelativeLayout>
+
+</LinearLayout>

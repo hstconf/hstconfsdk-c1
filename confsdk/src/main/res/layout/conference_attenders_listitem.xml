@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/fwv"
+    android:background="@android:color/transparent">
+
+    <RelativeLayout
+        android:id="@+id/attenders_rl_bg"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_7_80"
+        android:layout_marginLeft="@dimen/width_4_80"
+        android:layout_marginRight="@dimen/width_4_80"
+        android:layout_marginTop="@dimen/width_1_80"
+        android:layout_marginBottom="@dimen/width_1_80"
+        android:focusable="false"
+        android:background="@drawable/contactlist_press_on">
+
+        <FrameLayout
+            android:id="@+id/attenders_role_layout"
+            android:layout_width="@dimen/width_6_80"
+            android:layout_height="@dimen/width_6_80"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true">
+
+            <ImageView
+                android:id="@+id/attenders_role"
+                android:layout_width="@dimen/width_5_80"
+                android:layout_height="@dimen/width_5_80"
+                android:layout_gravity="center"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_att_device_pc" />
+
+            <TextView
+                android:id="@+id/attenders_point"
+                android:layout_width="@dimen/width_2_80"
+                android:layout_height="@dimen/width_2_80"
+                android:layout_gravity="right"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:background="@drawable/message_point"
+                android:visibility="invisible" />
+
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/attenders_name"
+            style="@style/styleText_confitem"
+            android:layout_height="@dimen/height_7_80"
+            android:layout_width="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/width_2_80"
+            android:layout_marginRight="@dimen/width_100_80"
+            android:layout_toRightOf="@+id/attenders_role_layout"
+            android:gravity="center_vertical"
+            android:maxEms="16"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textColor="@color/a6_txt_black2"
+            android:textSize="@dimen/textSize_02" />
+
+        <TextView
+            android:id="@+id/attenders_tv_role"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:textColor="@color/a6_txt_blue1"
+            android:layout_toRightOf="@+id/attenders_name"
+            android:lines="1"
+            android:textSize="@dimen/textSize_02"
+            android:gravity="center"
+            android:text="role" />
+
+        <ImageView
+            android:id="@+id/attenders_iv_hostlogo"
+            android:layout_width="@dimen/height_106_80"
+            android:layout_height="@dimen/height_7_80"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_att_role_host"
+            android:paddingLeft="@dimen/height_2_80"
+            android:paddingRight="@dimen/height_2_80"
+            android:layout_toRightOf="@+id/attenders_tv_role" />
+
+
+        <ImageView
+            android:id="@+id/attenders_video"
+            android:layout_width="@dimen/width_5_80"
+            android:layout_height="@dimen/width_5_80"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/width_102_80"
+            android:layout_toLeftOf="@+id/attenders_audio"
+            android:adjustViewBounds="true"
+            android:scaleType="centerInside" />
+
+        <ImageView
+            android:id="@+id/attenders_audio"
+            android:layout_width="@dimen/width_5_80"
+            android:layout_height="@dimen/width_5_80"
+            android:scaleType="centerInside"
+            android:layout_toLeftOf="@+id/attenders_kick"
+            android:layout_centerVertical="true" />
+
+        <ImageView
+            android:id="@+id/attenders_kick"
+            android:layout_width="@dimen/width_7_80"
+            android:layout_height="@dimen/height_7_80"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_att_kick"
+            android:paddingLeft="@dimen/width_1_80"
+            android:paddingRight="@dimen/width_1_80"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true" />
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginLeft="@dimen/width_4_80"
+        android:layout_marginRight="@dimen/width_4_80"
+        android:background="@color/a6_cuttingline3" />
+
+</LinearLayout>

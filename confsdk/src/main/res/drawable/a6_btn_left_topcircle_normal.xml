@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item>
+        <shape>
+
+            <!-- 边框颜色值 -->
+            <solid android:color="#ffffff" />
+
+            <!-- 左边圆角值 -->
+            <corners
+                android:bottomLeftRadius="0dp"
+                android:topLeftRadius="20dp" />
+
+
+        </shape>
+    </item>
+
+</layer-list>

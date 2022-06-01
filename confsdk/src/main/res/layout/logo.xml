@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/ffh">
+
+    <LinearLayout
+        android:id="@+id/logo_ll_root"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:background="@drawable/bg1024"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/title"
+            style="@style/ww"
+            android:src="@drawable/indextitle"
+            android:paddingTop="300dp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="9"
+            android:textColor="#C1C1C1"
+            android:textSize="16sp"
+            android:text="@string/about_mid5"
+            android:gravity="center_horizontal|bottom"
+            android:paddingBottom="@dimen/dp_15" />
+    </LinearLayout>
+
+</LinearLayout>

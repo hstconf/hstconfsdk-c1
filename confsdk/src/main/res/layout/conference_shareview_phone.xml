@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/share_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_main_hint_old"
+    android:clickable="true">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <View
+            android:id="@+id/view_inconf_ds_place_top"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_6_80"
+            android:layout_alignParentTop="true"
+            android:background="#232227" />
+
+        <FrameLayout
+            android:id="@+id/showData"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <com.infowarelab.conference.ui.view.PageViewDs
+                android:id="@+id/pv_inconf_ds"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:overScrollMode="never"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/ll_inconf_ds_lastpage"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/app_main_hint_old"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:layout_width="@dimen/height_6_80"
+                            android:layout_height="@dimen/height_6_80"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/ic_vs_loading" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/height_2_80"
+                            android:text="@string/as_wait"
+                            android:textColor="#A1A1A1"
+                            android:textSize="17sp" />
+                    </LinearLayout>
+
+                    <FrameLayout
+                        android:id="@+id/fl_inconf_ds_curpage"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <com.infowarelab.conference.ui.activity.inconf.view.share.DocView4Phone
+                            android:id="@+id/conf_doc_4phone_doc"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+
+                        <LinearLayout
+                            android:id="@+id/ll_inconf_ds_pageturn"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:orientation="horizontal">
+
+                                <Button
+                                    android:id="@+id/btn_inconf_ds_lastpage"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="#00000000"
+                                    android:layout_weight="1" />
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1" />
+
+                                <Button
+                                    android:id="@+id/btn_inconf_ds_nextpage"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="#00000000"
+                                    android:layout_weight="1" />
+
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2" />
+
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/share_iv_tools"
+                            android:layout_width="@dimen/height_104_80"
+                            android:layout_height="@dimen/height_104_80"
+                            android:layout_gravity="bottom|left"
+                            android:layout_marginBottom="@dimen/width_2_80"
+                            android:layout_marginLeft="@dimen/width_2_80"
+                            android:src="@drawable/icon_ds_tools_normal" />
+
+                        <TextView
+                            android:id="@+id/share_tv_page"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom|right"
+                            android:layout_marginBottom="@dimen/width_2_80"
+                            android:layout_marginRight="@dimen/width_2_80"
+                            android:text="1/1"
+                            android:textSize="@dimen/textSize_06" />
+
+                        <LinearLayout
+                            android:id="@+id/ll_inconf_ds_curpage"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/app_main_hint_old"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+
+                            <ImageView
+                                android:layout_width="@dimen/height_6_80"
+                                android:layout_height="@dimen/height_6_80"
+                                android:scaleType="fitCenter"
+                                android:src="@drawable/ic_vs_loading" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/height_2_80"
+                                android:text="@string/as_wait"
+                                android:textColor="#A1A1A1"
+                                android:textSize="17sp" />
+                        </LinearLayout>
+                    </FrameLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_inconf_ds_nextpage"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/app_main_hint_old"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:layout_width="@dimen/height_6_80"
+                            android:layout_height="@dimen/height_6_80"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/ic_vs_loading" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/height_2_80"
+                            android:text="@string/as_wait"
+                            android:textColor="#A1A1A1"
+                            android:textSize="17sp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+            </com.infowarelab.conference.ui.view.PageViewDs>
+
+
+            <LinearLayout
+                android:id="@+id/shareNoDoc"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/app_main_hint_old"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="@dimen/height_6_80"
+                    android:layout_height="@dimen/height_6_80"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_ds_null" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/height_2_80"
+                    android:text="@string/nofile"
+                    android:textColor="#A1A1A1"
+                    android:textSize="17sp" />
+            </LinearLayout>
+
+
+        </FrameLayout>
+
+        <View
+            android:id="@+id/view_inconf_ds_place_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_7_80"
+            android:layout_alignParentTop="true"
+            android:background="#232227" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/share_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_7_80"
+        android:layout_alignParentBottom="true"
+        android:background="#80000000"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/width_2_80"
+        android:paddingRight="@dimen/width_2_80">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/height_7_80"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+
+            <LinearLayout
+                android:id="@+id/share_bottom_ll_black"
+                android:layout_width="@dimen/height_103_80"
+                android:layout_height="@dimen/height_103_80"
+                android:background="@drawable/bg_anncolor_selected"
+                android:clickable="true"
+                android:focusable="false"
+                android:padding="@dimen/height_100_80">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bg_anncolor_black" />
+            </LinearLayout>
+
+            <com.infowarelab.conference.ui.view.PlaceView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/height_103_80"
+                android:layout_weight="1" />
+
+            <LinearLayout
+                android:id="@+id/share_bottom_ll_gray"
+                android:layout_width="@dimen/height_103_80"
+                android:layout_height="@dimen/height_103_80"
+                android:background="@android:color/transparent"
+                android:clickable="true"
+                android:focusable="false"
+                android:padding="@dimen/height_100_80">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bg_anncolor_gray" />
+            </LinearLayout>
+
+            <com.infowarelab.conference.ui.view.PlaceView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/height_103_80"
+                android:layout_weight="1" />
+
+            <!--<LinearLayout-->
+            <!--android:id="@+id/share_bottom_ll_white"-->
+            <!--android:layout_width="@dimen/height_103_80"-->
+            <!--android:layout_height="@dimen/height_103_80"-->
+            <!--android:background="@android:color/transparent"-->
+            <!--android:clickable="true"-->
+            <!--android:focusable="false"-->
+            <!--android:padding="@dimen/height_100_80">-->
+
+            <!--<View-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:background="@drawable/bg_anncolor_white" />-->
+            <!--</LinearLayout>-->
+
+            <!--<com.infowarelab.conference.ui.view.PlaceView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="@dimen/height_103_80"-->
+            <!--android:layout_weight="1" />-->
+
+            <LinearLayout
+                android:id="@+id/share_bottom_ll_green"
+                android:layout_width="@dimen/height_103_80"
+                android:layout_height="@dimen/height_103_80"
+                android:background="@android:color/transparent"
+                android:clickable="true"
+                android:focusable="false"
+                android:padding="@dimen/height_100_80">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bg_anncolor_green" />
+            </LinearLayout>
+
+            <com.infowarelab.conference.ui.view.PlaceView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/height_103_80"
+                android:layout_weight="1" />
+
+            <LinearLayout
+                android:id="@+id/share_bottom_ll_yellow"
+                android:layout_width="@dimen/height_103_80"
+                android:layout_height="@dimen/height_103_80"
+                android:background="@android:color/transparent"
+                android:clickable="true"
+                android:focusable="false"
+                android:padding="@dimen/height_100_80">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bg_anncolor_yellow" />
+            </LinearLayout>
+
+            <com.infowarelab.conference.ui.view.PlaceView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/height_103_80"
+                android:layout_weight="1" />
+
+            <LinearLayout
+                android:id="@+id/share_bottom_ll_red"
+                android:layout_width="@dimen/height_103_80"
+                android:layout_height="@dimen/height_103_80"
+                android:background="@android:color/transparent"
+                android:clickable="true"
+                android:focusable="false"
+                android:padding="@dimen/height_100_80">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bg_anncolor_red" />
+            </LinearLayout>
+
+            <com.infowarelab.conference.ui.view.PlaceView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/height_103_80"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:id="@+id/share_bottom_iv_pen"
+                android:layout_width="@dimen/height_103_80"
+                android:layout_height="@dimen/height_103_80"
+                android:padding="@dimen/height_100_80"
+                android:src="@drawable/icon_ds_pen_normal" />
+
+            <com.infowarelab.conference.ui.view.PlaceView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/height_103_80"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:id="@+id/share_bottom_iv_eraser"
+                android:layout_width="@dimen/height_103_80"
+                android:layout_height="@dimen/height_103_80"
+                android:padding="@dimen/height_100_80"
+                android:src="@drawable/icon_ds_eraser_normal" />
+
+            <com.infowarelab.conference.ui.view.PlaceView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/height_103_80"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:id="@+id/share_bottom_iv_pointer"
+                android:layout_width="@dimen/height_103_80"
+                android:layout_height="@dimen/height_103_80"
+                android:padding="@dimen/height_100_80"
+                android:src="@drawable/icon_ds_pointer_normal" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_inconf_ds_del"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/height_7_80"
+            android:gravity="right|center_vertical"
+            android:minEms="2"
+            android:textColor="#ff4f4f"
+            android:text="@string/delete"
+            android:textSize="@dimen/textSize_06"
+            android:visibility="visible" />
+    </LinearLayout>
+
+
+</RelativeLayout>

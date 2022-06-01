@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/ffv"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:background="#F1F2F4"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/act_home_rl_title"
+        android:background="@color/app_main_hint"
+        style="@style/style_rl_titleBar">
+
+        <TextView
+            android:id="@+id/act_home_tv_title_create"
+            style="@style/style_tv_titleBar_mid"
+            android:text="@string/socialize_10"
+            android:textSize="@dimen/t_20" />
+
+        <TextView
+            android:id="@+id/tv_history"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp_10"
+            android:text="@string/socialize_14"
+            android:textColor="@color/white"
+            android:textSize="@dimen/t_18" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id = "@+id/ll_top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/app_main_hint">
+
+        <Button
+            android:id="@+id/btn_one_key_conf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/one_key_conf_pad"
+            android:layout_marginLeft="@dimen/dp_16"
+            android:layout_marginRight="@dimen/dp_4"
+            android:layout_marginTop="@dimen/dp_8"
+            android:layout_marginBottom="@dimen/dp_8">
+
+        </Button>
+
+        <Button
+            android:id="@+id/btn_create_conf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/create_conf_pad"
+            android:layout_marginLeft="@dimen/dp_4"
+            android:layout_marginRight="@dimen/dp_4"
+            android:layout_marginTop="@dimen/dp_8"
+            android:layout_marginBottom="@dimen/dp_8">
+
+    </Button>
+
+        <Button
+            android:id="@+id/btn_join_conf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/join_conf_pad"
+            android:layout_marginLeft="@dimen/dp_4"
+            android:layout_marginRight="@dimen/dp_16"
+            android:layout_marginTop="@dimen/dp_8"
+            android:layout_marginBottom="@dimen/dp_8">
+
+        </Button>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/act_home_rl_title"
+        android:background="@color/app_main_hint"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent">
+
+        <LinearLayout
+            android:id="@+id/ll_title_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="horizontal">
+
+             <com.infowarelab.conference.ui.view.UnderlineButton
+                 android:id="@+id/btn_conf_list"
+                 android:layout_weight="1"
+                 style="@style/style_btn_titleBar_midbutton"
+                 android:background="@drawable/a6_btn_left_topcircle_normal"
+                 android:onClick="onConfList"
+                 android:text="@string/conf"
+                 android:textColor="@color/app_main_hue"
+                 android:textAlignment="center"
+                 android:textSize="@dimen/t_16" />
+
+            <com.infowarelab.conference.ui.view.UnderlineButton
+                android:id="@+id/btn_bcast_list"
+                android:layout_weight="1"
+                style="@style/style_btn_titleBar_midbutton"
+                android:background="@drawable/a6_btn_right_topcircle_normal"
+                android:onClick="onBcastList"
+                android:textSize="@dimen/t_16"
+                android:textAlignment="center"
+                android:text="@string/bcast"
+                android:textColor="@color/grey" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2px"
+            android:background="@color/a6_cuttingline1"
+            android:layout_below="@id/ll_title_list"
+            />
+
+    </RelativeLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/frag_join_vp"
+        style="@style/ff"
+        android:layout_weight="1" />
+
+</LinearLayout>

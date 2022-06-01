@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_main_hint_old"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical">
+
+
+    <View
+        android:id="@+id/view_inconf_info_place_top"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_6_80"
+        android:background="@color/black"
+        android:layout_alignParentTop="true" />
+
+    <LinearLayout
+        android:id="@+id/info_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <LinearLayout
+            style="@style/fwv"
+            android:layout_marginLeft="@dimen/height_5_80"
+            android:layout_marginRight="@dimen/height_5_80"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none"
+                android:scrollingCache="false"
+                android:overScrollMode="never">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        style="@style/ww"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ems="5"
+                            android:gravity="left"
+                            android:text="@string/more_topic"
+                            android:textColor="@color/a6_input_black"
+                            android:textSize="@dimen/textSize_04" />
+
+                        <TextView
+                            android:id="@+id/info_tv_topic"
+                            style="@style/ww"
+                            android:layout_marginLeft="@dimen/width_1_80"
+                            android:text="ject test"
+                            android:textColor="@color/a6_input_black"
+                            android:textSize="@dimen/textSize_04" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/ww"
+                        android:layout_marginTop="@dimen/height_3_80"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ems="5"
+                            android:gravity="left"
+                            android:text="@string/more_id"
+                            android:textColor="@color/a6_input_black"
+                            android:textSize="@dimen/textSize_04" />
+
+                        <TextView
+                            android:id="@+id/info_tv_id"
+                            style="@style/ww"
+                            android:layout_marginLeft="@dimen/width_1_80"
+                            android:text="11111111111"
+                            android:textColor="@color/a6_input_black"
+                            android:textSize="@dimen/textSize_04" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/ww"
+                        android:layout_marginTop="@dimen/height_3_80"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ems="5"
+                            android:gravity="left"
+                            android:text="@string/more_host"
+                            android:textColor="@color/a6_input_black"
+                            android:textSize="@dimen/textSize_04" />
+
+                        <TextView
+                            android:id="@+id/info_tv_host"
+                            style="@style/ww"
+                            android:layout_marginLeft="@dimen/width_1_80"
+                            android:text=""
+                            android:textColor="@color/a6_input_black"
+                            android:textSize="@dimen/textSize_04" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/info_ll_pwd"
+                        style="@style/ww"
+                        android:layout_marginTop="@dimen/height_3_80"
+                        android:orientation="horizontal">
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ems="5"
+                            android:gravity="left"
+                            android:text="@string/more_confpassword"
+                            android:textColor="@color/a6_input_black"
+                            android:textSize="@dimen/textSize_04" />
+
+                        <TextView
+                            android:id="@+id/info_tv_pwd"
+                            style="@style/ww"
+                            android:layout_marginLeft="@dimen/width_1_80"
+                            android:textColor="@color/a6_input_black"
+                            android:textSize="@dimen/textSize_04" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/info_ll_hostpwd"
+                        style="@style/ww"
+                        android:layout_marginTop="@dimen/height_3_80"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ems="5"
+                            android:gravity="left"
+                            android:text="@string/more_masterpasseord"
+                            android:textColor="@color/a6_input_black"
+                            android:textSize="@dimen/textSize_04" />
+
+                        <TextView
+                            android:id="@+id/info_tv_hostpwd"
+                            style="@style/ww"
+                            android:layout_marginLeft="@dimen/width_1_80"
+                            android:textColor="@color/a6_input_black"
+                            android:textSize="@dimen/textSize_04" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </ScrollView>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/fwv"
+            android:layout_alignParentBottom="true"
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/info_btn_exit"
+                style="@style/style_btn_cnl"
+                android:layout_marginBottom="@dimen/height_4_80"
+                android:text="@string/about_exit"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view_inconf_info_place_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_7_80"
+        android:background="@color/black"
+        android:layout_alignParentTop="true" />
+
+
+</LinearLayout>

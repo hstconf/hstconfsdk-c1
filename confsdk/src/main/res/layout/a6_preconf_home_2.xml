@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/act_home_rl_title"
+        style="@style/style_rl_titleBar">
+
+        <TextView
+            android:id="@+id/act_home_tv_title_create"
+            style="@style/style_tv_titleBar_mid"
+            android:text="@string/preconf_create" />
+
+        <TextView
+            android:id="@+id/act_home_tv_title_set"
+            style="@style/style_tv_titleBar_mid"
+            android:text="@string/setup" />
+
+        <LinearLayout
+            android:id="@+id/act_home_ll_title_list"
+            android:layout_width="@dimen/width_141_80"
+            android:layout_height="@dimen/height_4_80"
+            android:layout_centerInParent="true"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/act_home_btn_title_list_1"
+                style="@style/style_btn_titleBar_midbutton"
+                android:layout_weight="1"
+                android:background="@drawable/a6_btn_left_semicircle_selected"
+                android:onClick="RadioClick"
+                android:text="@string/conferenceList"
+                android:textColor="@color/app_main_hue" />
+
+            <Button
+                android:id="@+id/act_home_btn_title_list_2"
+                style="@style/style_btn_titleBar_midbutton"
+                android:layout_weight="1"
+                android:background="@drawable/a6_btn_right_semicircle_normal"
+                android:onClick="RadioClick"
+                android:text="@string/confNumber"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/act_home_rl_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/a6_cuttingline1" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_7_80"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/act_home_btn_bottom_1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/a6_icon_home_create_normal"
+                android:onClick="RadioClick"></Button>
+
+            <Button
+                android:id="@+id/act_home_btn_bottom_2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/a6_icon_home_list_selected"
+                android:onClick="RadioClick"></Button>
+
+            <Button
+                android:id="@+id/act_home_btn_bottom_3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/a6_icon_home_set_normal"
+                android:onClick="RadioClick"></Button>
+        </LinearLayout>
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/act_home_fl_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/act_home_rl_bottom"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/act_home_rl_title"></FrameLayout>
+
+</RelativeLayout>

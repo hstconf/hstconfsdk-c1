@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- base layout_width and layout_height -->
+    <style name="ff">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="fw" parent="ff">
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="wf" parent="ff">
+        <item name="android:layout_width">wrap_content</item>
+    </style>
+
+    <style name="ww" parent="wf">
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <!-- layout_width, layout_height and horizontal -->
+    <style name="ffh" parent="ff">
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="fwh" parent="fw">
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="wfh" parent="wf">
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="wwh" parent="ww">
+        <item name="android:orientation">horizontal</item>
+    </style>
+    <!-- layout_width, layout_height and vertical -->
+    <style name="ffv" parent="ff">
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="fwv" parent="fw">
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="wfv" parent="wf">
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="wwv" parent="ww">
+        <item name="android:orientation">vertical</item>
+    </style>
+</resources>

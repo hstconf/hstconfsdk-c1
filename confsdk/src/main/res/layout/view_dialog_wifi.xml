@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/ffv"
+    android:background="@android:color/transparent"
+    android:gravity="center">
+
+    <LinearLayout
+        android:id="@+id/dialog_exit_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/a6_bg_white_corners"
+        android:minHeight="@dimen/dp_47"
+        android:orientation="vertical"
+        android:padding="@dimen/dp_11">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/warnTitle"
+                android:textColor="@color/a6_txt_black2"
+                android:textSize="@dimen/textSize_08" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_11"
+                android:text="@string/warnContent"
+                android:textColor="@color/a6_txt_black2"
+                android:textSize="@dimen/textSize_03" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_11"
+            android:gravity="right">
+
+            <TextView
+                android:id="@+id/dialog_wifi_tv_audio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/dp_3"
+                android:gravity="center"
+                android:minEms="5"
+                android:text="@string/warnAudio"
+                android:textColor="@color/a6_txt_blue1"
+                android:textSize="@dimen/textSize_03" />
+
+            <TextView
+                android:id="@+id/dialog_wifi_tv_video"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:minEms="5"
+                android:text="@string/warnVideo"
+                android:textColor="@color/a6_txt_blue1"
+                android:textSize="@dimen/textSize_03" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:gravity="center_vertical"
+    android:paddingLeft="10dp"
+    android:background="#FFF">
+
+    <TextView
+        android:id="@+id/invite_cname"
+        style="@style/ww"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:textColor="@color/preconf_create_invite"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/invite_phonenumber"
+        style="@style/ww"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:textSize="15sp" />
+
+</LinearLayout>

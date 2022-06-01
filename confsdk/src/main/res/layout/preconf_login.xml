@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/ff"
+    android:background="@color/app_main_hint_old">
+
+    <RelativeLayout
+        android:id="@+id/RelativeLayout1"
+        style="@style/style_rl_titleBar"
+        android:layout_alignParentTop="true">
+
+        <LinearLayout
+            android:id="@+id/act_preconf_login_ll_back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:clickable="true"
+            android:focusable="false"
+            android:gravity="center_vertical"
+            android:onClick="ItemClick"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/width_102_80"
+            android:paddingRight="@dimen/width_102_80">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/height_6_80"
+                android:src="@drawable/a6_btn_login_back" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/width_2_80"
+                android:text="@string/preconf_login_back"
+                android:textColor="@color/white"
+                android:textSize="@dimen/textSize_02" />
+        </LinearLayout>
+
+        <TextView
+            style="@style/style_tv_titleBar_mid"
+            android:text="@string/preconf_login" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/act_preconf_login_ll_in"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/RelativeLayout1"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <LinearLayout
+            style="@style/style_common_input_and_btn"
+            android:layout_marginTop="@dimen/height_5_80"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/ww"
+                android:text="@string/preconf_login_hint_title"
+                android:textColor="@color/a6_txt_black2"
+                android:textSize="@dimen/textSize_07" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/style_ll_input"
+            android:layout_marginTop="@dimen/height_3_80">
+
+            <ImageView
+                style="@style/style_iv_inputicon_square"
+                android:src="@drawable/a6_icon_join_name" />
+
+            <EditText
+                android:id="@+id/preconf_login_editname"
+                style="@style/style_et_input"
+                android:hint="@string/preconf_login_hint_name"
+                android:maxLength="64"
+                android:paddingLeft="@dimen/width_1_80"
+                android:paddingRight="@dimen/width_2_80"
+                android:singleLine="true" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/style_ll_input"
+            android:layout_marginTop="@dimen/height_101_80">
+
+            <ImageView
+                style="@style/style_iv_inputicon_square"
+                android:src="@drawable/a6_icon_join_pwd" />
+
+            <EditText
+                android:id="@+id/preconf_login_editpassword"
+                style="@style/style_et_input"
+                android:hint="@string/preconf_login_hint_pwd"
+                android:inputType="textPassword"
+                android:maxLength="64"
+                android:singleLine="true" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/preconf_login_confirm"
+            style="@style/style_btn_ok"
+            android:layout_marginTop="@dimen/height_3_80"
+            android:onClick="ItemClick"
+            android:text="@string/preconf_login" />
+
+        <LinearLayout
+            style="@style/style_common_input_and_btn"
+            android:orientation="vertical"
+            android:layout_marginTop="@dimen/height_3_80">
+
+            <TextView
+                android:id="@+id/preconf_login_tv_msg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/a6_txt_red1"
+                android:textSize="@dimen/textSize_04"
+                android:text="@string/alert"
+                android:visibility="gone" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/act_preconf_login_rl_out"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/RelativeLayout1">
+
+        <LinearLayout
+            android:id="@+id/act_preconf_login_ll_out"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                style="@style/style_common_input_and_btn"
+                android:layout_height="@dimen/height_5_80"
+                android:layout_marginTop="@dimen/height_5_80"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/ww"
+                    android:text="@string/preconf_login_name"
+                    android:textColor="@color/a6_input_black"
+                    android:textSize="@dimen/textSize_04" />
+
+                <TextView
+                    android:id="@+id/act_preconf_login_tv_id"
+                    style="@style/ww"
+                    android:layout_marginLeft="@dimen/width_4_80"
+                    android:text="Eric"
+                    android:textColor="@color/a6_input_black"
+                    android:textSize="@dimen/textSize_04" />
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/style_common_input_and_btn"
+                android:layout_marginTop="@dimen/height_101_80"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    style="@style/ww"
+                    android:text="@string/preconf_login_nickname"
+                    android:textColor="@color/a6_input_black"
+                    android:textSize="@dimen/textSize_04" />
+
+                <TextView
+                    android:id="@+id/act_preconf_login_tv_nickname"
+                    style="@style/ww"
+                    android:layout_marginLeft="@dimen/width_4_80"
+                    android:text=""
+                    android:textColor="@color/a6_input_black"
+                    android:textSize="@dimen/textSize_04" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/act_preconf_login_btn_out"
+            style="@style/style_btn_cnl"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/height_6_80"
+            android:onClick="ItemClick"
+            android:text="@string/preconf_logout" />
+    </RelativeLayout>
+
+</RelativeLayout>

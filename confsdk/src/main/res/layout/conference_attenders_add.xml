@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/ffv">
+
+    <RelativeLayout style="@style/styleActionBar">
+
+        <TextView
+            style="@style/styleActiobBar_mid"
+            android:text="@string/addContacts" />
+
+        <ImageView
+            android:id="@+id/addContacts_img"
+            style="@style/ww"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/width_2_80" />
+
+    </RelativeLayout>
+
+    <FrameLayout style="@style/fw">
+
+        <ScrollView style="@style/fw">
+
+            <RelativeLayout style="@style/fw">
+
+                <TextView
+                    android:id="@+id/addContact_text"
+                    style="@style/ww"
+                    android:layout_margin="10dp"
+                    android:text="@string/preconf_create_invite_regularly"
+                    android:textSize="16sp"
+                    android:textColor="@color/actionbar_bg" />
+
+                <ListView
+                    android:id="@+id/addContacts_commList"
+                    style="@style/fw"
+                    android:layout_below="@+id/addContact_text"
+                    android:fadingEdge="none"
+                    android:scrollbars="none"
+                    android:scrollingCache="false"
+                    android:divider="@drawable/dividing_line"
+                    android:dividerHeight="1dp"
+                    android:listSelector="@android:color/transparent" />
+
+                <ListView
+                    android:id="@+id/addContacts_localList"
+                    style="@style/fw"
+                    android:layout_below="@+id/addContacts_commList"
+                    android:divider="@drawable/dividing_line"
+                    android:scrollingCache="false"
+                    android:scrollbars="none"
+                    android:fadingEdge="none" />
+
+            </RelativeLayout>
+
+        </ScrollView>
+
+        <ListView
+            android:id="@+id/addContacts_localIndex"
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:divider="@null"
+            android:fadingEdge="none"
+            android:scrollbars="none"
+            android:scrollingCache="false"
+            android:background="@null" />
+
+    </FrameLayout>
+
+</LinearLayout>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/ff"
+    android:background="@color/app_main_hint_old">
+
+    <LinearLayout
+        style="@style/ffv"
+        android:gravity="center_horizontal">
+
+        <RelativeLayout
+            android:id="@+id/conference_more_actionbar"
+            style="@style/style_rl_titleBar2">
+
+            <TextView
+                style="@style/styleActiobBar_mid"
+                android:text="@string/about"
+                android:textSize="@dimen/textSize_07" />
+
+        </RelativeLayout>
+
+        <ImageView
+            style="@style/ww"
+            android:layout_marginTop="@dimen/height_6_80"
+            android:src="@drawable/icon_about" />
+
+        <TextView
+            style="@style/ww"
+            android:layout_marginTop="@dimen/height_3_80"
+            android:text="@string/about_mid1"
+            android:textSize="@dimen/textSize_05"
+            android:textColor="@color/a6_input_black" />
+
+        <TextView
+            style="@style/ww"
+            android:layout_marginTop="@dimen/height_101_80"
+            android:text="@string/about_mid2"
+            android:textSize="@dimen/textSize_03"
+            android:textColor="@color/a6_input_black" />
+
+        <LinearLayout
+            android:id="@+id/about_button_ll"
+            style="@style/style_common_input_and_btn"
+            android:layout_height="@dimen/height_5_80"
+            android:layout_marginTop="@dimen/height_105_80"
+            android:gravity="center"
+            android:focusable="false"
+            android:clickable="true"
+            android:background="@drawable/a6_btn_green">
+
+            <ImageView
+                android:layout_width="@dimen/height_3_80"
+                android:layout_height="@dimen/height_3_80"
+                android:src="@drawable/icon_about_phone" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/width_104_80"
+                android:textSize="@dimen/textSize_07"
+                android:singleLine="true"
+                android:textColor="@color/white"
+                android:text="@string/tel" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/about_button"
+            style="@style/ww"
+            android:layout_marginLeft="@dimen/width_6_80"
+            android:layout_marginRight="@dimen/width_6_80"
+            android:layout_marginTop="@dimen/height_4_80"
+            android:background="@drawable/button_calltel_on"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/about_more_rl"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:paddingBottom="@dimen/height_6_80"
+        android:layout_alignParentBottom="true">
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:textSize="@dimen/textSize_00"
+            android:textColor="@color/a6_txt_black1"
+            android:text="@string/about_mid6" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/textView1"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/height_1_80"
+            android:textSize="@dimen/textSize_00"
+            android:textColor="@color/a6_txt_black1"
+            android:text="@string/about_mid5" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/textView2"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/height_1_80"
+            android:textSize="@dimen/textSize_00"
+            android:textColor="@color/a6_txt_black1"
+            android:text="@string/about_mid3" />
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

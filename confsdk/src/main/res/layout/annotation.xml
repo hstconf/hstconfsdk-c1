@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?><!-- 注解工具条 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/ww"
+    android:layout_gravity="center_vertical|right"
+    android:layout_marginRight="20dp"
+    android:paddingBottom="100dp"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:id="@+id/annotationMore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="bottom">
+        <!-- 形状 -->
+        <!-- 	<LinearLayout android:id="@+id/annotationShapeMore" android:background="@color/gray"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:layout_marginLeft="18px"
+                    android:visibility="invisible">
+                    <ToggleButton android:id="@+id/annotationShapeLine"
+                        android:background="@drawable/line" style="@style/StyleToolBar" />
+                    <ToggleButton android:id="@+id/annotationShapeSquare"
+                        android:background="@drawable/square" style="@style/StyleToolBar" />
+                    <ToggleButton android:id="@+id/annotationShapeOval"
+                        android:background="@drawable/oval" style="@style/StyleToolBar" />
+                    <ToggleButton android:id="@+id/annotationShapePolygon"
+                        android:background="@drawable/polygon" style="@style/StyleToolBar" android:visibility="gone"/>
+                </LinearLayout>
+         -->
+        <!-- 线条粗细 -->
+        <!-- 	<LinearLayout android:id="@+id/annotationStrokeMore" android:background="@color/gray"
+                   android:layout_width="wrap_content" android:layout_height="wrap_content"
+                   android:orientation="vertical" android:visibility="invisible">
+                   <ToggleButton android:id="@+id/annotationStroke1"
+                       android:background="@drawable/stroke1" style="@style/StyleToolBar" />
+                   <ToggleButton android:id="@+id/annotationStroke2"
+                       android:background="@drawable/stroke2" style="@style/StyleToolBar" />
+                   <ToggleButton android:id="@+id/annotationStroke3"
+                       android:background="@drawable/stroke3" style="@style/StyleToolBar" />
+                   <ToggleButton android:id="@+id/annotationStroke4"
+                       android:background="@drawable/stroke4" style="@style/StyleToolBar" />
+                   <ToggleButton android:id="@+id/annotationStroke5"
+                       android:background="@drawable/stroke5" style="@style/StyleToolBar" />
+                   <ToggleButton android:id="@+id/annotationStroke6"
+                       android:background="@drawable/stroke6" style="@style/StyleToolBar" />
+               </LinearLayout>
+        -->
+
+        <!-- 颜色 -->
+        <LinearLayout
+            android:id="@+id/annotationColorMore"
+            android:background="@color/grey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="invisible">
+
+            <ToggleButton
+                android:id="@+id/annotationColorBlack"
+                android:background="@drawable/colorblack"
+                style="@style/StyleToolBar" />
+
+            <ToggleButton
+                android:id="@+id/annotationColorBlue"
+                android:background="@drawable/colorblue"
+                style="@style/StyleToolBar" />
+
+            <ToggleButton
+                android:id="@+id/annotationColorGreen"
+                android:background="@drawable/colorgreen"
+                style="@style/StyleToolBar" />
+
+            <ToggleButton
+                android:id="@+id/annotationColorRed"
+                android:background="@drawable/colorred"
+                style="@style/StyleToolBar" />
+
+            <ToggleButton
+                android:id="@+id/annotationColorYellow"
+                android:background="@drawable/coloryellow"
+                style="@style/StyleToolBar" />
+
+            <ToggleButton
+                android:id="@+id/annotationColorWhite"
+                android:background="@drawable/colorwhite"
+                style="@style/StyleToolBar" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="right">
+
+        <ToggleButton
+            android:id="@+id/annotationTools"
+            style="@style/StyleToolBar"
+            android:background="@drawable/annotatetop" />
+
+        <LinearLayout
+            android:id="@+id/annotationMid"
+            android:background="@drawable/annotatemiddleneg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- 			<ToggleButton android:id="@+id/annotationShape"
+                            android:background="@drawable/line_init" style="@style/StyleToolBar" />
+                        <ToggleButton android:id="@+id/annotationStroke"
+                            android:background="@drawable/stroke" style="@style/StyleToolBar" />
+             -->
+            <ToggleButton
+                android:id="@+id/annotationColor"
+                android:background="@drawable/color"
+                style="@style/StyleToolBar" />
+
+            <ToggleButton
+                android:id="@+id/annotationT"
+                android:background="@drawable/t"
+                style="@style/StyleToolBar"
+                android:visibility="gone" />
+
+            <ToggleButton
+                android:id="@+id/annotationEraser"
+                android:background="@drawable/eraser"
+                style="@style/StyleToolBar" />
+
+            <ToggleButton
+                android:id="@+id/annotationPen"
+                android:layout_width="fill_parent"
+                android:background="@drawable/pen"
+                style="@style/StyleToolBar" />
+            <!--
+                        <ToggleButton android:id="@+id/annotationHand"
+                            android:background="@drawable/hand_selected" style="@style/StyleToolBar" />
+             -->
+        </LinearLayout>
+        <!--
+                <LinearLayout android:id="@+id/annotationMidifyZoom"
+                    android:background="@drawable/annotatemiddle" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <ToggleButton android:id="@+id/annotationMinify" style="@style/StyleToolBar"
+                        android:background="@drawable/minify" />
+                    <ToggleButton android:id="@+id/annotationZoom" style="@style/StyleToolBar"
+                        android:background="@drawable/zoom" />
+                    <ToggleButton android:id="@+id/annotationSave" style="@style/StyleToolBar"
+                        android:background="@drawable/save" />
+                </LinearLayout>
+         -->
+        <ToggleButton
+            style="@style/StyleToolBar"
+            android:background="@drawable/annotatebottom" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:id="@+id/ll_inconf_vs_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:visibility="visible">
+
+    <LinearLayout
+        android:id="@+id/ll_inconf_vs_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+<!--        <View-->
+<!--            android:id="@+id/view_inconf_vs_place_top"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="@dimen/height_6_80"-->
+<!--            android:layout_alignParentTop="true"-->
+<!--            android:background="#232227" />-->
+
+        <FrameLayout
+            android:id="@+id/flvideo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/app_main_hint_old">
+
+            <com.infowarelab.conference.ui.view.PageView
+                android:id="@+id/pv_videoroot"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#000000"
+                android:overScrollMode="never"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:id="@+id/rl_videoroot1"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:background="@color/black">
+
+                        <RelativeLayout
+                            android:id="@+id/rl_videoroot"
+
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/black"
+                            android:clickable="true"
+                            android:focusable="false"></RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/rl_inconf_camera"
+                            android:layout_width="1px"
+                            android:layout_height="1px"
+                            android:background="@color/black">
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@color/app_video_background"
+                                android:layout_alignParentLeft="true"
+                                android:layout_alignParentTop="true"></FrameLayout>
+
+                            <com.infowarelab.conference.ui.activity.inconf.view.video.LocalVideoView
+                                android:id="@+id/localVideo"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_centerInParent="true"
+                                android:visibility="visible" />
+
+                            <LinearLayout
+                                android:id="@+id/llNopermission"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@color/app_video_background"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                android:visibility="gone">
+
+                                <ImageView
+                                    android:layout_width="@dimen/height_6_80"
+                                    android:layout_height="@dimen/height_6_80"
+                                    android:scaleType="fitCenter"
+                                    android:src="@drawable/ic_vs_portrait" />
+
+                                <TextView
+                                    android:id="@+id/tv_my_name"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/height_2_80"
+                                    android:text=""
+                                    android:textColor="#A1A1A1"
+                                    android:textSize="13sp" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/tv_inconf_camerame"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                android:layout_alignParentBottom="true"
+                                android:background="@drawable/bg_roundedrectangle_video_name"
+                                android:paddingRight="@dimen/dp_4"
+                                android:paddingLeft="@dimen/dp_4"
+                                android:maxLines="1"
+                                android:text="TextView"
+                                android:textColor="#FFFFFF"
+                                android:textSize="22px"
+                                android:singleLine="true"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Headline"/>
+
+                            <Button
+                                android:id="@+id/btnChangeCamera"
+                                android:layout_width="@dimen/height_104_80"
+                                android:layout_height="@dimen/height_104_80"
+                                android:layout_alignParentRight="true"
+                                android:layout_alignParentTop="true"
+                                android:layout_marginRight="@dimen/width_1_80"
+                                android:layout_marginTop="@dimen/height_100_80"
+                                android:background="@drawable/a6_btn_camera_rotate"
+                                android:visibility="gone"/>
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/rl_videoRootFront"
+
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/black"
+                            android:clickable="true"
+                            android:visibility="gone"
+                            android:focusable="false"></RelativeLayout>
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+            </com.infowarelab.conference.ui.view.PageView>
+
+
+            <LinearLayout
+                android:id="@+id/ll_dots"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height_4_80"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="@dimen/height_3_80"
+                android:gravity="center"
+                android:orientation="horizontal"></LinearLayout>
+
+        </FrameLayout>
+
+<!--        <View-->
+<!--            android:id="@+id/view_inconf_vs_place_bottom"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="@dimen/height_7_80"-->
+<!--            android:layout_alignParentTop="true"-->
+<!--            android:background="#232227" />-->
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/iv_inconf_vs_switch"
+        android:layout_width="@dimen/height_104_80"
+        android:layout_height="@dimen/height_104_80"
+        android:layout_gravity="center_vertical|bottom"
+        android:layout_marginBottom="@dimen/height_108_80"
+        android:layout_marginLeft="@dimen/width_2_80"
+        android:src="@drawable/ic_vs_switch_indexs" />
+
+    <LinearLayout
+        android:id="@+id/ll_inconf_vs_videos"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_7_80"
+        android:layout_gravity="bottom"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <HorizontalScrollView
+            android:id="@+id/hs_inconf_vs_videos"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_7_80"
+            android:background="#80000000"
+            android:fadeScrollbars="false"
+            android:fadingEdge="none"
+            android:overScrollMode="never"
+            android:scrollbars="none"
+            android:scrollingCache="false">
+
+            <LinearLayout
+                android:id="@+id/ll_inconf_vs_videos_container"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"></LinearLayout>
+        </HorizontalScrollView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_inconf_vs_close"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:focusable="false"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_6_80"
+            android:layout_alignParentTop="true"
+            android:background="@color/black" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/app_main_hint_old"
+            android:gravity="center"
+            android:orientation="vertical">
+
+
+            <ImageView
+                android:layout_width="@dimen/height_6_80"
+                android:layout_height="@dimen/height_6_80"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_vs_closed" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/height_2_80"
+                android:text="@string/vs_closed"
+                android:textColor="#A1A1A1"
+                android:textSize="17sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_7_80"
+            android:layout_alignParentTop="true"
+            android:background="@color/black" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/ll_inconf_vs_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:id="@+id/video_top"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_6_80"
+            android:layout_alignParentTop="true"
+            android:background="@color/black">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/fl"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="@string/shareVideo"
+                android:textColor="@color/white"
+                android:textSize="@dimen/textSize_07" />
+
+            <LinearLayout
+                android:id="@+id/video_back"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:clickable="true"
+                android:focusable="false"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/width_102_80"
+                android:paddingRight="@dimen/width_102_80">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/height_6_80"
+                    android:src="@drawable/a6_btn_login_back" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/width_2_80"
+                    android:text="@string/preconf_login_back"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/textSize_02" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <ListView
+            android:id="@+id/lv_devices"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/app_main_hint_old"
+            android:divider="@null"
+            android:listSelector="#00000000"
+            android:overScrollMode="never" />
+
+    </LinearLayout>
+
+
+</FrameLayout>

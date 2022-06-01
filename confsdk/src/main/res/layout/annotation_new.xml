@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?><!-- 注解工具条 -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/annotationLayout"
+    android:layout_gravity="top|left"
+    android:layout_marginLeft="@dimen/width_1_80"
+    android:layout_marginTop="@dimen/height_7_80"
+
+    android:visibility="visible">
+
+    <LinearLayout
+        android:id="@+id/llAnno"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#60f8b551"
+        android:padding="@dimen/height_100_80"
+        android:layout_marginRight="2px"
+        android:visibility="visible">
+
+        <ToggleButton
+            android:id="@+id/annotationPen"
+            android:background="@drawable/annotation_pen_sel"
+            style="@style/Style_ann_bar" />
+
+        <ToggleButton
+            android:id="@+id/annotationColor"
+            style="@style/Style_ann_bar"
+            android:background="@drawable/icon_color_red" />
+
+        <!-- 颜色 -->
+        <LinearLayout
+            android:id="@+id/annotationColorMore"
+            android:layout_width="@dimen/width_6_80"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+
+            android:background="#ffffff">
+
+            <ToggleButton
+                android:id="@+id/annotationColorRed"
+                android:background="@drawable/icon_color_red"
+                style="@style/Style_ann_bar" />
+
+            <ToggleButton
+                android:id="@+id/annotationColorYellow"
+                android:background="@drawable/icon_color_yellow"
+                style="@style/Style_ann_bar" />
+
+            <ToggleButton
+                android:id="@+id/annotationColorGreen"
+                android:background="@drawable/icon_color_green"
+                style="@style/Style_ann_bar" />
+        </LinearLayout>
+
+        <ToggleButton
+            android:id="@+id/annotationEraser"
+            android:background="@drawable/annotation_eraser_sel"
+            style="@style/Style_ann_bar" />
+
+        <ToggleButton
+            android:id="@+id/annotationPointing"
+            android:background="@drawable/annotation_pointing_sel"
+            style="@style/Style_ann_bar" />
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/ibDrag"
+        android:layout_width="@dimen/width_4_80"
+        android:layout_height="@dimen/height_10_80"
+        android:layout_toRightOf="@id/llAnno"
+        android:background="@drawable/anno_pullback_pressed"
+        android:layout_centerVertical="true"
+        android:visibility="visible" />
+</RelativeLayout>

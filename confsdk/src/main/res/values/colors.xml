@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="font_conflist_head">#3e3e3e</color>
+    <color name="white">#FFFFFF</color>
+    <color name="red">#FF0000</color>
+    <color name="grey">#CCCCCC</color>
+    <color name="black">#000000</color>
+    <color name="item">#EEEEEE</color>
+    <color name="backgroudLiqid">#00FFFFFF</color>
+    <color name="site_setup_help">#C0DBFB</color>
+    <color name="site_setup_help_text">#808B9E</color>
+    <color name="preconf_create">#003164</color>
+    <color name="actionbar_bg">#2F8ED6</color>
+    <color name="preconf_create_default">#708BA8</color>
+    <color name="preconf_create_invite">#2264A6</color>
+    <color name="preconf_create_invite_edititem">#B9E8FF</color>
+    <color name="preconf_create_invite_edititem_shadowColor">#7A96DF</color>
+    <color name="font_confList_type">#545454</color>
+    <color name="chat_comename">#2f8ed6</color>
+    <color name="video_item">#4b8ad3</color>
+
+    <!-- 推送 -->
+    <color name="loginContent">#1C6791</color>
+    <color name="loginContentTip">#C9C9C9</color>
+
+    <color name="app_im_bg">#181818</color>
+    <color name="bg">#eeeeee</color>
+
+    <color name="app_video_background">#2D3033</color>
+    <color name="app_main_hue">#DC0916</color>
+    <color name="app_main_hue_down">#FC0916</color>
+    <color name="app_inconf_hue">#232227</color>
+    <color name="app_main_hint">#DC0916</color>
+    <color name="app_main_hint_old">#EFEFF4</color>
+    <color name="app_main_input_bg">#FDFEFF</color>
+    <color name="app_main_input_stroke">#D7D8D9</color>
+    <color name="a6_input_black">#4B4B4B</color>
+    <color name="a6_input_hint">#CCCCCC</color>
+    <color name="a6_txt_black1">#666666</color>
+    <color name="a6_txt_black2">#2B2B2B</color>
+    <color name="a6_txt_black3">#B4B4B4</color>
+    <color name="a6_txt_black4">#888888</color>
+    <color name="a6_txt_red1">#DC0916</color>
+    <color name="a6_txt_green1">#32BD45</color>
+    <color name="a6_txt_blue1">#50A1FF</color>
+    <color name="a6_gray1">#F4F4F4</color>
+    <color name="a6_cuttingline1">#CFCFCF</color>
+    <color name="a6_cuttingline2">#D1D1D1</color>
+    <color name="a6_cuttingline3">#DCDCDC</color>
+    <color name="a6_cuttingline4">#DC0916</color>
+    <color name="a6_cuttingline5">#F1F2F4</color>
+    <color name="a6_ll_down">#CFE2EB</color>
+    <color name="a6_ll_down_2">#EFEFEF</color>
+
+    <color name="index_white">#FFFFFF</color>
+    <color name="index_blue">#52A2FF</color>
+    <color name="index_red">#DC0916</color>
+
+    <color name="index_translucence">#80000000</color>
+    <!--	测试-->
+
+    <!--悬浮窗-->
+    <color name="float_window_bg_border_normal">#bcbcbc</color>
+    <color name="float_window_bg_border_edit">#4f95ff</color>
+    <color name="exit_red">#EE5A58</color>
+
+</resources>

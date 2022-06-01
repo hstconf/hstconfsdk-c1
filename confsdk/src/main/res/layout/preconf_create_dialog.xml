@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/ffh"
+    android:gravity="center">
+
+    <ProgressBar
+        android:id="@+id/site_check_loading"
+        style="@style/ww" />
+
+    <TextView
+        android:id="@+id/preconf_create_dialog"
+        style="@style/ww"
+        android:layout_marginLeft="3dp"
+        android:textColor="@color/white"
+        android:textSize="@dimen/textSize_06"
+        android:text="@string/preconf_create_loading" />
+
+</LinearLayout>

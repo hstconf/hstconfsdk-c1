@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/ffv"
+    android:background="@color/app_main_hint_old"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/act_preconf_about_rl_title"
+        style="@style/style_rl_titleBar">
+
+        <LinearLayout
+            android:id="@+id/act_preconf_about_ll_back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:clickable="true"
+            android:focusable="false"
+            android:gravity="center_vertical"
+            android:onClick="ItemClick"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/width_102_80"
+            android:paddingRight="@dimen/width_102_80">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/height_6_80"
+                android:src="@drawable/a6_btn_login_back" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/width_2_80"
+                android:text="@string/preconf_login_back"
+                android:textColor="@color/white"
+                android:textSize="@dimen/textSize_02" />
+        </LinearLayout>
+
+        <TextView
+            style="@style/style_tv_titleBar_mid"
+            android:text="@string/about" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/view_frag_set_ll_1"
+        style="@style/style_common_input_and_btn"
+        android:layout_marginTop="@dimen/dp_22"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/a6_icon_logo" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_6"
+            android:text="@string/about_mid2"
+            android:textColor="@color/a6_txt_black1"
+            android:textSize="@dimen/textSize_03" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/act_preconf_about_btn"
+        style="@style/style_btn_ok"
+        android:layout_marginTop="@dimen/dp_14"
+        android:enabled="true"
+        android:onClick="ItemClick"
+        android:text="@string/tel" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/height_6_80"
+            android:text=""
+            android:textColor="@color/a6_txt_black1"
+            android:textSize="@dimen/textSize_00" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/textView1"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/height_1_80"
+            android:text=""
+            android:textColor="@color/a6_txt_black1"
+            android:textSize="@dimen/textSize_00" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/textView2"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/height_1_80"
+            android:text="@string/about_mid3"
+            android:textColor="@color/a6_txt_black1"
+            android:textSize="@dimen/textSize_00" />
+    </RelativeLayout>
+
+</LinearLayout>

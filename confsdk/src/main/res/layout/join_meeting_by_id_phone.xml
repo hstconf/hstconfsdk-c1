@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/ffv">
+
+    <LinearLayout
+        android:id="@+id/join_meeting_number_layout"
+        style="@style/styleLayout_h"
+        android:background="@null"
+        android:layout_marginTop="@dimen/height_6_80">
+
+        <TextView
+            style="@style/styleLayout_leftItem"
+            android:layout_marginLeft="@dimen/width_4_80"
+            android:text="@string/conferenceNumber" />
+
+        <EditText
+            android:id="@+id/join_meeting_number"
+            style="@style/styleLayout_rightItem"
+            android:maxLength="9"
+            android:digits="1234567890 " />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/join_meeting_showname_layout"
+        style="@style/styleLayout_h"
+        android:layout_marginTop="@dimen/height_2_80">
+
+        <TextView
+            style="@style/styleLayout_leftItem"
+            android:layout_marginLeft="@dimen/width_4_80"
+            android:text="@string/show_name" />
+
+        <EditText
+            android:id="@+id/join_meeting_showname"
+            style="@style/styleLayout_rightItem"
+            android:maxLength="16" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/join_meeting_password_layout"
+        style="@style/styleLayout_h"
+        android:layout_marginTop="@dimen/height_2_80">
+
+        <TextView
+            style="@style/styleLayout_leftItem"
+            android:layout_marginLeft="@dimen/width_4_80"
+            android:text="@string/conferencePassword" />
+
+        <EditText
+            android:id="@+id/join_meeting_password"
+            style="@style/styleLayout_rightItem"
+            android:singleLine="true"
+            android:password="true" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/join_meeting_button"
+        style="@style/stylePreConf_button"
+        android:enabled="false" />
+
+</LinearLayout>

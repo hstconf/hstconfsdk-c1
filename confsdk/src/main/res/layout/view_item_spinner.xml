@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center_vertical">
+
+    <LinearLayout
+        android:id="@+id/ll_item_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_5_80"
+        android:layout_weight="1"
+        android:background="@drawable/bg_pop_item"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:clickable="true"
+        android:focusable="false">
+
+        <TextView
+            android:id="@+id/tv_item_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:text="item"
+            android:layout_marginLeft="@dimen/width_6_80"
+            android:textColor="@color/a6_input_black"
+            android:textSize="@dimen/textSize_04"
+            android:lines="1" />
+
+    </LinearLayout>
+
+</LinearLayout>

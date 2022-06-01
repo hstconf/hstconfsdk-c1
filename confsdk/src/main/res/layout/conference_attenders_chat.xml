@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/ff"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:background="@color/app_main_hint_old">
+
+    <RelativeLayout
+        android:id="@+id/chat_actionbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_6_80"
+        android:background="@color/black"
+        android:layout_alignParentTop="true">
+
+        <TextView
+            android:id="@+id/chat_top"
+            style="@style/styleActiobBar_mid"
+            android:textSize="@dimen/textSize_07"
+            android:textColor="@color/white"
+            android:ellipsize="end"
+            android:singleLine="true" />
+
+        <LinearLayout
+            android:id="@+id/chat_back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:clickable="true"
+            android:focusable="false"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/width_102_80"
+            android:paddingRight="@dimen/width_102_80">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/height_6_80"
+                android:src="@drawable/a6_btn_login_back" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/width_2_80"
+                android:text="@string/preconf_login_back"
+                android:textColor="@color/white"
+                android:textSize="@dimen/textSize_02" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/chat_list"
+        style="@style/ff"
+        android:layout_below="@+id/chat_actionbar"
+        android:layout_above="@+id/chat_editlayout"
+        android:fadingEdge="none"
+        android:divider="@null"
+        android:scrollingCache="false"
+        android:listSelector="@android:color/transparent" />
+
+    <RelativeLayout
+        android:id="@+id/chat_editlayout"
+        style="@style/fw"
+        android:layout_alignParentBottom="true"
+        android:paddingBottom="@dimen/height_1_80"
+        android:paddingTop="@dimen/height_1_80"
+        android:paddingLeft="@dimen/height_101_80"
+        android:paddingRight="@dimen/height_101_80">
+
+        <LinearLayout
+            android:id="@+id/llsendsms"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/height_104_80"
+            android:paddingTop="2px"
+            android:paddingBottom="2px"
+            android:gravity="center"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/chat_sendsms"
+                style="@style/style_btn_ok"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/height_104_80"
+                android:layout_marginLeft="1px"
+                android:layout_marginRight="1px"
+                android:paddingLeft="@dimen/width_2_80"
+                android:paddingRight="@dimen/width_2_80"
+                android:text="@string/send" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/chat_edit"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_104_80"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="@dimen/width_1_80"
+            android:layout_toLeftOf="@+id/llsendsms"
+            android:background="@drawable/a6_et_common"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/textSize_04" />
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

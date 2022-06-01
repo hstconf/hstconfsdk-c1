@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- font size -->
+    <dimen name="textSizeSmall">20sp</dimen>
+    <dimen name="textSizeMid">24sp</dimen>
+    <dimen name="textSizeLarge">30sp</dimen>
+
+    <!-- magin-->
+    <dimen name="meetingListMargin">15dp</dimen>
+
+
+    <dimen name="dp_3">3dp</dimen>
+    <dimen name="dp_5">5dp</dimen>
+    <dimen name="dp_10">10dp</dimen>
+    <dimen name="dp_15">15dp</dimen>
+
+    <dimen name="t_8">8sp</dimen>
+    <dimen name="t_9">9sp</dimen>
+    <dimen name="t_10">10sp</dimen>
+    <dimen name="t_11">11sp</dimen>
+    <dimen name="t_12">12sp</dimen>
+    <dimen name="t_13">13sp</dimen>
+    <dimen name="t_14">14sp</dimen>
+    <dimen name="t_15">15sp</dimen>
+    <dimen name="t_16">16sp</dimen>
+    <dimen name="t_17">17sp</dimen>
+    <dimen name="t_18">18sp</dimen>
+    <dimen name="t_19">19sp</dimen>
+    <dimen name="t_20">20sp</dimen>
+    <dimen name="t_21">21sp</dimen>
+    <dimen name="t_22">22sp</dimen>
+    <dimen name="t_23">23sp</dimen>
+    <dimen name="t_24">24sp</dimen>
+    <dimen name="t_25">25sp</dimen>
+    <dimen name="t_26">26sp</dimen>
+    <dimen name="t_27">27sp</dimen>
+    <dimen name="t_28">28sp</dimen>
+    <dimen name="t_29">29sp</dimen>
+    <dimen name="t_30">30sp</dimen>
+
+    <dimen name="dpx_0">0dp</dimen>
+    <dimen name="dpx_1">1dp</dimen>
+    <dimen name="dpx_2">2dp</dimen>
+    <dimen name="dpx_3">3dp</dimen>
+    <dimen name="dpx_4">4dp</dimen>
+    <dimen name="dpx_5">5dp</dimen>
+    <dimen name="dpx_6">6dp</dimen>
+    <dimen name="dpx_7">7dp</dimen>
+    <dimen name="dpx_8">8dp</dimen>
+    <dimen name="dpx_9">9dp</dimen>
+    <dimen name="dpx_10">10dp</dimen>
+    <dimen name="dpx_11">11dp</dimen>
+    <dimen name="dpx_12">12dp</dimen>
+    <dimen name="dpx_13">13dp</dimen>
+    <dimen name="dpx_14">14dp</dimen>
+    <dimen name="dpx_15">15dp</dimen>
+    <dimen name="dpx_16">16dp</dimen>
+    <dimen name="dpx_17">17dp</dimen>
+    <dimen name="dpx_18">18dp</dimen>
+    <dimen name="dpx_19">19dp</dimen>
+    <dimen name="dpx_20">20dp</dimen>
+    <dimen name="dpx_21">21dp</dimen>
+    <dimen name="dpx_22">22dp</dimen>
+    <dimen name="dpx_23">23dp</dimen>
+    <dimen name="dpx_24">24dp</dimen>
+    <dimen name="dpx_25">25dp</dimen>
+    <dimen name="dpx_26">26dp</dimen>
+    <dimen name="dpx_27">27dp</dimen>
+    <dimen name="dpx_28">28dp</dimen>
+    <dimen name="dpx_29">29dp</dimen>
+    <dimen name="dpx_30">30dp</dimen>
+    <dimen name="dpx_31">31dp</dimen>
+    <dimen name="dpx_32">32dp</dimen>
+    <dimen name="dpx_33">33dp</dimen>
+    <dimen name="dpx_34">34dp</dimen>
+    <dimen name="dpx_35">35dp</dimen>
+    <dimen name="dpx_36">36dp</dimen>
+    <dimen name="dpx_37">37dp</dimen>
+    <dimen name="dpx_38">38dp</dimen>
+    <dimen name="dpx_39">39dp</dimen>
+    <dimen name="dpx_40">40dp</dimen>
+    <dimen name="dpx_41">41dp</dimen>
+    <dimen name="dpx_42">42dp</dimen>
+    <dimen name="dpx_43">43dp</dimen>
+    <dimen name="dpx_44">44dp</dimen>
+    <dimen name="dpx_45">45dp</dimen>
+    <dimen name="dpx_46">46dp</dimen>
+    <dimen name="dpx_47">47dp</dimen>
+    <dimen name="dpx_48">48dp</dimen>
+    <dimen name="dpx_49">49dp</dimen>
+    <dimen name="dpx_50">50dp</dimen>
+
+
+</resources>

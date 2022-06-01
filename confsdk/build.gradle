@@ -1,0 +1,169 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
+    lintOptions {
+//        checkReleaseBuilds false
+//        abortOnError false
+        // true--关闭lint报告的分析进度
+
+        quiet true
+
+// true--错误发生后停止gradle构建
+
+        abortOnError false
+
+// true--只报告error
+
+        ignoreWarnings true
+
+// true--忽略有错误的文件的全/绝对路径(默认是true)
+
+//absolutePaths true
+
+// true--检查所有问题点，包含其他默认关闭项
+
+        checkAllWarnings true
+
+// true--所有warning当做error
+
+        warningsAsErrors true
+
+// 关闭指定问题检查
+
+        disable 'TypographyFractions','TypographyQuotes'
+
+// 打开指定问题检查
+
+        enable 'RtlHardcoded','RtlCompat', 'RtlEnabled'
+
+// 仅检查指定问题
+
+        check 'NewApi', 'InlinedApi'
+
+// true--error输出文件不包含源码行号
+
+        noLines true
+
+// true--显示错误的所有发生位置，不截取
+
+        showAll true
+
+// 回退lint设置(默认规则)
+
+        lintConfig file("default-lint.xml")
+
+// true--生成txt格式报告(默认false)
+
+        textReport true
+
+// 重定向输出；可以是文件或'stdout'
+
+        textOutput 'stdout'
+
+// true--生成XML格式报告
+
+        xmlReport false
+
+// 指定xml报告文档(默认lint-results.xml)
+
+        xmlOutput file("lint-report.xml")
+
+// true--生成HTML报告(带问题解释，源码位置，等)
+
+        htmlReport true
+
+// html报告可选路径(构建器默认是lint-results.html )
+
+        htmlOutput file("lint-report.html")
+
+//  true--所有正式版构建执行规则生成崩溃的lint检查，如果有崩溃问题将停止构建
+
+        checkReleaseBuilds true
+
+// 在发布版本编译时检查(即使不包含lint目标)，指定问题的规则生成崩溃
+
+        fatal 'NewApi'
+
+// 指定问题的规则生成错误
+
+        error 'Wakelock', 'TextViewEdits'
+
+// 指定问题的规则生成警告
+
+        warning 'ResourceAsColor'
+
+// 忽略指定问题的规则(同关闭检查)
+
+        ignore 'TypographyQuotes'
+    }
+    defaultConfig {
+        //applicationId "com.infowarelab.hongshantongphone"
+        minSdkVersion 16
+        targetSdkVersion 28
+
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+        ndk {
+            //abiFilters "arm64-v8a", "armeabi", "armeabi-v7a"
+            abiFilters "arm64-v8a", "armeabi-v7a"
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+// Between "}" and "dependencies {" Always empty one line
+dependencies {
+    //api files('../demo/libs/ConfLib.aar')
+    //implementation(name:'Trunk_lib-release', ext:'aar')
+    api fileTree(include: ['*.jar'], dir: 'libs')
+    //api fileTree(include: ['*.aar'], dir: 'libs')
+    //api project(path: ':conflib')
+    androidTestImplementation('androidx.test.espresso:espresso-core:3.1.0', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    implementation 'androidx.appcompat:appcompat:1.0.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    //implementation project(':Trunk_lib')
+    implementation 'com.hd.splashscreen:splashscreen:1.4'
+    implementation 'pub.devrel:easypermissions:1.1.3'
+    //debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.5.4'
+    //releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.4'
+    implementation('com.github.hotchemi:permissionsdispatcher:3.1.0') {
+        exclude module: "support-v13"
+    }
+    annotationProcessor "com.github.hotchemi:permissionsdispatcher-processor:3.1.0"
+    //桌面共享
+    //implementation project(':screencapture')
+    implementation 'com.google.android.material:material:1.0.0'
+    //api files('libs/android-logging-log4j-1.0.3.jar')
+    api files('libs/asmack.jar')
+    //api files('libs/gson-2.2.2.jar')
+    //api files('libs/log4j-1.2.16.jar')
+    api files('libs/libwebrtc.jar')
+    api 'org.jbundle.util.osgi.wrapped:org.jbundle.util.osgi.wrapped.org.apache.http.client:4.1.2'
+    api 'org.greenrobot:eventbus:3.1.1'
+    api 'com.tencent.bugly:crashreport:latest.release' //其中latest.release指代最新Bugly SDK版本号，也可以指定明确的版本号，例如2.1.9
+//    api 'com.tencent.bugly:nativecrashreport:latest.release' //其中latest.release指代最新Bugly NDK版本号，也可以指定明确的版
+    api 'commons-logging:commons-logging:1.2'
+    api 'com.google.code.gson:gson:2.8.0'
+    implementation 'com.koushikdutta.async:androidasync:2.+'
+    implementation 'com.contrarywind:Android-PickerView:4.1.9'
+}

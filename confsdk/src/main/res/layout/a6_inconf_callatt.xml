@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/ffv"
+    android:background="@android:color/transparent"
+    android:gravity="center">
+
+    <LinearLayout
+        android:id="@+id/dialog_callatt_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:paddingTop="@dimen/dp_6"
+        android:background="@drawable/a6_bg_white_corners">
+
+        <ImageView
+            android:layout_width="@dimen/dp_18"
+            android:layout_height="@dimen/dp_18"
+            android:src="@drawable/a6_icon_callatt" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_7"
+            android:textSize="@dimen/textSize_03"
+            android:textColor="@color/a6_txt_black2"
+            android:text="@string/inconf_callatt_1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_5"
+            android:textSize="@dimen/textSize_03"
+            android:textColor="@color/a6_txt_black2"
+            android:text="@string/inconf_callatt_2" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_5">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/textSize_03"
+                android:textColor="@color/a6_txt_black2"
+                android:text="@string/inconf_callatt_3" />
+
+            <TextView
+                android:id="@+id/dialog_callatt_tv_second"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/textSize_03"
+                android:textColor="@color/a6_txt_black2"
+                android:text="60" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/textSize_03"
+                android:textColor="@color/a6_txt_black2"
+                android:text="@string/inconf_callatt_4" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginTop="@dimen/dp_8"
+            android:background="#DCDCDC" />
+
+        <TextView
+            android:id="@+id/dialog_callatt_tv_confirm"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_20"
+            android:gravity="center"
+            android:text="@string/confirm"
+            android:textColor="@color/a6_txt_blue1"
+            android:textSize="@dimen/textSize_03"
+            android:background="@drawable/a6_btn_bottom_semicircle" />
+
+    </LinearLayout>
+
+</LinearLayout>

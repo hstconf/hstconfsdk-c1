@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/ff"
+    android:background="@color/app_main_hint_old">
+
+    <RelativeLayout style="@style/ffv">
+
+        <RelativeLayout
+            android:id="@+id/conference_more_actionbar"
+            style="@style/style_rl_titleBar2">
+
+            <TextView
+                style="@style/styleActiobBar_mid"
+                android:text="@string/more"
+                android:textSize="@dimen/textSize_07" />
+
+            <LinearLayout
+                android:id="@+id/more_back"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:clickable="true"
+                android:focusable="false"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/width_102_80"
+                android:paddingRight="@dimen/width_102_80">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/height_6_80"
+                    android:src="@drawable/a6_btn_login_back" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/width_2_80"
+                    android:text="@string/preconf_login_back"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/textSize_02" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            style="@style/fwv"
+            android:layout_below="@+id/conference_more_actionbar"
+            android:layout_marginLeft="@dimen/height_5_80"
+            android:layout_marginRight="@dimen/height_5_80"
+            android:layout_marginTop="@dimen/height_105_80"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/ww"
+                android:layout_gravity="center_horizontal"
+                android:textColor="@color/a6_input_black"
+                android:text="@string/more_info"
+                android:textSize="@dimen/textSize_07" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    style="@style/ww"
+                    android:layout_marginTop="@dimen/height_104_80">
+
+                    <TextView
+                        android:id="@+id/tvplaceholder"
+                        style="@style/ww"
+                        android:ems="5"
+                        android:textSize="@dimen/textSize_04" />
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout0"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignRight="@+id/tvplaceholder"
+                        android:layout_alignLeft="@+id/tvplaceholder"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="left"
+                            android:text="@string/more_topic"
+                            android:textColor="@color/a6_input_black"
+                            android:textSize="@dimen/textSize_04" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="："
+                            android:textColor="@color/a6_input_black"
+                            android:textSize="@dimen/textSize_04"
+                            android:visibility="gone" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tvTopic"
+                        style="@style/ww"
+                        android:text="："
+                        android:layout_toRightOf="@+id/linearLayout0"
+                        android:textColor="@color/a6_input_black"
+                        android:textSize="@dimen/textSize_04"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/conference_more_topic"
+                        style="@style/ww"
+                        android:layout_toRightOf="@id/tvTopic"
+                        android:text="ject test"
+                        android:textColor="@color/a6_input_black"
+                        android:layout_marginLeft="@dimen/width_1_80"
+                        android:textSize="@dimen/textSize_04" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    style="@style/ww"
+                    android:layout_marginTop="@dimen/height_3_80">
+
+                    <TextView
+                        android:id="@+id/tvplaceholder1"
+                        style="@style/ww"
+                        android:ems="5"
+                        android:textSize="@dimen/textSize_04" />
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignRight="@+id/tvplaceholder1"
+                        android:layout_alignLeft="@+id/tvplaceholder1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="left"
+                            android:text="@string/more_id"
+                            android:textColor="@color/a6_input_black"
+                            android:textSize="@dimen/textSize_04" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="："
+                            android:textColor="@color/a6_input_black"
+                            android:textSize="@dimen/textSize_04"
+                            android:visibility="gone" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tvNumber"
+                        style="@style/ww"
+                        android:text="："
+                        android:layout_toRightOf="@+id/linearLayout1"
+                        android:textColor="@color/a6_input_black"
+                        android:textSize="@dimen/textSize_04"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/conference_more_id"
+                        style="@style/ww"
+                        android:layout_toRightOf="@id/tvNumber"
+                        android:layout_marginLeft="@dimen/width_1_80"
+                        android:textColor="@color/a6_input_black"
+                        android:textSize="@dimen/textSize_04"
+                        android:text="11111111111" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    style="@style/ww"
+                    android:layout_marginTop="@dimen/height_3_80">
+
+                    <TextView
+                        android:id="@+id/tvplaceholder2"
+                        style="@style/ww"
+                        android:ems="5"
+                        android:textSize="@dimen/textSize_04" />
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignRight="@+id/tvplaceholder2"
+                        android:layout_alignLeft="@+id/tvplaceholder2"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="left"
+                            android:text="@string/attenders_adapter_host"
+                            android:textColor="@color/a6_input_black"
+                            android:textSize="@dimen/textSize_04" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="left"
+                            android:text=":"
+                            android:textColor="@color/a6_input_black"
+                            android:textSize="@dimen/textSize_04" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tvHost"
+                        style="@style/ww"
+                        android:text="："
+                        android:layout_toRightOf="@+id/linearLayout2"
+                        android:textColor="@color/a6_input_black"
+                        android:textSize="@dimen/textSize_04"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/conference_more_host"
+                        style="@style/ww"
+                        android:layout_toRightOf="@id/tvHost"
+                        android:layout_marginLeft="@dimen/width_1_80"
+                        android:textColor="@color/a6_input_black"
+                        android:textSize="@dimen/textSize_04"
+                        android:text="" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/more_masterp"
+                    style="@style/ww"
+                    android:layout_marginTop="@dimen/height_3_80"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/tvplaceholder3"
+                        style="@style/ww"
+                        android:ems="5"
+                        android:textSize="@dimen/textSize_04" />
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignRight="@+id/tvplaceholder3"
+                        android:layout_alignLeft="@+id/tvplaceholder3"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="left"
+                            android:text="@string/more_masterpasseord"
+                            android:textColor="@color/a6_input_black"
+                            android:textSize="@dimen/textSize_04" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="持"
+                            android:textColor="@color/a6_input_black"
+                            android:textSize="@dimen/textSize_04"
+                            android:visibility="gone" />
+                    </LinearLayout>
+
+                    <TextView
+                        style="@style/ww"
+                        android:id="@+id/tvMasterPass"
+                        android:text="："
+                        android:layout_toRightOf="@+id/linearLayout3"
+                        android:textColor="@color/a6_input_black"
+                        android:textSize="@dimen/textSize_04"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/conference_more_masterpasseord"
+                        style="@style/ww"
+                        android:layout_toRightOf="@id/tvMasterPass"
+                        android:layout_marginLeft="@dimen/width_1_80"
+                        android:textColor="@color/a6_input_black"
+                        android:textSize="@dimen/textSize_04" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/more_confp"
+                    style="@style/ww"
+                    android:layout_marginTop="@dimen/height_3_80"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/tvplaceholder4"
+                        style="@style/ww"
+                        android:ems="5"
+                        android:textSize="@dimen/textSize_04" />
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignRight="@+id/tvplaceholder4"
+                        android:layout_alignLeft="@+id/tvplaceholder4"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="left"
+                            android:text="@string/more_confpassword"
+                            android:textColor="@color/a6_input_black"
+                            android:textSize="@dimen/textSize_04" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="："
+                            android:textColor="@color/a6_input_black"
+                            android:textSize="@dimen/textSize_04"
+                            android:visibility="gone" />
+                    </LinearLayout>
+
+                    <TextView
+                        style="@style/ww"
+                        android:id="@+id/tvconfPwd"
+                        android:text="："
+                        android:layout_toRightOf="@+id/linearLayout4"
+                        android:textColor="@color/a6_input_black"
+                        android:textSize="@dimen/textSize_04"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/conference_more_confpassword"
+                        style="@style/ww"
+                        android:layout_toRightOf="@id/tvconfPwd"
+                        android:layout_marginLeft="@dimen/width_1_80"
+                        android:textColor="@color/a6_input_black"
+                        android:textSize="@dimen/textSize_04" />
+
+                </RelativeLayout>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/fwv"
+            android:layout_alignParentBottom="true">
+
+            <Button
+                android:id="@+id/conference_more_leave"
+                style="@style/style_btn_cnl"
+                android:text="@string/about_exit"
+                android:layout_marginBottom="@dimen/height_4_80" />
+
+            <Button
+                android:id="@+id/conference_more_about"
+                style="@style/style_btn_gray"
+                android:text="@string/about"
+                android:layout_marginBottom="@dimen/height_4_80"
+                android:layout_marginTop="@dimen/height_2_80"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <include
+        android:id="@+id/more_about"
+        layout="@layout/conference_about"
+        android:visibility="gone" />
+
+</FrameLayout>

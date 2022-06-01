@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/ffv"
+    android:background="@color/bg">
+
+    <RelativeLayout style="@style/styleActionBar">
+
+        <LinearLayout
+            style="@style/ww"
+            android:layout_centerInParent="true"
+            android:gravity="center_vertical">
+
+            <Button
+                android:id="@+id/conference_list"
+                style="@style/styleActionBar_midbutton"
+                android:background="@drawable/meeting_list_pressed"
+                android:text="@string/conferenceList" />
+
+            <Button
+                android:id="@+id/conferenceNumber"
+                style="@style/styleActionBar_midbutton"
+                android:background="@drawable/meeting_number_pressed"
+                android:text="@string/confNumber" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/meetingListViewPager"
+        style="@style/ff"
+        android:layout_weight="1" />
+
+</LinearLayout>

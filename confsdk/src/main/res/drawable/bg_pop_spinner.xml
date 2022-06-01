@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <!-- 渐变 -->
+    <gradient
+        android:angle="270"
+        android:endColor="@color/app_main_input_bg"
+        android:startColor="@color/app_main_input_bg" />
+    <!-- 描边 -->
+    <stroke
+        android:width="2px"
+        android:color="@color/app_main_input_stroke" />
+    <!-- 圆角 -->
+    <corners
+        android:bottomLeftRadius="@dimen/width_100_80"
+        android:bottomRightRadius="@dimen/width_100_80" />
+
+</shape>

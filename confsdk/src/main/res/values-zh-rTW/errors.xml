@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="UnknowError">未知錯誤</string>
+
+    <string name="ConfSysErrCode_Server_Network_Error">網路錯誤</string>
+    <string name="ConfSysErrCode_Server_GC_Redirect">GC 服務器分派錯誤</string>
+
+    <!-- 創建會議 -->
+    <string name="ConfSysErrCode_Server_Response_Timeout">服務器響應超時</string>
+    <string name="ConfSysErrCode_License_MaxUserNum_Of_AllConf_Limited">總用戶數超過許可限制數目</string>
+    <string name="ConfSysErrCode_License_MaxUserNum_Of_OneConf_Limited">用戶超過本會議限制數目</string>
+    <string name="ConfSysErrCode_License_Trial_Expired">許可證過期</string>
+    <string name="ConfSysErrCode_License_Dog_Error">加密狗錯誤</string>
+    <string name="ConfSysErrCode_No_License">無認證</string>
+    <string name="ConfSysErrCode_Conf_Expired">會議過期</string>
+    <string name="ConfSysErrCode_Jbh_Not_Allow">創建會議未允許</string>
+    <string name="ConfSysErrCode_No_InfoSvr">未找到 Info Server</string>
+    <string name="ConfSysErrCode_Invalide_ClusterID">Cluster 不可用</string>
+    <string name="ConfSysErrCode_Conf_Locked">會議被鎖定</string>
+    <string name="ConfSysErrCode_Conf_Server_Internal_Error">服務器內部錯誤</string>
+    <string name="ConfSysErrCode_Conf_H323_User_Cannot_Create_Conf">用戶無法創建會議</string>
+    <string name="ConfSysErrCode_Conf_Create_Undefine_Error">未定義創建會議錯誤</string>
+    <string name="ConfSysErrCode_License__Mobile_MaxUserNum_Of_AllConf_Limited">當前會議移動設備參加人數已滿額，請聯系主持人！</string>
+    <!-- 關閉會議 -->
+    <string name="ConfSysErrCode_Host_Closed_Conf">主持人已經結束該會議</string>
+    <string name="ConfSysErrCode_Conf_Close_Jbh_No_Host_Join">主持人未加入會議</string>
+    <string name="ConfSysErrCode_Conf_Close_Server_Network_Error">網路錯誤</string>
+    <string name="ConfSysErrCode_Conf_Close_No_More_Attendee">沒有更多的參會人員</string>
+    <string name="ConfSysErrCode_Conf_Close_Main_Conf_Closed">主會議關閉</string>
+    <string name="ConfSysErrCode_Conf_Close_Disconnect_With_MasterServer">連接已斷開</string>
+    <string name="ConfSysErrCode_Conf_Close_Ok">會議已關閉</string>
+    <string name="ConfSysErrCode_Conf_Close_Undefine_Error">未定義關閉錯誤</string>
+
+    <!-- 加入會議 -->
+    <string name="ConfSysErrCode_Conf_Max_User_Limited">參加該會議人數已達到主持人設定數量，請與主持人聯系。</string>
+    <string name="ConfSysErrCode_Conf_TopArea_Join_SubAreaConf">上級區域加入下級區域錯誤</string>
+    <string name="ConfSysErrCode_Conf_Area_Error">區域錯誤</string>
+    <string name="ConfSysErrCode_Conf_Join_Undefine_Error">未定義加會錯誤</string>
+
+    <!-- 退出會議 -->
+    <string name="ConfSysErrCode_User_Kicked">您被請出會議</string>
+    <string name="ConfSysErrCode_User_Leave_Noraml">會議已退出</string>
+    <string name="ConfSysErrCode_User_Login_Somewhere">您的賬號在別處登錄</string>
+    <string name="ConfSysErrCode_User_Leave_Network_Error">網路錯誤</string>
+    <string name="ConfSysErrCode_User_Leave_Undefine_Error">退出會議未定義錯誤</string>
+
+    <!-- 會議列表界面 -->
+    <string name="error_prompt_siteName">站點不正確，請聯系公司系統管理員</string>
+
+</resources> 

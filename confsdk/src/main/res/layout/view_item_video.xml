@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fl_item_video"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_item_video_nor">
+
+
+    <com.infowarelab.conference.ui.activity.inconf.view.video.VideoDecodeView
+        android:id="@+id/video_item_video"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <LinearLayout
+        android:id="@+id/llPortrait"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_item_video_nor"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="@dimen/height_6_80"
+            android:layout_height="@dimen/height_6_80"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_vs_portrait" />
+
+        <TextView
+            android:id="@+id/tv_item_video_center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/height_2_80"
+            android:text=""
+            android:textColor="#A1A1A1"
+            android:textSize="13sp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_item_video"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left|bottom"
+        android:background="@drawable/bg_roundedrectangle_video_name"
+        android:paddingRight="@dimen/dp_4"
+        android:paddingLeft="@dimen/dp_4"
+        android:maxLines="1"
+        android:text="TextView"
+        android:textColor="#ffffff"
+        android:textSize="22px"
+        android:singleLine="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"/>
+
+    <Button
+        android:id="@+id/btn_item_cut"
+        android:layout_width="@dimen/height_104_80"
+        android:layout_height="@dimen/height_104_80"
+        android:layout_gravity="right|top"
+        android:layout_marginRight="@dimen/width_1_80"
+        android:layout_marginTop="@dimen/height_100_80"
+        android:background="@drawable/a6_btn_cutvideo"
+        android:visibility="gone" />
+
+</FrameLayout>

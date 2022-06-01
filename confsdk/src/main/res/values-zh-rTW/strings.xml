@@ -1,0 +1,356 @@
+<resources>
+
+    <!-- 定制 -->
+
+    <!-- App名字 -->
+    <string name="app_name">紅杉通</string>
+    <!-- 邮件邀请签名 -->
+    <string name="attenders_end"> 【紅杉通視頻會議】。</string>
+    <!-- 应用信息 -->
+    <string name="about_mid1">紅杉通視頻會議Android版</string>
+    <string name="about_mid2">UCP 7.3.5</string>
+
+    <string name="about_mid4">Copyright ©2016-2019 All Rights Reserved</string>
+    <!-- 版权信息 -->
+    <string name="about_mid3">杭州紅杉云澎信息技術有限公司      版權所有</string>
+    <string name="about_mid5">Copyright ©2016-%s,HongShanYunPeng Inc.</string>
+    <string name="about_mid6">All Rights Reserved</string>
+    <!-- 站点提示版权信息 -->
+    <string name="site_help_content">會議網址是紅杉通視頻會議系統專門為您的公司設立的獨立於其他公司的會議地址，保證您公司會議訊息的安全</string>
+    <!-- 默认站点 -->
+    <string name="site_hint">ucp7.infowarelab.cn</string>
+    <!-- 客服电话，隐藏则填0-->
+    <string name="tel">400-672-1386</string>
+
+    <!-- 定制 -->
+
+
+    <string name="menu_settings">Settings</string>
+    <!-- CommonUtil -->
+    <string name="confirm">確定</string>
+    <string name="cancel">取消</string>
+    <string name="alert">提示</string>
+    <string name="known">知道了</string>
+    <string name="send">發送</string>
+    <string name="finish">退出</string>
+    <string name="returnvideo">返回視頻</string>
+    <string name="clicktoofast">請勿連續點擊</string>
+    <string name="autoexit_existed">已存在</string>
+    <string name="autoexit_wrong">格式錯誤</string>
+    <string name="autoexit_comma">請勿手動輸入斷詞符</string>
+
+    <!-- ConferenceList -->
+    <string name="conferenceList">會議列表</string>
+    <string name="confNumber">會議號</string>
+    <string name="confTitle">會議標題</string>
+    <string name="confHostname">主持人名稱</string>
+    <string name="conferenceNumber">會議號:</string>
+    <string name="myConference">我的會議</string>
+    <string name="public_conference">公開會議</string>
+    <string name="show_name">顯示名:</string>
+    <string name="conferencePassword">會議密碼:</string>
+    <string name="joinbuttonText">加入會議</string>
+    <string name="conflist_data_refresh">正在載入...</string>
+    <string name="join_Conference">加會</string>
+    <string name="refresh">下拉刷新</string>
+    <string name="conf_number_pwdhint">會議密碼（無密碼可不輸入）</string>
+    <string name="joinashost">以普通參會者身份入會</string>
+    <!-- AlertDialog -->
+    <string name="alert_title">您正在使用非WIFI的網絡</string>
+    <string name="alert_message">可能會消耗較多的流量，請確認流量余額</string>
+    <string name="know">知道了</string>
+    <string name="network_seeting">網絡設定</string>
+    <string name="netTip">網絡未連接,是否要連接網絡?</string>
+    <string name="wifiNoticeTitle">妳正在使用非wifi網絡</string>
+    <string name="wifiNoticeMessage">可能會消耗較多流量，請確認流量余額</string>
+    <!-- crashHandler -->
+    <string name="crashMeessage">很抱歉，程序異常退出</string>
+    <!-- SiteSetup -->
+    <string name="setup">設定</string>
+    <string name="site">網址</string>
+    <string name="site_http">http://</string>
+    <string name="site_error">請確認網址是否正確或檢查網絡是否給力</string>
+    <string name="site_error_net">網絡未開啟</string>
+    <string name="site_error_wrong">網址格式不正確</string>
+    <string name="site_error_null">您輸入的網址為空</string>
+    <string name="site_help_notif">請設定您公司的會議網址</string>
+    <string name="site_help_contact">如有疑問，請聯系公司系統管理員</string>
+    <string name="site_help_update">如果您公司的會議網址有更新，請重新設定</string>
+    <string name="releasefresh">鬆開刷新</string>
+    <string name="setsite">站點配置</string>
+    <string name="setsuc">配置成功</string>
+    <string name="site_input_hint">輸入站點地址</string>
+    <string name="notify_site_title">您設定了默認網址</string>
+    <string name="notify_site_message">此網址只用於演示</string>
+    <!-- PreConf Home -->
+    <string name="preconf_home_currentsite">網址:</string>
+    <!-- Login -->
+    <string name="preconf_login">登錄</string>
+    <string name="preconf_logout">註銷</string>
+    <string name="preconf_login_back">返回</string>
+    <string name="preconf_login_hint_title">請輸入用戶名和密碼</string>
+    <string name="preconf_login_hint_name">請輸入用戶名</string>
+    <string name="preconf_login_hint_pwd">請輸入密碼</string>
+    <string name="preconf_login_name">用戶名稱：</string>
+    <string name="preconf_login_nickname">入會暱稱：</string>
+    <string name="preconf_login_password">密碼</string>
+    <string name="preconf_login_error">用戶名或密碼不正確</string>
+    <string name="preconf_login_null">用戶名或密碼為空</string>
+    <string name="preconf_login_illegal">輸入出現了特殊字符</string>
+    <!-- PreConf Setup -->
+    <string name="preconf_setup_accountMsg">賬戶訊息</string>
+    <string name="preconf_setup_account">賬戶名</string>
+    <string name="preconf_setup_accountDefault">未登錄</string>
+    <string name="preconf_setup_nickname">會議昵稱</string>
+    <string name="notify_logout">確定註銷嗎？</string>
+    <string name="notify_logout_suc">註銷成功</string>
+    <string name="notify_login_suc">登錄成功</string>
+    <!-- Set -->
+    <string name="preconf_set_login">用戶登錄</string>
+    <string name="preconf_set_site">站點設置</string>
+    <string name="preconf_set_video">視頻設置</string>
+    <string name="preconf_set_cache">清除緩存</string>
+    <string name="preconf_set_about">關於我們</string>
+    <string name="preconf_set_resolution_1">視頻設置</string>
+    <string name="preconf_set_resolution_2">分辨率越高，視頻越清晰</string>
+    <string name="preconf_set_resolution_3">分辨率：</string>
+    <string name="preconf_set_resolution_4">流暢 (352*288)</string>
+    <string name="preconf_set_resolution_5">高清 (640*480)</string>
+    <string name="preconf_set_resolution_6">超清 (1280*720)</string>
+    <string name="preconf_set_cache_1">確認清除緩存？</string>
+    <string name="preconf_set_cache_2">清除完畢</string>
+    <!-- CreateConf -->
+    <string name="preconf_create">新會議</string>
+    <string name="preconf_create_topic">會議主題:</string>
+    <string name="preconf_create_topic_default">的會議</string>
+    <string name="preconf_create_password">會議密碼:</string>
+    <string name="preconf_create_password_default">可不設置密码</string>
+    <string name="preconf_create_loading">正在進入會議...</string>
+    <string name="preconf_forbidden">創建會議失敗，用戶沒有創建會議的權限</string>
+    <string name="preconf_create_notif">短信方式發送會議通知產生的費用由運營商收取</string>
+    <string name="preconf_create_user_exist">用戶已在邀請列表中</string>
+    <string name="preconf_create_input_wrong">請輸入正確的聯系方式</string>
+    <string name="preconf_create_qiehuan">切換帳號</string>
+    <string name="preconf_create_topicerror">會議主題包含了**非法字符，請重新輸入</string>
+    <string name="preconf_create_fixed">創建固定會議</string>
+    <string name="preconf_create_duration0">持續時間</string>
+    <string name="preconf_create_duration1">即開即入</string>
+    <string name="preconf_create_duration2">1天</string>
+    <string name="preconf_create_duration3">3天</string>
+    <string name="preconf_create_duration4">5天</string>
+    <string name="preconf_create_duration5">10天</string>
+    <string name="preconf_create_duration6">1個月</string>
+    <string name="preconf_create_duration7">3個月</string>
+    <string name="preconf_create_duration8">半年</string>
+    <string name="preconf_create_duration9">1年</string>
+    <string name="preconf_create_duration10">永久</string>
+
+    <!-- Org -->
+    <string name="preconf_org_title">邀請參會者</string>
+    <string name="preconf_org_toroot">返回根目錄</string>
+
+    <!-- Invite Contacts -->
+    <string name="preconf_create_invite_mid">邀請與會者</string>
+    <string name="preconf_create_invite_notif">請輸入郵箱、手機號碼或手機通訊錄的聯系人姓名</string>
+    <string name="preconf_create_invite_regularly">最近聯系人</string>
+    <string name="preconf_create_error_2">身份驗證失敗</string>
+    <string name="preconf_create_error_7">同時間段參加會議人數超過網址人數限制</string>
+    <string name="preconf_create_error_9">密碼不能為空</string>
+    <string name="preconf_create_error_10">會議已經結束</string>
+    <string name="preconf_create_error_16">沒有host權限</string>
+    <string name="preconf_create_error_17">開始時間早於系統當前時間</string>
+    <string name="preconf_invite_contains">用戶已在邀請列表中</string>
+    <string name="preconf_create_error">開啟會議錯誤請驗證身份或檢查權限</string>
+    <string name="preconf_notknown_error">未知錯誤</string>
+    <string name="inconf_invite_addressbook">手機通訊錄</string>
+    <string name="inconf_invite_add">添加</string>
+    <string name="inconf_invite_norecentcontacts">暫無最近聯繫人</string>
+    <string name="inconf_invite_nolocalcontacts">暫無聯繫人</string>
+
+    <!-- JoinConf -->
+    <string name="nomeetting">暫無會議</string>
+    <string name="slidetotheleft">向左滑動，試試用會議號加會</string>
+    <string name="joinbynumberhint">請輸入會議號以加入會議</string>
+    <string name="numbernull">會議號不能為空</string>
+    <string name="nicknamenull">會議暱稱不能為空</string>
+    <string name="myconf">我的會議</string>
+    <string name="publicconf">公開的會議</string>
+    <string name="host">主持</string>
+    <string name="confupdate">最近刷新:</string>
+    <string name="skrefresh">鬆開刷新</string>
+    <string name="xlrefresh">下拉刷新</string>
+    <string name="berefresh">正在刷新...</string>
+    <string name="initSDKFailed">SDK初始化失敗</string>
+    <string name="confConflict">會議沖突</string>
+    <string name="needLogin">該會議需要登錄</string>
+    <string name="overConf">會議不存在或已結束</string>
+    <string name="noConf">該會議號不存在，請確認</string>
+    <string name="meetingInvalidate">會議不可用!</string>
+    <string name="beyound_maxcount">達到會議最大人數限制</string>
+    <string name="beyound_jiami">普通用戶人數已經達到加密狗允許的點數</string>
+    <string name="meetingNotJoinBefore">會議未開始，請稍後再加入</string>
+    <string name="hostError">請檢查網址是否正確,如有疑問請聯系客服!</string>
+    <string name="spellError">請檢查用戶名或密碼是否正確(不可使用特殊符號)!</string>
+    <string name="LoginFailed">加會失敗,請檢查會議號、顯示名和會議密碼!</string>
+    <string name="illegalCharacter">用戶名含有非法字符,請輸入數字、字母或者下劃線</string>
+
+
+    <!-- conference -->
+    <string name="createhint">請輸入會議主題以創建會議</string>
+    <string name="alertTitle">提示</string>
+    <string name="exitTip">確定要退出會議嗎?</string>
+    <string name="leave">會議已結束</string>
+    <string name="noSDcard">檢查不到SD卡</string>
+    <string name="forceLeave">您已被請出會議</string>
+    <string name="offlineLeave">斷開連接，請重新加入會議</string>
+    <string name="inconf_callatt_1">主持人發起點名</string>
+    <string name="inconf_callatt_2">點擊“確定”響應</string>
+    <string name="inconf_callatt_3">剩餘時間</string>
+    <string name="inconf_callatt_4">秒</string>
+    <string name="inconf_network_1">當前使用非WIFI網絡，\n使用將產生流量費用。</string>
+    <string name="inconf_network_2">繼續使用</string>
+    <string name="inconf_network_3">離開會議</string>
+    <string name="warnTitle">提醒</string>
+    <string name="warnContent">非wifi環境下，接收視頻會消耗您較多數據流量，如果選擇“僅接收音頻”，您將無法接收視頻和共享本地桌面。</string>
+    <string name="warnAudio">僅接收音頻</string>
+    <string name="warnVideo">接收音視頻</string>
+    <string name="warnReVideo">重新接收視頻和桌面數據</string>
+    <string name="audioon">音頻已打開</string>
+    <string name="audiooff">音頻已關閉</string>
+    <string name="cameraon">本地攝像頭已打開</string>
+    <string name="cameraoff">本地攝像頭已關閉</string>
+    <string name="audio_permission_on">音頻權限已打開</string>
+    <string name="audio_permission_off">音頻權限已關閉</string>
+    <string name="audiodisable">無操作音頻權限</string>
+
+    <!-- Conference Attenders -->
+    <string name="all">所有人</string>
+    <string name="attenders">與會者</string>
+    <string name="attenders_chatall">與所有人聊天</string>
+    <string name="not_private_chat_permission">無私聊權限,請等待...</string>
+    <string name="not_public_chat_permission">無公聊權限,請等待...</string>
+    <string name="me">我</string>
+    <string name="invite">邀請</string>
+    <string name="addContacts">添加聯系人</string>
+    <string name="emailFail">郵件邀請失敗，請檢查郵件格式是否規範！</string>
+    <string name="emailFailNoLogin">使用郵件邀請功能,需要登錄賬號。</string>
+    <string name="emailSuccess">郵件已遞交！</string>
+    <string name="attenders_chat">聊天</string>
+    <string name="attenders_chat_msgnull">內容不能為空</string>
+    <string name="attenders_ing">正與</string>
+    <string name="attenders_wifi">您正在使用非WIFI網絡</string>
+    <string name="attenders_tip">可能會消耗較多流量，請確認流量餘額</string>
+    <string name="attenders_netsetup">網絡設置</string>
+    <string name="attenders_invite">邀請您參加會議。</string>
+    <string name="attenders_site">會議站點:</string>
+    <string name="attenders_url">點擊鏈接:</string>
+    <string name="attenders_enter">進入會議</string>
+    <string name="attenders_kick">確認請出</string>
+    <string name="attenders_kick2">？</string>
+
+    <string name="attenders_adapter_host">主持人</string>
+    <string name="attenders_adapter_speaker">主講人</string>
+    <string name="attenders_adapter_assistant">助理</string>
+    <string name="attenders_adapter_publicchat">公聊</string>
+    <string name="attenders_adapter_me">我</string>
+    <string name="attenders_sethost">確定其為主持人？</string>
+    <string name="attenders_sethost_err1">當前不是主持人</string>
+    <string name="attenders_sethost_err2">用戶不存在</string>
+
+    <!-- Conference Share -->
+    <string name="nofile">暫無文檔共享</string>
+    <string name="share_title">文檔共享</string>
+    <string name="docNotSupport">不支持該文檔格式</string>
+    <string name="noCloseDoc">沒有權限關閉該文檔</string>
+    <string name="prePage">已達最前壹頁</string>
+    <string name="nextPage">已達最後壹頁</string>
+    <string name="whiteboard">白板</string>
+    <string name="addfilefromcamera">拍照</string>
+    <string name="addfilefromphoto">相冊</string>
+    <string name="addtitle">選擇共享文檔</string>
+
+    <!-- Conference Share -->
+    <string name="as_title">桌面共享</string>
+    <string name="as_null">暫無桌面共享</string>
+    <string name="as_nonsupport">分辨率或碼流過大</string>
+    <string name="as_wait">請稍等...</string>
+    <string name="as_closed">桌面共享已關閉</string>
+    <string name="delete">刪除</string>
+
+    <!-- Conference More -->
+    <string name="more">更多</string>
+    <string name="more_info">會議訊息</string>
+    <string name="more_topic">會議主題:</string>
+    <string name="more_id">會議號:</string>
+    <string name="more_host">主持人:</string>
+    <string name="more_confpassword">會議密碼:</string>
+    <string name="more_masterpasseord">主持人密碼:</string>
+    <string name="about">關於我們</string>
+    <string name="about_exit">離開會議</string>
+
+    <string name="about_leave">確定離開會議？</string>
+    <string name="about_leave_host">離開將結束會議，權限將賦給其他人</string>
+
+    <!-- Conference Video -->
+    <string name="videoTitle">視訊</string>
+    <string name="shareVideo">共享視訊</string>
+    <string name="sharePre">視訊預覽</string>
+    <string name="sharePreSmall">視訊預覽：</string>
+    <string name="search">搜索</string>
+    <string name="videoTip">請點擊小圖標開啟視訊</string>
+    <string name="syncvideo">同步視訊</string>
+    <string name="syncthisvideo">共享給其他人</string>
+    <string name="stopsyncthisvideo">停止共享</string>
+    <string name="previewvideo">打開視頻</string>
+    <string name="closepreviewvideo">關閉視頻</string>
+    <string name="previewvideohost">僅自己觀看</string>
+    <string name="disallowSync">主持人正在同步視頻</string>
+    <string name="vs_closed">視頻已關閉</string>
+    <string name="vs_synced">此路視頻已同步</string>
+
+    <!-- Conference Notice -->
+
+    <!-- ui.notice by Jack.Yan -->
+    <string name="notification_title">會議通知</string>
+    <string name="dialog_title">通知</string>
+    <string name="dialog_enter">進入</string>
+    <string name="dialog_delay">暫不</string>
+    <string name="dialog_cancel">取消</string>
+    <string name="confirm_dialog_delay">5分鐘後將再次提醒您！</string>
+    <string name="delayTime">300000</string>
+    <string name="confirm_dialog_cancel">提醒已取消，您仍可從客戶端進入會議！</string>
+
+    <string name="novoicepermission">麥克風被禁止，請檢查錄音權限</string>
+    <string name="nocamerapermission">攝像頭被禁止，請檢查攝像權限</string>
+    <string name="nosupport">分辨率或碼流過大，暫不支持</string>
+
+    <string name="socialize_1">選擇分享方式</string>
+    <string name="socialize_2">短信</string>
+    <string name="socialize_3">分享會議鏈接</string>
+    <string name="socialize_4">分享到</string>
+    <string name="socialize_5">微信好友</string>
+    <string name="socialize_6">朋友圈</string>
+    <string name="socialize_7">QQ好友</string>
+    <string name="socialize_8">新浪微博</string>
+    <string name="socialize_9">钉钉</string>
+    <string name="socialize_10">紅杉樹視頻會議</string>
+    <string name="socialize_11">分享成功</string>
+    <string name="socialize_12">分享失敗:</string>
+    <string name="socialize_13">取消分享</string>
+
+
+    <string name="setting_title">設置</string>
+    <string name="setting_resolution">視頻分辨率</string>
+    <string name="setting_nickname">顯示名</string>
+
+
+    <string name="index_1">語音</string>
+    <string name="index_2">視頻</string>
+    <string name="index_3">分享</string>
+    <string name="index_4">參加者</string>
+    <string name="index_5">更多</string>
+    <string name="index_5_1">信息</string>
+    <string name="index_5_2">設置</string>
+    <string name="index_5_3">錄製</string>
+    <string name="index_5_4">停止</string>
+</resources>

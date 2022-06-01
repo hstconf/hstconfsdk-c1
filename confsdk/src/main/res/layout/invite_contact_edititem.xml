@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.infowarelab.conference.ui.view.ClipView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/invite_editItem"
+    style="@style/ww"
+    android:gravity="center"
+    android:minEms="2"
+    android:background="@drawable/a6_bg_et_clip"
+    android:textColor="@color/a6_txt_black2"
+    android:textSize="@dimen/textSize_04"
+    android:text="Bob"
+    android:paddingLeft="@dimen/dp_5"
+    android:paddingRight="@dimen/dp_5"
+    android:paddingTop="@dimen/dp_3"
+    android:paddingBottom="@dimen/dp_3"
+    android:textStyle="bold" />

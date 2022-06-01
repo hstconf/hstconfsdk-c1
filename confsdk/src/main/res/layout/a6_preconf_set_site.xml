@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/ffv"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:background="@color/app_main_hint_old">
+
+    <RelativeLayout
+        android:id="@+id/act_preconf_site_rl_title"
+        style="@style/style_rl_titleBar">
+
+        <LinearLayout
+            android:id="@+id/act_preconf_site_ll_back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:clickable="true"
+            android:focusable="false"
+            android:gravity="center_vertical"
+            android:onClick="onClick"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/width_102_80"
+            android:paddingRight="@dimen/width_102_80">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/height_6_80"
+                android:src="@drawable/a6_btn_login_back" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/width_2_80"
+                android:text="@string/preconf_login_back"
+                android:textColor="@color/white"
+                android:textSize="@dimen/textSize_02" />
+        </LinearLayout>
+
+        <TextView
+            style="@style/style_tv_titleBar_mid"
+            android:text="@string/setsite" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/act_preconf_site_ll_1"
+        style="@style/style_common_input_and_btn"
+        android:layout_marginTop="@dimen/height_5_80"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/ww"
+            android:text="@string/site_help_notif"
+            android:textColor="@color/a6_txt_black2"
+            android:textSize="@dimen/textSize_07" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/style_ll_input"
+        android:layout_marginTop="@dimen/height_3_80"
+        android:paddingRight="1px">
+
+        <ImageView
+            style="@style/style_iv_inputicon_square"
+            android:src="@drawable/a6_icon_set" />
+
+        <EditText
+            android:id="@+id/act_preconf_site_et"
+            style="@style/style_et_input"
+            android:layout_width="wrap_content"
+            android:layout_weight="1"
+            android:paddingLeft="@dimen/width_1_80"
+            android:paddingRight="@dimen/width_2_80"
+            android:hint="@string/site_input_hint" />
+
+        <ImageView
+            android:id="@+id/act_preconf_site_iv_clear"
+            android:layout_width="@dimen/height_5_80"
+            android:layout_height="@dimen/height_5_80"
+            android:padding="@dimen/width_3_80"
+            android:layout_gravity="center"
+            android:src="@drawable/icon_inputclear" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/act_preconf_site_btn"
+        android:layout_marginTop="@dimen/height_3_80"
+        style="@style/style_btn_ok"
+        android:text="@string/confirm"
+        android:enabled="true" />
+
+    <LinearLayout
+        style="@style/style_common_input_and_btn"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/height_3_80">
+
+        <TextView
+            android:id="@+id/act_preconf_site_tv_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/a6_txt_red1"
+            android:textSize="@dimen/textSize_04"
+            android:text="@string/site_error_wrong"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/act_preconf_site_tv_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/a6_txt_green1"
+            android:textSize="@dimen/textSize_04"
+            android:text="@string/setsuc"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/view_frag_set_tv_3"
+            style="@style/ww"
+            android:layout_marginTop="@dimen/height_1_80"
+            android:text="@string/site_help_update"
+            android:textColor="@color/a6_txt_black1"
+            android:textSize="@dimen/textSize_03"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+</LinearLayout>

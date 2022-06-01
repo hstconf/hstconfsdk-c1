@@ -1,0 +1,509 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <View
+            android:id="@+id/view_inconf_ctrl_place_top"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_6_80"
+            android:background="@color/black"
+            android:visibility="gone"/>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <FrameLayout
+                android:id="@+id/fl_inconf_ctrl"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RelativeLayout
+                    android:id="@+id/rl_inconf_ctrl_top"
+                    style="@style/style_rl_titleBar2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:background="#000000"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/tv_inconf_ctrl_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:gravity="center"
+                        android:text="@string/videoTitle"
+                        android:textColor="@color/white"
+
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/tv_inconf_ctrl_conffinish"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:clickable="true"
+                        android:gravity="center"
+                        android:lines="1"
+                        android:paddingLeft="@dimen/width_2_80"
+                        android:paddingRight="@dimen/width_2_80"
+                        android:text="@string/finish"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/textSize_02"
+                        android:visibility="gone" />
+
+                    <ImageView
+                        android:id="@+id/iv_inconf_ctrl_att_add"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:paddingRight="@dimen/dp_3"
+                        android:scaleType="center"
+                        android:src="@drawable/ic_att_add"
+                        android:visibility="gone" />
+
+                    <ImageView
+                        android:id="@+id/iv_inconf_ctrl_vs_add"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:padding="@dimen/width_2_80"
+                        android:scaleType="center"
+                        android:src="@drawable/ic_vs_sync" />
+
+                    <ImageView
+                        android:id="@+id/iv_inconf_ctrl_ds_add"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:padding="@dimen/width_2_80"
+                        android:scaleType="center"
+                        android:src="@drawable/ic_ds_add"
+                        android:visibility="gone" />
+
+                </RelativeLayout>
+
+
+            </FrameLayout>
+
+            <RelativeLayout
+                android:id="@+id/ll_inconf_ctrl_im_top"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#00000000"
+                android:gravity="top">
+
+                <ImageView
+                    android:id="@+id/iv_inconf_ctrl_profile_picture"
+                    android:layout_width="@dimen/dp_30"
+                    android:layout_height="@dimen/dp_30"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/profilepicture" />
+
+                <TextView
+                    android:id="@+id/tv_inconf_ctrl_profile_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:layout_marginLeft="@dimen/dp_4"
+                    android:layout_toRightOf="@id/iv_inconf_ctrl_profile_picture"
+                    android:text="@string/caller_name"
+                    android:textColor="@color/index_white"
+                    android:textSize="25sp" />
+
+                <TextView
+                    android:id="@+id/tv_inconf_ctrl_profile_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dp_1"
+                    android:layout_marginLeft="@dimen/dp_4"
+                    android:layout_marginTop="@dimen/dp_2"
+                    android:layout_below="@id/tv_inconf_ctrl_profile_name"
+                    android:layout_toRightOf="@id/iv_inconf_ctrl_profile_picture"
+                    android:text="@string/caller_text"
+                    android:textColor="@color/index_white"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/tv_inconf_ctrl_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="3dp"
+                    android:paddingTop="@dimen/dp_3"
+                    android:paddingBottom="@dimen/dp_3"
+                    android:text="00:00:00"
+                    android:textAlignment="center"
+                    android:textColor="@color/index_white"
+                    android:textSize="15sp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/ll_inconf_ctrl_im"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#00000000"
+                android:gravity="bottom"
+                android:paddingTop="@dimen/dp_15"
+                android:paddingBottom="@dimen/dp_15">
+
+                <LinearLayout
+                    android:id="@+id/ll_inconf_ctrl_volume"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:focusable="false"
+                    android:gravity="center"
+                    android:onClick="onSpeakerClick"
+                    android:orientation="vertical"
+                    >
+
+                    <ImageView
+                        android:id="@+id/iv_inconf_ctrl_speaker"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/volume_on" />
+
+                    <TextView
+                        android:id="@+id/tv_inconf_ctrl_speaker"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/height_100_80"
+                        android:text="@string/volume_on"
+                        android:textColor="@color/index_white"
+                        android:textSize="13sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_inconf_ctrl_mic"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/dp_15"
+                    android:layout_toLeftOf="@id/ll_inconf_ctrl_volume"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:focusable="false"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/iv_inconf_ctrl_mic"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/mic_on" />
+
+                    <TextView
+                        android:id="@+id/tv_inconf_ctrl_mic"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/height_100_80"
+                        android:text="@string/mic_on"
+                        android:textColor="@color/index_white"
+                        android:textSize="13sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_inconf_ctrl_camera"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_15"
+                    android:layout_toRightOf="@id/ll_inconf_ctrl_volume"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:focusable="false"
+                    android:gravity="center"
+                    android:onClick="onSwitchCamera"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/iv_inconf_ctrl_camera"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/camera_on" />
+
+                    <TextView
+                        android:id="@+id/tv_inconf_ctrl_camera"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/height_100_80"
+                        android:text="@string/camera_on"
+                        android:textColor="@color/index_white"
+                        android:textSize="13sp" />
+                </LinearLayout>
+
+
+                <ImageView
+                    android:id="@+id/iv_inconf_ctrl_hangup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/ll_inconf_ctrl_volume"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/dp_12"
+                    android:onClick="onHangupClick"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/btn_hangup" />
+
+
+                <LinearLayout
+                    android:id="@+id/ll_inconf_ctrl_camera2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/iv_inconf_ctrl_hangup"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="bottom"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/iv_inconf_ctrl_accept"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="@dimen/dp_12"
+                        android:layout_marginRight="@dimen/dp_20"
+                        android:onClick="onAcceptClick"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/btn_accept" />
+
+                    <ImageView
+                        android:id="@+id/iv_inconf_ctrl_hangup2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginLeft="@dimen/dp_20"
+                        android:layout_marginTop="@dimen/dp_12"
+                        android:onClick="onHangupClick"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/btn_hangup" />
+
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/iv_inconf_ctrl_camera_switch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/iv_inconf_ctrl_camera"
+                    android:layout_alignRight="@id/ll_inconf_ctrl_camera"
+                    android:layout_alignBottom="@id/iv_inconf_ctrl_hangup"
+                    android:layout_centerHorizontal="true"
+
+                    android:onClick="onRotateCamera"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/camera_switch" />
+
+            </RelativeLayout>
+
+
+            <com.infowarelab.conference.ui.activity.inchat.view.vp.ADSViewPager
+                android:id="@+id/vp_inconf_ctrl"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:overScrollMode="never"
+                android:visibility="gone">
+
+            </com.infowarelab.conference.ui.activity.inchat.view.vp.ADSViewPager>
+
+        </FrameLayout>
+
+        <View
+            android:id="@+id/view_inconf_ctrl_place_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_7_80"
+            android:background="@color/black"
+            android:visibility="gone"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/ll_inconf_ctrl_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_7_80"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:background="#80000000"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:id="@+id/ll_inconf_ctrl_index_1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="false">
+
+            <ImageView
+                android:id="@+id/iv_inconf_ctrl_index_1"
+                android:layout_width="@dimen/height_3_80"
+                android:layout_height="@dimen/height_3_80"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_index_1_disable_off" />
+
+            <TextView
+                android:id="@+id/tv_inconf_ctrl_index_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/height_100_80"
+                android:text="@string/index_1"
+                android:textColor="@color/index_white"
+                android:textSize="10sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ll_inconf_ctrl_index_2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="false">
+
+            <ImageView
+                android:id="@+id/iv_inconf_ctrl_index_2"
+                android:layout_width="@dimen/height_3_80"
+                android:layout_height="@dimen/height_3_80"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_index_2_nor" />
+
+            <TextView
+                android:id="@+id/tv_inconf_ctrl_index_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/height_100_80"
+                android:text="@string/index_2"
+                android:textColor="@color/index_white"
+                android:textSize="10sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ll_inconf_ctrl_index_3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="false">
+
+            <ImageView
+                android:id="@+id/iv_inconf_ctrl_index_3"
+                android:layout_width="@dimen/height_3_80"
+                android:layout_height="@dimen/height_3_80"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_index_3_nor" />
+
+            <TextView
+                android:id="@+id/tv_inconf_ctrl_index_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/height_100_80"
+                android:text="@string/index_3"
+                android:textColor="@color/index_white"
+                android:textSize="10sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ll_inconf_ctrl_index_4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="false">
+
+            <ImageView
+                android:id="@+id/iv_inconf_ctrl_index_4"
+                android:layout_width="@dimen/height_3_80"
+                android:layout_height="@dimen/height_3_80"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_index_4_nor" />
+
+            <TextView
+                android:id="@+id/tv_inconf_ctrl_index_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/height_100_80"
+                android:text="@string/index_4"
+                android:textColor="@color/index_white"
+                android:textSize="10sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ll_inconf_ctrl_index_5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="false">
+
+            <ImageView
+                android:id="@+id/iv_inconf_ctrl_index_5"
+                android:layout_width="@dimen/height_3_80"
+                android:layout_height="@dimen/height_3_80"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_index_5_nor" />
+
+            <TextView
+                android:id="@+id/tv_inconf_ctrl_index_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/height_100_80"
+                android:text="@string/index_5"
+                android:textColor="@color/index_white"
+                android:textSize="10sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_inconf_ctrl_record"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/rl_inconf_ctrl_top"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="@dimen/width_2_80"
+        android:visibility="gone">
+
+        <View
+            android:layout_width="@dimen/width_1_80"
+            android:layout_height="@dimen/width_1_80"
+            android:background="@drawable/bg_bot_red" />
+
+        <TextView
+            android:id="@+id/tv_inconf_ctrl_recordtime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/width_1_80"
+            android:gravity="center"
+            android:lines="1"
+            android:text="Rec"
+            android:textColor="@color/a6_txt_red1"
+            android:textSize="@dimen/textSize_00" />
+
+    </LinearLayout>
+
+</RelativeLayout>

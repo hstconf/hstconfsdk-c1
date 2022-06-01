@@ -1,0 +1,432 @@
+<resources>
+
+    <!-- 定制 -->
+
+    <!-- App名字 -->
+    <string name="app_name">红杉通</string>
+    <!-- 邮件邀请签名 -->
+    <string name="attenders_end"> 【红杉通视频会议】。</string>
+    <!-- 应用信息 -->
+    <string name="about_mid1">红杉通视频会议Android版</string>
+    <string name="about_mid2">UCP 8.1（Build 1352)</string>
+    <!-- 版权信息 -->
+    <string name="about_mid3">杭州红杉云澎信息技术有限公司　版权所有</string>
+    <!-- 版权信息英文 -->
+    <string name="about_mid4">Copyright ©2016-2019 All Rights Reserved</string>
+    <string name="about_mid5">Copyright ©2016-%s,HongShanYunPeng Inc.</string>
+    <string name="about_mid6">All Rights Reserved</string>
+    <!-- 站点提示版权信息 -->
+    <string name="site_help_content">会议站点是红杉通视频会议系统专门为您的公司设立的独立于其他公司的会议地址，保证您公司会议信息的安全</string>
+    <!-- 默认站点 -->
+    <string name="site_hint">ucp8.hongshantong.cn</string>
+    <!-- 客服电话，隐藏则填0-->
+    <string name="tel">400-672-1386</string>
+    <!-- 定制 -->
+
+    <string name="menu_settings">Settings</string>
+
+    <!-- CommonUtil -->
+    <string name="confirm">确定</string>
+    <string name="cancel">取消</string>
+    <string name="alert">提示</string>
+    <string name="known">知道了</string>
+    <string name="send">发送</string>
+    <string name="finish">退出</string>
+    <string name="returnvideo">返回视频</string>
+    <string name="clicktoofast">请勿连续点击</string>
+    <string name="autoexit_existed">已存在</string>
+    <string name="autoexit_wrong">格式错误</string>
+    <string name="autoexit_comma">请勿手动输入断词符</string>
+    <!-- ConferenceList -->
+    <string name="conferenceList">会议列表</string>
+    <string name="broadcastList">直播列表</string>
+    <string name="confNumber">会议号</string>
+    <string name="confTitle">会议主题：</string>
+    <string name="confMember">选择人员：</string>
+    <string name="confTime">会议时间：</string>
+    <string name="confStartTime">开始时间：</string>
+    <string name="confEndTime">结束时间：</string>
+    <string name="confHostname">主持人名称</string>
+    <string name="conferenceNumber">会议号:</string>
+    <string name="myConference">我的会议</string>
+    <string name="public_conference">公开会议</string>
+    <string name="show_name">显示名:</string>
+    <string name="conferencePassword">会议密码:</string>
+    <string name="joinbuttonText">加入会议</string>
+    <string name="joinbuttonText2">进入会议</string>
+    <string name="startbuttonText">开启会议</string>
+    <string name="joinbcastText">进入直播</string>
+    <string name="conflist_data_refresh">正在载入...</string>
+    <string name="join_Conference">加会</string>
+    <string name="refresh">下拉刷新</string>
+    <string name="conf_number_pwdhint">会议密码（无密码可不输入）</string>
+    <string name="joinashost">以普通参会者身份入会</string>
+    <!-- AlertDialog -->
+    <string name="alert_title">您正在使用非WIFI的网络</string>
+    <string name="alert_message">可能会消耗较多的流量，请确认流量余额</string>
+    <string name="know">知道了</string>
+    <string name="network_seeting">网络设置</string>
+    <string name="netTip">网络未连接,是否要连接网络?</string>
+    <string name="wifiNoticeTitle">你正在使用非wifi网络</string>
+    <string name="wifiNoticeMessage">可能会消耗较多流量，请确认流量余额</string>
+    <!-- crashHandler -->
+    <string name="crashMeessage">很抱歉，程序异常退出</string>
+    <!-- SiteSetup -->
+    <string name="setup">设置</string>
+    <string name="site">站点</string>
+    <string name="setsite">站点配置</string>
+    <string name="setsuc">配置成功</string>
+    <string name="site_input_hint">输入站点地址</string>
+
+    <string name="site_http">http://</string>
+    <string name="site_error">请确认站点是否正确或检查网络是否给力</string>
+    <string name="site_error_net">网络未开启</string>
+    <string name="site_error_wrong">站点格式不正确</string>
+    <string name="site_error_null">您输入的站点为空</string>
+    <string name="site_help_notif">请输入您会议所在的站点地址</string>
+    <string name="site_help_contact">如有疑问，请联系公司系统管理员</string>
+    <string name="site_help_update">如您的会议站点有更新，请重新设置</string>
+    <string name="releasefresh">松开刷新</string>
+
+    <string name="notify_site_title">您设置了默认站点</string>
+    <string name="notify_site_message">此站点只用于演示</string>
+    <!-- PreConf Home -->
+    <string name="preconf_home_currentsite">站点:</string>
+    <!-- Login -->
+    <string name="preconf_login">登录</string>
+    <string name="preconf_logout">注销</string>
+    <string name="preconf_login_back">返回</string>
+    <string name="preconf_login_hint_title">请输入用户名和密码</string>
+    <string name="preconf_login_hint_name">请输入用户名</string>
+    <string name="preconf_login_hint_pwd">请输入密码</string>
+    <string name="preconf_login_name">用户名称：</string>
+    <string name="preconf_login_nickname">入会昵称：</string>
+    <string name="preconf_login_password">密码</string>
+    <string name="preconf_login_error">用户名或密码不正确</string>
+    <string name="preconf_login_null">用户名或密码为空</string>
+    <string name="preconf_login_illegal">输入出现了特殊的字符</string>
+    <!-- PreConf Setup -->
+    <string name="preconf_setup_accountMsg">账户信息</string>
+    <string name="preconf_setup_account">账户名</string>
+    <string name="preconf_setup_accountDefault">未登录</string>
+    <string name="preconf_setup_nickname">昵称</string>
+    <string name="notify_logout">确定注销吗？</string>
+    <string name="notify_logout_suc">注销成功</string>
+    <string name="notify_login_suc">登录成功</string>
+    <!-- Set -->
+    <string name="preconf_set_login">用户登录</string>
+    <string name="preconf_set_site">站点设置</string>
+    <string name="preconf_set_video">视频设置</string>
+    <string name="preconf_set_cache">清除缓存</string>
+    <string name="preconf_set_about">关于我们</string>
+    <string name="preconf_set_resolution_1">视频设置</string>
+    <string name="preconf_set_resolution_2">分辨率越高，视频越清晰</string>
+    <string name="preconf_set_resolution_3">分辨率：</string>
+    <string name="preconf_set_resolution_4">标准 (352*288)</string>
+    <string name="preconf_set_resolution_5">清晰 (640*480)</string>
+    <string name="preconf_set_resolution_6">高清 (1280*720)</string>
+    <string name="preconf_set_cache_1">确认清除缓存？</string>
+    <string name="preconf_set_cache_2">清除完毕</string>
+
+
+    <!-- CreateConf -->
+    <string name="preconf_create">创建会议</string>
+    <string name="preconf_create_2">发起会议</string>
+    <string name="preconf_join">加入会议</string>
+    <string name="preconf_create_topic">会议主题:</string>
+    <string name="preconf_create_topic_default">的会议</string>
+    <string name="preconf_create_password">会议密码:</string>
+    <string name="preconf_create_password_default">可不设置密码</string>
+    <string name="preconf_create_loading">正在进入会议...</string>
+    <string name="preconf_forbidden">创建会议失败，用户没有创建会议的权限</string>
+    <string name="preconf_create_notif">短信方式发送会议通知产生的费用由运营商收取</string>
+    <string name="preconf_create_user_exist">用户已在邀请列表中</string>
+    <string name="preconf_create_input_wrong">请输入正确的联系方式</string>
+    <string name="preconf_create_qiehuan">切换账号</string>
+    <string name="preconf_create_topicerror">会议主题包含了**非法字符，请重新输入</string>
+    <string name="preconf_create_fixed">创建固定会议</string>
+
+
+    <string name="preconf_create_duration0">持续时间</string>
+    <string name="preconf_create_duration1">即开即入</string>
+    <string name="preconf_create_duration2">1天</string>
+    <string name="preconf_create_duration3">3天</string>
+    <string name="preconf_create_duration4">5天</string>
+    <string name="preconf_create_duration5">10天</string>
+    <string name="preconf_create_duration6">1个月</string>
+    <string name="preconf_create_duration7">3个月</string>
+    <string name="preconf_create_duration8">半年</string>
+    <string name="preconf_create_duration9">1年</string>
+    <string name="preconf_create_duration10">永久</string>
+
+
+    <!-- Org -->
+    <string name="preconf_org_title">邀请参会者</string>
+    <string name="preconf_org_toroot">返回根目录</string>
+
+    <!-- Invite Contacts -->
+    <string name="preconf_create_invite_mid">邀请参会者</string>
+    <string name="preconf_create_invite_notif">请输入邮箱或手机号码</string>
+    <string name="preconf_create_invite_regularly">最近联系人</string>
+    <string name="preconf_create_error_2">身份验证失败</string>
+    <string name="preconf_create_error_7">同时间段参加会议人数超过站点人数限制</string>
+    <string name="preconf_create_error_9">密码不能为空</string>
+    <string name="preconf_create_error_10">会议已经结束</string>
+    <string name="preconf_create_error_16">没有host权限</string>
+    <string name="preconf_create_error_17">开始时间早于系统当前时间</string>
+    <string name="preconf_invite_contains">用户已在邀请列表中</string>
+    <string name="preconf_create_error">开启会议错误请验证身份或检查权限</string>
+    <string name="preconf_notknown_error">未知错误</string>
+    <string name="inconf_invite_addressbook">手机通讯录</string>
+    <string name="inconf_invite_add">添加</string>
+    <string name="inconf_invite_norecentcontacts">暂无最近联系人</string>
+    <string name="inconf_invite_nolocalcontacts">暂无联系人</string>
+
+    <!-- JoinConf -->
+    <string name="nomeetting">暂无会议</string>
+    <string name="slidetotheleft">向左滑动，试试用会议号加会</string>
+    <string name="joinbynumberhint">请输入会议号以加入会议</string>
+    <string name="numbernull">会议号不能为空</string>
+    <string name="nicknamenull">会议昵称不能为空</string>
+    <string name="myconf">我的会议</string>
+    <string name="publicconf">公开的会议</string>
+    <string name="mybcast">我的直播</string>
+    <string name="publicbcast">公开的直播</string>
+    <string name="host">主持</string>
+    <string name="confupdate">最近更新:</string>
+    <string name="skrefresh">松开刷新</string>
+    <string name="xlrefresh">下拉刷新</string>
+    <string name="berefresh">正在刷新...</string>
+    <string name="initSDKFailed">SDK初始化失败</string>
+    <string name="confConflict">会议冲突</string>
+    <string name="needLogin">该会议需要登录</string>
+    <string name="overConf">会议不存在或已结束</string>
+    <string name="noConf">该会议号不存在，请确认</string>
+    <string name="meetingInvalidate">会议不可用!</string>
+    <string name="beyound_maxcount">达到会议最大人数限制</string>
+    <string name="beyound_jiami">普通用户人数已经达到加密狗允许的点数</string>
+    <string name="meetingNotJoinBefore">会议未开始，请稍后再加入</string>
+    <string name="hostError">请检查站点是否正确,如有疑问请联系客服!</string>
+    <string name="spellError">请检查用户名或密码是否正确(不可使用特殊符号)!</string>
+    <string name="LoginFailed">加会失败,请检查会议号、显示名和会议密码!</string>
+    <string name="illegalCharacter">用户名含有非法字符,请输入数字、字母或者下划线</string>
+
+
+    <!-- conference -->
+    <string name="createhint">请输入会议主题以创建会议</string>
+    <string name="alertTitle">提示</string>
+    <string name="exitTip">确定要退出会议吗?</string>
+    <string name="leave">会议已结束</string>
+    <string name="noSDcard">检查不到SD卡</string>
+    <string name="forceLeave">您已被请出会议</string>
+    <string name="offlineLeave">断开连接，请重新加入会议</string>
+    <string name="inconf_callatt_1">主持人发起点名</string>
+    <string name="inconf_callatt_2">点击“确定”响应</string>
+    <string name="inconf_callatt_3">剩余时间</string>
+    <string name="inconf_callatt_4">秒</string>
+    <string name="inconf_network_1">当前使用非WIFI网络，\n使用将产生流量费用。</string>
+    <string name="inconf_network_2">继续使用</string>
+    <string name="inconf_network_3">离开会议</string>
+    <string name="warnTitle">提醒</string>
+    <string name="warnContent">非wifi环境下，接受视频会消耗您较多数据流量，如果选择“仅接受音频”，您将无法接受视频和共享本地桌面</string>
+    <string name="warnAudio">仅接收音频</string>
+    <string name="warnVideo">接收音视频</string>
+    <string name="warnReVideo">重新接收视频和桌面数据</string>
+    <string name="audioon">音频已打开</string>
+    <string name="audiooff">音频已关闭</string>
+    <string name="cameraon">本地摄像头已打开</string>
+    <string name="cameraoff">本地摄像头已关闭</string>
+    <string name="audio_permission_on">音频权限已打开</string>
+    <string name="audio_permission_off">音频权限已关闭</string>
+    <string name="audiodisable">无操作音频权限</string>
+
+    <!-- Conference Attenders -->
+    <string name="all">所有人</string>
+    <string name="attenders">参会者</string>
+    <string name="attenders_chatall">与所有人聊天</string>
+    <string name="not_private_chat_permission">无私聊权限,请等待...</string>
+    <string name="not_public_chat_permission">无公聊权限,请等待...</string>
+    <string name="attenders_chat_msgnull">内容不能为空</string>
+    <string name="me">我</string>
+    <string name="invite">邀请</string>
+    <string name="addContacts">添加联系人</string>
+    <string name="emailFail">邮件邀请失败，请检查邮件格式是否规范！</string>
+    <string name="emailFailNoLogin">使用邮件邀请功能,需要登录账号。</string>
+    <string name="emailSuccess">邮件已递交！</string>
+    <string name="attenders_chat">聊天</string>
+    <string name="attenders_ing">正与</string>
+    <string name="attenders_wifi">您正在使用非WIFI网络</string>
+    <string name="attenders_tip">可能会消耗较多流量，请确认流量余额</string>
+    <string name="attenders_netsetup">网络设置</string>
+    <string name="attenders_invite">邀请您参加会议。</string>
+    <string name="attenders_site">会议站点:</string>
+    <string name="attenders_url">点击链接:</string>
+    <string name="attenders_enter">进入会议</string>
+    <string name="attenders_kick">确认请出</string>
+    <string name="attenders_kick2">？</string>
+
+    <string name="attenders_adapter_host">主持人</string>
+    <string name="attenders_adapter_speaker">主讲人</string>
+    <string name="attenders_adapter_assistant">助理</string>
+    <string name="attenders_adapter_publicchat">公聊</string>
+    <string name="attenders_adapter_me">我</string>
+    <string name="attenders_sethost">确定其为主持人？</string>
+    <string name="attenders_sethost_err1">当前不是主持人</string>
+    <string name="attenders_sethost_err2">用户不存在</string>
+
+    <!-- Conference Share -->
+    <string name="nofile">暂无文档共享</string>
+    <string name="share_title">文档共享</string>
+    <string name="docNotSupport">不支持该文档格式</string>
+    <string name="noCloseDoc">没有权限关闭该文档</string>
+    <string name="noShareDoc">没有权限共享文档</string>
+    <string name="prePage">已达最前一页</string>
+    <string name="nextPage">已达最后一页</string>
+    <string name="whiteboard">白板</string>
+    <string name="addfilefromcamera">拍照</string>
+    <string name="addfilefromphoto">相册</string>
+    <string name="delete">刪除</string>
+    <string name="addtitle">选择共享</string>
+
+    <!-- Conference Share -->
+    <string name="as_title">桌面共享</string>
+    <string name="as_null">暂无文档和桌面共享</string>
+    <string name="as_nonsupport">分辨率或码流过大</string>
+    <string name="as_wait">请稍等...</string>
+    <string name="as_closed">桌面共享已关闭</string>
+
+    <!-- Conference More -->
+    <string name="more">更多</string>
+    <string name="more_info">会议信息</string>
+    <string name="more_topic">会议主题:</string>
+    <string name="more_id">会议号:</string>
+    <string name="more_host">主持人:</string>
+    <string name="more_confpassword">会议密码:</string>
+    <string name="more_masterpasseord">主持人密码:</string>
+    <string name="about">关于我们</string>
+    <string name="about_exit">离开会议</string>
+    <string name="about_leave">确定离开会议？</string>
+    <string name="about_leave_host">离开将结束会议，需要将权限赋给其他人</string>
+    <string name="volume_on">免提已开</string>
+    <string name="volume_off">听筒已开</string>
+    <string name="mic_on">麦克风已开</string>
+    <string name="mic_off">麦克风已关</string>
+    <string name="camera_on">摄像头已开</string>
+    <string name="camera_off">摄像头已关</string>
+    <string name="callee_name">小莉</string>
+    <string name="caller_name">小张</string>
+    <string name="caller_text">正在等待对方接受邀请...</string>
+    <string name="callee_text">邀请您进行视频通话...</string>
+
+    <!-- Conference Video -->
+    <string name="videoTitle">视频</string>
+    <string name="shareVideo">共享视频</string>
+    <string name="sharePre">视频预览</string>
+    <string name="sharePreSmall">视频预览：</string>
+    <string name="search">搜索</string>
+    <string name="videoTip">请点击小图标开启视频</string>
+    <string name="syncvideo">同步视频</string>
+    <string name="syncthisvideo">共享给其他人</string>
+    <string name="stopsyncthisvideo">停止共享</string>
+    <string name="previewvideo">打开视频</string>
+    <string name="closepreviewvideo">关闭视频</string>
+    <string name="previewvideohost">仅自己观看</string>
+    <string name="disallowSync">主持人正在同步视频</string>
+    <string name="vs_closed">视频已关闭</string>
+    <string name="vs_synced">此路视频已同步</string>
+
+    <!-- Conference Notice -->
+
+    <!-- ui.notice by Jack.Yan -->
+    <string name="notification_title">会议通知</string>
+    <string name="dialog_title">通知</string>
+    <string name="dialog_enter">进入</string>
+    <string name="dialog_delay">暂不</string>
+    <string name="dialog_cancel">取消</string>
+    <string name="confirm_dialog_delay">5分钟后将再次提醒您！</string>
+    <string name="delayTime">300000</string>
+    <string name="confirm_dialog_cancel">提醒已取消，您仍可从客户端进入会议！</string>
+
+    <string name="novoicepermission">麦克风被禁止，请检查录音权限</string>
+    <string name="nocamerapermission">摄像头被禁止，请检查摄像权限</string>
+    <string name="nosupport">分辨率或码流过大，暂不支持</string>
+
+    <string name="socialize_1">选择分享方式</string>
+    <string name="socialize_2">短信</string>
+    <string name="socialize_3">分享会议链接</string>
+    <string name="socialize_4">分享到</string>
+    <string name="socialize_5">微信好友</string>
+    <string name="socialize_6">朋友圈</string>
+    <string name="socialize_7">QQ好友</string>
+    <string name="socialize_8">新浪微博</string>
+    <string name="socialize_9">钉钉</string>
+    <string name="socialize_10">视频会议</string>
+    <string name="socialize_11">分享成功</string>
+    <string name="socialize_12">分享失败:</string>
+    <string name="socialize_13">取消分享</string>
+    <string name="socialize_14">历史会议</string>
+    <string name="socialize_15">历史直播</string>
+
+    <string name="setting_title">设置</string>
+    <string name="setting_resolution">视频分辨率</string>
+    <string name="setting_nickname">显示名</string>
+
+
+    <string name="index_1">语音</string>
+    <string name="index_2">视频</string>
+    <string name="index_3">分享</string>
+    <string name="index_4">参加者</string>
+    <string name="index_5">更多</string>
+    <string name="index_5_1">信息</string>
+    <string name="index_5_2">设置</string>
+    <string name="index_5_3">录制</string>
+    <string name="index_5_4">停止</string>
+    <string name="index_5_5">聊天</string>
+    <string name="length_video" translatable="false">Length:</string>
+    <string name="gravando" translatable="false">Recording...</string>
+    <string name="stop" translatable="false">Stop</string>
+    //动态申请权限
+    <string name="store_permission_message" translatable="false">为了正常使用App，需要获取一些必要权限</string>
+    <string name="string_allow" translatable="false">允许</string>
+    <string name="string_not_allow" translatable="false">不允许</string>
+    <string name="string_open_setting_tip" translatable="false">您未授权App读写外部存储的权限和摄像头权限，无法正常使用App，请您前往设置中心开启</string>
+    <string name="string_goto" translatable="false">前往</string>
+    <string name="string_not_goto" translatable="false">暂不开启</string>
+
+    <!--    测试-->
+    <string name="title_app_float_view">内部悬浮窗(推荐)</string>
+    <string name="title_float_window_dialog">WM弹窗(无需权限)</string>
+    <string name="title_alert_window">系统弹窗(需权限)</string>
+    <string name="sub_content_tips">继续显示内部弹窗，并保留上个页面的位置</string>
+    <string name="btn_txt_open_sys_win">打开WM系统弹窗</string>
+    <string name="content_tips">这里是视频或者其他内容</string>
+    <string name="btn_txt_open">打开新页面</string>
+    <string name="btn_txt_open_no_fw">打开新页面,不显示悬浮窗</string>
+    <string name="tips_no_float_window">控制某个页面是否显示悬浮窗，只需要重写基类中isShowFloatWindow()方法，该页面返回false，所以不显示</string>
+    <string name="system_win_message">系统弹窗形式显示悬浮窗，可以退出应用在桌面显示，需要开启悬浮窗权限，如果没有开启，点击开启</string>
+    <string name="callee_joining" >正在和对方建立连接...</string>
+    <string name="confInSetup">视频通话正在建立中，请稍后退出。</string>
+    <string name="leaveConference" >对方已经离开视频通话。</string>
+    <string name="audioinprocess">音频设备正在处理中，请稍后再操作。</string>
+
+    <string name="create_meeting_title">发起呼叫</string>
+    <string name="zd_invite_title">会议邀请</string>
+    <string name="dialog_content">您收到%s的会议邀请，是否立即加入会议？</string>
+    <string name="comm_crashMeessage">很抱歉，程序异常退出</string>
+    <string name="comm_defaultsite">192.168.2.61</string>
+    <string name="comm_copyright">Copyright ©2008-2018 Infowarelab.</string>
+    <string name="comm_confirm">确定</string>
+    <string name="comm_cancel">取消</string>
+    <string name="comm_enter">进入</string>
+    <string name="comm_exit">退出</string>
+
+    <string name="regist_success">注册成功</string>
+    <string name="regist_fail">注册失败</string>
+    <string name="title_activity_act_custom_dialog">ActCustomDialog</string>
+    <string name="index_5_0" >管理视频</string>
+
+    <string name="conf">会议</string>
+    <string name="bcast">直播</string>
+    <string name="instant_conf">立即会议</string>
+    <string name="schedule_conf">预约会议</string>
+</resources>

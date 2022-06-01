@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/ffv"
+    android:background="@android:color/transparent"
+    android:gravity="center">
+
+    <LinearLayout
+        android:id="@+id/dialog_cutbmp_ll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/a6_bg_white_corners"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/dp_6">
+
+        <ImageView
+            android:id="@+id/dialog_cutbmp_iv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitCenter"
+            android:src="@drawable/bg1024" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginTop="@dimen/dp_8"
+            android:background="#DCDCDC" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/dialog_cutbmp_tv_cnl"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_20"
+                android:clickable="true"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/cancel"
+                android:textColor="@color/a6_txt_blue1"
+                android:textSize="@dimen/textSize_03"
+                android:background="@drawable/a6_btn_bottom_left_semicircle" />
+
+            <TextView
+                android:id="@+id/dialog_cutbmp_tv_ok"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_20"
+                android:clickable="true"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/confirm"
+                android:textColor="@color/a6_txt_blue1"
+                android:textSize="@dimen/textSize_03"
+                android:background="@drawable/a6_btn_bottom_right_semicircle" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

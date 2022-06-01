@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/meetingTitle"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/height_4_80"
+    android:gravity="center"
+    android:background="@color/a6_gray1"
+    android:clickable="false"
+    android:textColor="@color/a6_txt_black2"
+    android:paddingLeft="@dimen/width_102_80"
+    android:textSize="@dimen/textSize_02" />

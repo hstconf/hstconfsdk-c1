@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/ffv"
+    android:background="@color/app_main_hint_old">
+
+    <LinearLayout
+        style="@style/fwv"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/dp_3">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#CFCFCF" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#E1E1E1"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/dp_2"
+            android:paddingLeft="@dimen/dp_5"
+            android:paddingRight="@dimen/dp_5"
+            android:paddingTop="@dimen/dp_2">
+
+            <com.infowarelab.conference.ui.view.AutoEdit
+                android:id="@+id/et_inconf_invite"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/a6_bg_et_corners"
+                android:gravity="center_vertical"
+                android:hint="@string/preconf_create_invite_notif"
+                android:minHeight="@dimen/dp_17"
+                android:padding="@dimen/dp_2"
+                android:textColorHint="@color/grey"
+                android:textSize="@dimen/textSize_04"></com.infowarelab.conference.ui.view.AutoEdit>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#CFCFCF" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginTop="@dimen/dp_3"
+            android:background="#CFCFCF" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_19"
+            android:background="@color/white"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/tv_inconf_invite_tab1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:clickable="true"
+                android:gravity="center"
+                android:text="@string/preconf_create_invite_regularly"
+                android:textColor="@color/a6_input_black"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_inconf_invite_tab2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/a6_btn_underlinetab_down"
+                android:clickable="true"
+                android:gravity="center"
+                android:text="@string/inconf_invite_addressbook"
+                android:textColor="@color/a6_input_black"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#CFCFCF" />
+    </LinearLayout>
+
+    <RelativeLayout style="@style/fw">
+
+        <FrameLayout
+            android:id="@+id/fl_inconf_invite_tab1"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@color/white"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/inconf_invite_tv_tab1_no"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="@dimen/dp_20"
+                android:text="@string/inconf_invite_norecentcontacts"
+                android:textColor="@color/a6_input_hint"
+                android:textSize="@dimen/textSize_04" />
+
+            <ListView
+                android:id="@+id/inconf_invite_lv_tab1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:divider="@null"
+                android:fadingEdge="none"
+                android:listSelector="@android:color/transparent"
+                android:scrollbars="none"
+                android:scrollingCache="false" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/fl_inconf_invite_tab2"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@color/white">
+
+            <TextView
+                android:id="@+id/inconf_invite_tv_tab2_no"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="@dimen/dp_20"
+                android:text="@string/inconf_invite_norecentcontacts"
+                android:textColor="@color/a6_input_hint"
+                android:textSize="@dimen/textSize_04" />
+
+            <ListView
+                android:id="@+id/inconf_invite_lv_tab2"
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
+                android:background="@android:color/transparent"
+                android:cacheColorHint="@android:color/transparent"
+                android:divider="@null"
+                android:fadingEdge="none"
+                android:listSelector="@android:color/transparent"
+                android:overScrollMode="never"
+                android:scrollbars="none"
+                android:scrollingCache="false" />
+
+            <LinearLayout
+                android:id="@+id/inconf_invite_ll_title"
+                android:layout_width="fill_parent"
+                android:layout_height="30dp"
+                android:layout_gravity="right|top"
+                android:background="#ff303030"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/inconf_invite_tv_catalog"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:background="@color/a6_gray1"
+                    android:paddingBottom="5dip"
+                    android:paddingLeft="5dip"
+                    android:paddingTop="5dip"
+                    android:textColor="#454545" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/inconf_invite_dialog"
+                android:layout_width="80.0dip"
+                android:layout_height="80.0dip"
+                android:layout_gravity="center"
+                android:background="#00000000"
+                android:gravity="center"
+                android:textColor="#ffffffff"
+                android:textSize="30.0dip"
+                android:visibility="invisible" />
+
+            <com.infowarelab.conference.ui.tools.SideBar
+                android:id="@+id/inconf_invite_sidrbar"
+                android:layout_width="@dimen/dp_6"
+                android:layout_height="fill_parent"
+                android:layout_gravity="right|center"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp" />
+        </FrameLayout>
+    </RelativeLayout>
+
+</LinearLayout>

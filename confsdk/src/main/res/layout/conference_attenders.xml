@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/attenders_fl"
+    style="@style/ff"
+    android:background="@color/app_main_hint_old">
+
+    <LinearLayout
+        android:id="@+id/ll_inconf_attenders_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <View
+            android:id="@+id/view_inconf_attenders_place_top"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_6_80"
+            android:background="@color/black"
+            android:layout_alignParentTop="true" />
+
+        <com.infowarelab.conference.ui.view.CanDragListView
+            android:id="@+id/attenders_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:divider="@null"
+            android:fadingEdge="none"
+            android:listSelector="@android:color/transparent"
+            android:scrollbars="none"
+            android:scrollingCache="false" />
+
+        <View
+            android:id="@+id/view_inconf_attenders_place_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_7_80"
+            android:background="@color/black"
+            android:layout_alignParentTop="true" />
+
+    </LinearLayout>
+
+
+    <include
+        android:id="@+id/attenders_chat"
+        layout="@layout/conference_attenders_chat"
+        android:visibility="gone" />
+
+    <include
+        android:id="@+id/attenders_invite"
+        layout="@layout/conference_invite"
+        android:visibility="gone" />
+
+</FrameLayout>

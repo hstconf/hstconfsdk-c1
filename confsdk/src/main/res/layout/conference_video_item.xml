@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/llConfVideo"
+    style="@style/ww"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="@dimen/height_7_80"
+        android:layout_height="@dimen/height_7_80">
+
+        <LinearLayout
+            android:id="@+id/llVideoItemRoot"
+            android:layout_width="@dimen/height_7_80"
+            android:layout_height="@dimen/height_7_80"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:clickable="true"
+            android:focusable="false">
+
+            <ImageView
+                android:id="@+id/ivVideoItem"
+                android:layout_width="@dimen/height_3_80"
+                android:layout_height="@dimen/height_3_80"
+                android:layout_centerInParent="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_vs_item_nor" />
+
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/height_100_80"
+                android:gravity="center"
+                android:singleLine="true"
+                android:text="Eric"
+                android:textColor="#ffffff"
+                android:textSize="10sp" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/ivDelete"
+            android:layout_width="@dimen/height_102_80"
+            android:layout_height="@dimen/height_102_80"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:padding="@dimen/height_100_80"
+            android:src="@drawable/delete"
+            android:visibility="invisible" />
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="UnknowError">Unknow Error</string>
+
+    <string name="ConfSysErrCode_Server_Network_Error">Network Error</string>
+    <string name="ConfSysErrCode_Server_GC_Redirect">GC Server distribution error</string>
+
+    <!-- Create Meeting -->
+    <string name="ConfSysErrCode_Server_Response_Timeout">No Response from server</string>
+    <string name="ConfSysErrCode_License_MaxUserNum_Of_AllConf_Limited">The total user number exceeds its limition</string>
+    <string name="ConfSysErrCode_License_MaxUserNum_Of_OneConf_Limited">User number exceeds meeting limition</string>
+    <string name="ConfSysErrCode_License_Trial_Expired">License is expired</string>
+    <string name="ConfSysErrCode_License_Dog_Error">softdog error</string>
+    <string name="ConfSysErrCode_No_License">No authentication</string>
+    <string name="ConfSysErrCode_Conf_Expired">Meeting is expired</string>
+    <string name="ConfSysErrCode_Jbh_Not_Allow">No permission to create meeting</string>
+    <string name="ConfSysErrCode_No_InfoSvr">Not found Info Server</string>
+    <string name="ConfSysErrCode_Invalide_ClusterID">Cluster is invalid</string>
+    <string name="ConfSysErrCode_Conf_Locked">Meeting is locked</string>
+    <string name="ConfSysErrCode_Conf_Server_Internal_Error">Internal server error</string>
+    <string name="ConfSysErrCode_Conf_H323_User_Cannot_Create_Conf">User is not available to create meeting</string>
+    <string name="ConfSysErrCode_Conf_Create_Undefine_Error">Undefined error when create meeting</string>
+    <string name="ConfSysErrCode_License__Mobile_MaxUserNum_Of_AllConf_Limited">The number of mobile devices reaches its limition,please contact the host!</string>
+    <!-- Close Meeting -->
+    <string name="ConfSysErrCode_Host_Closed_Conf">Host has ended the meeting</string>
+    <string name="ConfSysErrCode_Conf_Close_Jbh_No_Host_Join">Host has not attended the meeting</string>
+    <string name="ConfSysErrCode_Conf_Close_Server_Network_Error">Network Error</string>
+    <string name="ConfSysErrCode_Conf_Close_No_More_Attendee">No more attendees</string>
+    <string name="ConfSysErrCode_Conf_Close_Main_Conf_Closed">Main Meeting is closed</string>
+    <string name="ConfSysErrCode_Conf_Close_Disconnect_With_MasterServer">The connection is interrupted</string>
+    <string name="ConfSysErrCode_Conf_Close_Ok">Meeting is closed</string>
+    <string name="ConfSysErrCode_Conf_Close_Undefine_Error">Undefined close error</string>
+
+    <!-- Join Meeting -->
+    <string name="ConfSysErrCode_Conf_Max_User_Limited">The attendees number reaches the given number by host,please contact host。</string>
+    <string name="ConfSysErrCode_Conf_TopArea_Join_SubAreaConf">Error at toparea to join subarea</string>
+    <string name="ConfSysErrCode_Conf_Area_Error">Area Error</string>
+    <string name="ConfSysErrCode_Conf_Join_Undefine_Error">Undefined error when join meeting</string>
+
+    <!-- Leave Meeting -->
+    <string name="ConfSysErrCode_User_Kicked">Force to leave meeting</string>
+    <string name="ConfSysErrCode_User_Leave_Noraml">Quite Meeting Successfully</string>
+    <string name="ConfSysErrCode_User_Login_Somewhere">Your account has been logged elsewhere</string>
+    <string name="ConfSysErrCode_User_Leave_Network_Error">Network Error</string>
+    <string name="ConfSysErrCode_User_Leave_Undefine_Error">Undefined error when leave meeting</string>
+
+    <!-- Meeting List -->
+    <string name="error_prompt_siteName">Sitename is not correct，please contact system administrator</string>
+
+</resources> 

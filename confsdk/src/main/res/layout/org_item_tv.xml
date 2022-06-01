@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="@dimen/dp_18"
+    android:gravity="center"
+    android:minEms="3"
+    android:background="@drawable/a6_bg_et_clip"
+    android:textColor="@color/a6_txt_black2"
+    android:textSize="@dimen/textSize_04"
+    android:text="Bob"
+    android:paddingLeft="@dimen/dp_5"
+    android:paddingRight="@dimen/dp_5" />

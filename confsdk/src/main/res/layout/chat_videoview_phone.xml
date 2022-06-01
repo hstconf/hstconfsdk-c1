@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:visibility="visible">
+
+    <LinearLayout
+        android:id="@+id/ll_inconf_vs_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <View
+            android:id="@+id/view_inconf_vs_place_top"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_6_80"
+            android:layout_alignParentTop="true"
+            android:background="@color/black"
+            android:visibility="gone"/>
+
+
+        <RelativeLayout
+            android:id="@+id/rl_inconf_ctrl_top"
+            style="@style/style_rl_titleBar2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#000000"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tv_inconf_ctrl_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="@string/videoTitle"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/tv_inconf_ctrl_conffinish"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:clickable="true"
+                android:gravity="center"
+                android:lines="1"
+                android:paddingLeft="@dimen/width_2_80"
+                android:paddingRight="@dimen/width_2_80"
+                android:text="@string/finish"
+                android:textColor="@color/white"
+                android:textSize="@dimen/textSize_02"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/iv_inconf_ctrl_att_add"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:paddingRight="@dimen/dp_3"
+                android:scaleType="center"
+                android:src="@drawable/ic_att_add"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/iv_inconf_ctrl_vs_add"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:padding="@dimen/width_2_80"
+                android:scaleType="center"
+                android:src="@drawable/ic_vs_sync" />
+
+            <ImageView
+                android:id="@+id/iv_inconf_ctrl_ds_add"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:padding="@dimen/width_2_80"
+                android:scaleType="center"
+                android:src="@drawable/ic_ds_add"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+        <FrameLayout
+            android:id="@+id/flvideo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/app_im_bg">
+
+            <com.infowarelab.conference.ui.view.PageView
+                android:id="@+id/pv_videoroot"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/app_im_bg"
+                android:overScrollMode="never"
+                android:scrollbars="none"
+                android:visibility="gone">
+
+            </com.infowarelab.conference.ui.view.PageView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/rl_videoroot1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <RelativeLayout
+                        android:id="@+id/rl_videoroot"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:clickable="true"
+                        android:focusable="false"></RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rl_inconf_camera"
+                        android:layout_width="1px"
+                        android:layout_height="1px"
+                        android:layout_alignParentRight="true"
+                        android:background="@color/app_im_bg">
+
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentTop="true"></FrameLayout>
+
+                        <!--                            <com.infowarelab.conference.ui.activity.inchat.view.video.GLCameraView-->
+                        <!--                            <com.infowarelab.conference.ui.activity.inchat.view.video.LocalVideoView-->
+                        <com.infowarelab.conference.ui.activity.inchat.view.video.GLCameraView
+                            android:id="@+id/localVideo"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_centerInParent="true"
+                            android:visibility="visible" />
+
+                        <LinearLayout
+                            android:id="@+id/llNopermission"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/app_video_background"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+
+                            <ImageView
+                                android:id="@+id/iv_my_portrait"
+                                android:layout_width="@dimen/height_6_80"
+                                android:layout_height="@dimen/height_6_80"
+                                android:scaleType="fitCenter"
+                                android:src="@drawable/ic_vs_portrait" />
+
+                            <TextView
+                                android:id="@+id/tv_my_name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/height_2_80"
+                                android:text="视频已关闭"
+                                android:textColor="#A1A1A1"
+                                android:textSize="13sp" />
+                        </LinearLayout>
+
+
+                        <TextView
+                            android:id="@+id/tv_inconf_camerame"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentRight="true"
+                            android:maxLines="1"
+                            android:text="@string/me"
+                            android:textColor="#ffffff"
+                            android:textSize="13sp"
+                            android:shadowColor="@color/black"
+                            android:shadowDx="1.0"
+                            android:shadowDy="1.0"
+                            android:shadowRadius="2.0"
+                            android:singleLine="true"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Headline"/>
+
+                        <Button
+                            android:id="@+id/btnChangeCamera"
+                            android:layout_width="@dimen/height_104_80"
+                            android:layout_height="@dimen/height_104_80"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginRight="@dimen/width_1_80"
+                            android:layout_marginTop="@dimen/height_100_80"
+                            android:visibility="gone"
+                            android:background="@drawable/a6_btn_camera_rotate" />
+
+                    </RelativeLayout>
+
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/ll_dots"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height_4_80"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="@dimen/height_3_80"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="gone"></LinearLayout>
+
+        </FrameLayout>
+
+        <View
+            android:id="@+id/view_inconf_vs_place_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_7_80"
+            android:layout_alignParentTop="true"
+            android:background="@color/black"
+            android:visibility="gone"/>
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/iv_inconf_vs_switch"
+        android:layout_width="@dimen/height_104_80"
+        android:layout_height="@dimen/height_104_80"
+        android:layout_gravity="center_vertical|bottom"
+        android:layout_marginBottom="@dimen/height_108_80"
+        android:layout_marginLeft="@dimen/width_2_80"
+        android:src="@drawable/ic_vs_switch_indexs"
+        android:visibility="gone"/>
+
+    <LinearLayout
+        android:id="@+id/ll_inconf_vs_videos"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_7_80"
+        android:layout_gravity="bottom"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <HorizontalScrollView
+            android:id="@+id/hs_inconf_vs_videos"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_7_80"
+            android:background="#80000000"
+            android:fadeScrollbars="false"
+            android:fadingEdge="none"
+            android:overScrollMode="never"
+            android:scrollbars="none"
+            android:scrollingCache="false">
+
+            <LinearLayout
+                android:id="@+id/ll_inconf_vs_videos_container"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"></LinearLayout>
+        </HorizontalScrollView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_inconf_vs_close"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:focusable="false"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_6_80"
+            android:layout_alignParentTop="true"
+            android:background="@color/black" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/app_main_hint_old"
+            android:gravity="center"
+            android:orientation="vertical"
+            >
+
+
+            <ImageView
+                android:layout_width="@dimen/height_6_80"
+                android:layout_height="@dimen/height_6_80"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_vs_closed" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/height_2_80"
+                android:text="@string/vs_closed"
+                android:textColor="#A1A1A1"
+                android:textSize="17sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_7_80"
+            android:layout_alignParentTop="true"
+            android:background="@color/black" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/ll_inconf_vs_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:id="@+id/video_top"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_6_80"
+            android:layout_alignParentTop="true"
+            android:background="@color/black">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/fl"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="@string/shareVideo"
+                android:textColor="@color/white"
+                android:textSize="@dimen/textSize_07" />
+
+            <LinearLayout
+                android:id="@+id/video_back"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:clickable="true"
+                android:focusable="false"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/width_102_80"
+                android:paddingRight="@dimen/width_102_80">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/height_6_80"
+                    android:src="@drawable/a6_btn_login_back" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/width_2_80"
+                    android:text="@string/preconf_login_back"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/textSize_02" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <ListView
+            android:id="@+id/lv_devices"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/app_main_hint_old"
+            android:divider="@null"
+            android:listSelector="#00000000"
+            android:overScrollMode="never" />
+
+    </LinearLayout>
+
+
+</FrameLayout>

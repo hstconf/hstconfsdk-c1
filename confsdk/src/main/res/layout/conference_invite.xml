@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/ffv"
+    android:background="@color/app_main_hint_old">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_6_80"
+        android:background="@color/black">
+
+        <TextView
+            style="@style/styleActiobBar_mid"
+            android:textSize="@dimen/textSize_07"
+            android:textColor="@color/white"
+            android:text="@string/preconf_create_invite_mid" />
+
+        <LinearLayout
+            android:id="@+id/invite_back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:clickable="true"
+            android:focusable="false"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/width_102_80"
+            android:paddingRight="@dimen/width_102_80">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/height_6_80"
+                android:src="@drawable/a6_btn_login_back" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/width_2_80"
+                android:text="@string/preconf_login_back"
+                android:textColor="@color/white"
+                android:textSize="@dimen/textSize_02" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        style="@style/fwv"
+        android:layout_weight="1">
+
+        <include
+            android:id="@+id/conference_invite_contact"
+            layout="@layout/invite_contact_et" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#CFCFCF" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_8_80"
+        android:layout_weight="0"
+        android:layout_gravity="bottom"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/conference_invite_confirmbutton"
+            style="@style/style_btn_ok"
+            android:text="@string/confirm"
+            android:enabled="true" />
+
+    </LinearLayout>
+
+</LinearLayout>

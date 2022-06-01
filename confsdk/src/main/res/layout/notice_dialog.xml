@@ -1,0 +1,43 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/ffv"
+    android:gravity="center_vertical|center_horizontal">
+
+    <LinearLayout style="@style/wwv">
+
+        <TextView
+            android:id="@+id/dialogTitle"
+            style="@style/dialog_title" />
+
+        <TextView
+            android:id="@+id/dialogMessage"
+            style="@style/dialog_message" />
+
+        <LinearLayout
+            style="@style/fwh"
+            android:background="@drawable/infobg02"
+            android:gravity="bottom|center_horizontal"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp">
+
+            <Button
+                style="@style/dialog_button"
+                android:id="@+id/dialogEnter"
+                android:text="@string/dialog_enter" />
+
+            <Button
+                style="@style/dialog_button"
+                android:id="@+id/dialogDelay"
+                android:text="@string/dialog_delay" />
+
+            <Button
+                style="@style/dialog_button"
+                android:id="@+id/dialogCancel"
+                android:text="@string/dialog_cancel" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/fwh"
+            android:background="@drawable/infobg03" />
+    </LinearLayout>
+</LinearLayout>

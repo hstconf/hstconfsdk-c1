@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.infowarelab.hongshantongphone">
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.REORDER_TASKS" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION"></uses-permission>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"></uses-permission>
+
+    <!--悬浮框权限-->
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <!--android 26 以上需要-->
+    <uses-permission android:name="android.permission.SYSTEM_OVERLAY_WINDOW"/>
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <application
+        android:name="com.infowarelab.conference.ConferenceApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/icon"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/icon"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        android:fitsSystemWindows="true">
+
+        <activity
+            android:name="com.infowarelab.conference.ui.activity.ActCustomDialog"
+            android:label="@string/title_activity_act_custom_dialog"
+            android:theme="@style/dialog"></activity>
+
+        <activity
+            android:name="com.infowarelab.conference.ui.activity.LogoActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyFullScreenTheme">
+            <intent-filter>
+                <data
+                    android:host="info.meeting"
+                    android:scheme="infowarelab" />
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.infowarelab.conference.ui.activity.preconf.SiteSetupActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.infowarelab.conference.ui.activity.preconf.ActHome"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            android:name="com.infowarelab.conference.ui.activity.preconf.ActHome2"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:launchMode="singleTask"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            android:name="com.infowarelab.conference.ui.activity.preconf.LoginActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.infowarelab.conference.ui.activity.inconf.Conference4PhoneActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|fontScale"
+            android:launchMode="singleTop" />
+
+        <activity
+            android:name="com.infowarelab.conference.ui.activity.inchat.Conference4PhoneActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|fontScale"
+            android:launchMode="singleTop" />
+
+
+        <activity
+            android:name="com.infowarelab.conference.ui.activity.inconf.ConferenceActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|fontScale"
+            android:launchMode="singleTop" />
+
+        <activity
+            android:name="com.infowarelab.conference.ui.activity.inconf.ImageActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <activity
+            android:name="com.infowarelab.conference.ui.activity.preconf.ActOrganization"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.infowarelab.conference.ui.activity.preconf.ActSetSite"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.infowarelab.conference.ui.activity.preconf.ActSetResolution"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.infowarelab.conference.ui.activity.preconf.ActSetAbout"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.infowarelab.conference.wxapi.WXEntryActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <activity
+            android:name="com.infowarelab.conference.ddshare.DDShareActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <activity
+            android:name="com.umeng.qq.tencent.AuthActivity"
+            android:launchMode="singleTask"
+            android:noHistory="true">
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="tencent1104660765" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.umeng.qq.tencent.AssistActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="573d54b8e0f55a42ae0021d9"></meta-data>
+        <meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="Infowarelab" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.infowarelab.hongshantongphone.sdk.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <service
+            android:name="com.infowarelab.conference.utils.SocketService"
+            android:enabled="true"
+            android:exported="true">
+        <intent-filter android:priority="1000" >
+            <action android:name="com.infowarelab.conference.utils.SocketService" />
+        </intent-filter>
+        </service>
+
+        <receiver android:name="com.infowarelab.hongshantongphone.BootBroadcastReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.USER_PRESENT" />
+                <action android:name="android.intent.action.PACKAGE_RESTARTED" />
+                <action android:name="com.infowarelab.hongshantongphone.destroy" />
+            </intent-filter>
+        </receiver>
+
+    </application>
+
+</manifest>

@@ -1,0 +1,353 @@
+<resources>
+
+    <!-- 定制 -->
+
+    <!-- App名字 -->
+    <string name="app_name">InfowareLab meeting</string>
+    <!-- 邮件邀请签名 -->
+    <string name="attenders_end"> 【Infowarelab meeting】。</string>
+    <!-- 应用信息 -->
+    <string name="about_mid1">Infowarelab meeting android version</string>
+    <string name="about_mid2">UCP 7.3.5</string>
+    <!-- 版权信息 -->
+    <string name="about_mid3">Infowarelab      All Right Reserved </string>
+    <!-- 版权信息英文 -->
+    <string name="about_mid4">Copyright ©2016-2019 All Rights Reserved</string>
+    <string name="about_mid5">Copyright ©2016-%s,HongShanYunPeng Inc.</string>
+    <string name="about_mid6">All Rights Reserved</string>
+    <!-- 默认站点 -->
+    <string name="site_hint">ucp7.infowarelab.cn</string>
+    <!-- 客服电话，隐藏则填0-->
+    <string name="tel">400-672-1386</string>
+
+    <!-- 定制 -->
+
+
+    <string name="menu_settings">Settings</string>
+
+    <!-- CommonUtil -->
+    <string name="confirm">Confirm</string>
+    <string name="cancel">Cancel</string>
+    <string name="alert">Alert</string>
+    <string name="known">Known</string>
+    <string name="send">Send</string>
+    <string name="finish">Exit</string>
+    <string name="returnvideo">Return video</string>
+    <string name="clicktoofast">Click too fast</string>
+    <string name="autoexit_existed">Existed</string>
+    <string name="autoexit_wrong">Wrong format</string>
+    <string name="autoexit_comma">Do not enter broken words manually</string>
+    <!-- ConferenceList -->
+    <string name="conferenceList">List</string>
+    <string name="confNumber">Nummber</string>
+    <string name="confTitle">Subject</string>
+    <string name="confHostname">Host</string>
+    <string name="conferenceNumber">MeetingNumber:</string>
+    <string name="myConference">My Meetinglist</string>
+    <string name="public_conference">Public Meeting</string>
+    <string name="show_name">Display name:</string>
+    <string name="conferencePassword">MeetingPassword:</string>
+    <string name="joinbuttonText">Join Meeting</string>
+    <string name="conflist_data_refresh">Loading...</string>
+    <string name="join_Conference">Join Meeting</string>
+    <string name="refresh">Refresh</string>
+    <string name="conf_number_pwdhint">Pwd (no pwd can be input)</string>
+    <string name="joinashost">Join in as a attendee</string>
+    <!-- AlertDialog -->
+    <string name="alert_title">You are using a non WIFI network</string>
+    <string name="alert_message">May consume lots of traffic,please confirm the flow balance</string>
+    <string name="know">known</string>
+    <string name="network_seeting">Networt setting</string>
+    <string name="netTip">Not online,will you connect to network?</string>
+    <string name="wifiNoticeTitle">You are using a non WIFI network</string>
+    <string name="wifiNoticeMessage">May consume lots of traffic,please confirm the flow balance</string>
+    <!-- crashHandler -->
+    <string name="crashMeessage">Sorry，program exception</string>
+    <!-- SiteSetup -->
+    <string name="setup">Setting</string>
+    <string name="site">Site</string>
+    <string name="setsite">Setting</string>
+    <string name="setsuc">Configuration succeeds</string>
+    <string name="site_input_hint">Please enter the site address</string>
+
+    <string name="site_http">http://</string>
+    <string name="site_error">PLease confirm whether site is right or check whether network is available</string>
+    <string name="site_error_net">Network is not open</string>
+    <string name="site_error_wrong">Site format is wrong</string>
+    <string name="site_error_null">The site address you enter is empty</string>
+    <string name="site_help_notif">Input right site name</string>
+    <string name="site_help_contact">Any question, please contact system administrator</string>
+    <string name="site_help_update">If site is changed, please reset it</string>
+    <string name="releasefresh">Lossen the refresh</string>
+    <string name="site_help_content">The meeting site is only used by your company, which set it apart from other sites to keep company meeting information security </string>
+    <string name="notify_site_title">You finished default site</string>
+    <string name="notify_site_message">The site is only used to do demo</string>
+    <!-- PreConf Home -->
+    <string name="preconf_home_currentsite">Site:</string>
+    <!-- Login -->
+    <string name="preconf_login">Login</string>
+    <string name="preconf_logout">Logout</string>
+    <string name="preconf_login_back">Back</string>
+    <string name="preconf_login_hint_title">Please enter pwd and username</string>
+    <string name="preconf_login_hint_name">Please enter username</string>
+    <string name="preconf_login_hint_pwd">Please enter pwd</string>
+    <string name="preconf_login_name">Username</string>
+    <string name="preconf_login_nickname">Nickname：</string>
+    <string name="preconf_login_password">Password</string>
+    <string name="preconf_login_error">Incorrect username or password</string>
+    <string name="preconf_login_null">Username or password is blank</string>
+    <string name="preconf_login_illegal">Special characters are not allowed</string>
+    <!-- PreConf Setup -->
+    <string name="preconf_setup_accountMsg">Account information</string>
+    <string name="preconf_setup_account">Account name</string>
+    <string name="preconf_setup_accountDefault">Not login</string>
+    <string name="preconf_setup_nickname">Nickname</string>
+    <string name="notify_logout">Are you sure to logout?</string>
+    <string name="notify_logout_suc">Logout success</string>
+    <string name="notify_login_suc">Login success</string>
+    <!-- Set -->
+    <string name="preconf_set_login">Login</string>
+    <string name="preconf_set_site">Site</string>
+    <string name="preconf_set_video">Video Settings</string>
+    <string name="preconf_set_cache">Clear Cache</string>
+    <string name="preconf_set_about">About Us</string>
+    <string name="preconf_set_resolution_1">Video Settings</string>
+    <string name="preconf_set_resolution_2">higher resolution,clearer video</string>
+    <string name="preconf_set_resolution_3">Resolution：</string>
+    <string name="preconf_set_resolution_4">Standard (352*288)</string>
+    <string name="preconf_set_resolution_5">Clear (640*480)</string>
+    <string name="preconf_set_resolution_6">HD (1280*720)</string>
+    <string name="preconf_set_cache_1">Confirm？</string>
+    <string name="preconf_set_cache_2">Cache Cleared</string>
+    <!-- CreateConf -->
+    <string name="preconf_create">New Meeting</string>
+    <string name="preconf_create_topic">Meeting Subject:</string>
+    <string name="preconf_create_topic_default">　Meeting</string>
+    <string name="preconf_create_password">Meeting Password:</string>
+    <string name="preconf_create_password_default">Can be null</string>
+    <string name="preconf_create_loading">Loading...</string>
+    <string name="preconf_forbidden">Failed to create meeting. The user has no permission to create the conference.</string>
+    <string name="preconf_create_notif">The message will be paid by local phone operator</string>
+    <string name="preconf_create_user_exist">User is already in the list</string>
+    <string name="preconf_create_input_wrong">Please input right contact information</string>
+    <string name="preconf_create_qiehuan">exchange account</string>
+    <string name="preconf_create_topicerror">Meeting subject includes** invalid characters, please input again</string>
+    <string name="preconf_create_fixed">Create fixed conference</string>
+    <string name="preconf_create_duration0">Duration</string>
+    <string name="preconf_create_duration1">temporary</string>
+    <string name="preconf_create_duration2">1 day</string>
+    <string name="preconf_create_duration3">3 day</string>
+    <string name="preconf_create_duration4">5 day</string>
+    <string name="preconf_create_duration5">10 day</string>
+    <string name="preconf_create_duration6">1 month</string>
+    <string name="preconf_create_duration7">3 month</string>
+    <string name="preconf_create_duration8">6 month</string>
+    <string name="preconf_create_duration9">1 year</string>
+    <string name="preconf_create_duration10">permanent</string>
+
+    <!-- Org -->
+    <string name="preconf_org_title">Invite</string>
+    <string name="preconf_org_toroot">Root</string>
+    <!-- Invite Contacts -->
+    <string name="preconf_create_invite_mid">Invite attendee</string>
+    <string name="preconf_create_invite_notif">Please input email、phone number or contacts from your phone contact list</string>
+    <string name="preconf_create_invite_regularly">recent contacts</string>
+    <string name="preconf_create_error_2">Fail to verify identity</string>
+    <string name="preconf_create_error_7">Attendees exceed site user number limition at one time</string>
+    <string name="preconf_create_error_9">Password cannot be null</string>
+    <string name="preconf_create_error_10">Meeting is over</string>
+    <string name="preconf_create_error_16">No host authority</string>
+    <string name="preconf_create_error_17">Meeting start time is less than current system time</string>
+    <string name="preconf_invite_contains">User is already in the list</string>
+    <string name="preconf_create_error">Fail to start meeting,please verify identity or check your permission</string>
+    <string name="preconf_notknown_error">Unkown error</string>
+    <string name="inconf_invite_addressbook">Phone Contacts</string>
+    <string name="inconf_invite_add">Add</string>
+    <string name="inconf_invite_norecentcontacts">No recent contacts</string>
+    <string name="inconf_invite_nolocalcontacts">No contacts</string>
+
+    <!-- JoinConf -->
+    <string name="nomeetting">No meeing</string>
+    <string name="slidetotheleft">Swipe left, try to use the meeting number to be added</string>
+    <string name="joinbynumberhint">Please Enter Conference Number</string>
+    <string name="numbernull">Meeting number can not be null</string>
+    <string name="nicknamenull">Nickname can not be null</string>
+    <string name="myconf">My meeting</string>
+    <string name="publicconf">Public meeting</string>
+    <string name="host">host</string>
+    <string name="confupdate">Recent update:</string>
+    <string name="skrefresh">release refresh</string>
+    <string name="xlrefresh">pull down to refresh</string>
+    <string name="berefresh">Refresh...</string>
+    <string name="initSDKFailed">Fail to SDK initialization</string>
+    <string name="confConflict">Meeting conflict</string>
+    <string name="needLogin">Meeting requests login</string>
+    <string name="overConf">Meeting is over or not exists</string>
+    <string name="noConf">Meeting number not exists, please check</string>
+    <string name="meetingInvalidate">Meeting is not available!</string>
+    <string name="beyound_maxcount">The user number reaches the meeting max-limition</string>
+    <string name="beyound_jiami">User number reaches the softdog number permission</string>
+    <string name="meetingNotJoinBefore">Meeting does not start yet, please enter later</string>
+    <string name="hostError">Please check whether the site is right. Any question, please contact customer service !</string>
+    <string name="spellError">Please check username and password(not allowed to use special characters)!</string>
+    <string name="LoginFailed">Fail to join meeting,please check meeting number、display name and meeting password!</string>
+    <string name="illegalCharacter">Nickname includes invalid characters, please input digital、letter or underline</string>
+
+
+    <!-- conference -->
+    <string name="createhint">Please Enter Meeting Theme</string>
+    <string name="alertTitle">Prompt</string>
+    <string name="exitTip">Are you sure to quit meeting?</string>
+    <string name="leave">Meeting is over</string>
+    <string name="noSDcard">Cannot find SD card</string>
+    <string name="forceLeave">You are forced to leave meeting</string>
+    <string name="offlineLeave">Disconnected, please join the meeting again</string>
+    <string name="inconf_callatt_1">Host Start the name</string>
+    <string name="inconf_callatt_2">Click "Confirm" to respond</string>
+    <string name="inconf_callatt_3">Time left</string>
+    <string name="inconf_callatt_4">s</string>
+    <string name="inconf_network_1">non-WIFI networks, \n use will generate traffic charges.</string>
+    <string name="inconf_network_2">Continue</string>
+    <string name="inconf_network_3">Exit</string>
+    <string name="warnTitle">Warning</string>
+    <string name="warnContent">Accepting videos without wifi will consume more data traffic.You can select “ Audio Only”,but you can not receive video and desktop.</string>
+    <string name="warnAudio">Audio Only</string>
+    <string name="warnVideo">Audio and Video</string>
+    <string name="warnReVideo">Receive video and desktop</string>
+    <string name="audioon">Mic ON</string>
+    <string name="audiooff">Mic OFF</string>
+    <string name="cameraon">Camera ON</string>
+    <string name="cameraoff">Camera OFF</string>
+    <string name="audio_permission_on">Permission ON</string>
+    <string name="audio_permission_off">Permission OFF</string>
+    <string name="audiodisable">No Permission</string>
+
+    <!-- Conference Attenders -->
+    <string name="all">All</string>
+    <string name="attenders">Attendee</string>
+    <string name="attenders_chatall">chat to all</string>
+    <string name="not_private_chat_permission">no chat permission,please wait...</string>
+    <string name="not_public_chat_permission">no public chat permission, please wait...</string>
+
+    <string name="me">Me</string>
+    <string name="invite">Invite</string>
+    <string name="addContacts">add contact</string>
+    <string name="emailFail">email invation failure, please check email format!</string>
+    <string name="emailFailNoLogin">Using the email invite function, you need to log in to your account.</string>
+    <string name="emailSuccess">email invation success!</string>
+    <string name="attenders_chat"></string>
+    <string name="attenders_chat_msgnull">No message</string>
+    <string name="attenders_ing">Chat with </string>
+    <string name="attenders_wifi">You are using a non WIFI network</string>
+    <string name="attenders_tip">May consume lots of traffic,please confirm the flow balance</string>
+    <string name="attenders_netsetup">Network setting</string>
+    <string name="attenders_invite">invite you join meeting。</string>
+    <string name="attenders_site">Meeting site:</string>
+    <string name="attenders_url">Click the link:</string>
+    <string name="attenders_enter">to join conference</string>
+    <string name="attenders_kick">Kick</string>
+    <string name="attenders_kick2">？</string>
+
+    <string name="attenders_adapter_speaker">Presenter</string>
+    <string name="attenders_adapter_assistant">Assistant</string>
+    <string name="attenders_adapter_host">Host</string>
+    <string name="attenders_adapter_publicchat">Public chat</string>
+    <string name="attenders_adapter_me">Me</string>
+    <string name="attenders_sethost">Make sure the moderator?</string>
+    <string name="attenders_sethost_err1">No permission</string>
+    <string name="attenders_sethost_err2">User not exist</string>
+
+    <!-- Conference Share -->
+    <string name="nofile">No document sharing</string>
+    <string name="share_title">Document Sharing</string>
+    <string name="docNotSupport">The document format is not allowed</string>
+    <string name="noCloseDoc">No permission to close the document</string>
+    <string name="prePage">Front page</string>
+    <string name="nextPage">Last page</string>
+    <string name="whiteboard">whiteboard</string>
+    <string name="addfilefromcamera">Take pictures</string>
+    <string name="addfilefromphoto">Album</string>
+    <string name="addtitle">Select doc</string>
+
+    <!-- Conference Share -->
+    <string name="as_title">Desktop Sharing</string>
+    <string name="as_null">No desktop sharing</string>
+    <string name="as_nonsupport">Resolution or code too large</string>
+    <string name="as_wait">Waiting...</string>
+    <string name="as_closed">Desktop sharing is off</string>
+    <string name="delete">Delete</string>
+
+    <!-- Conference More -->
+    <string name="more">More</string>
+    <string name="more_info">Meeting information</string>
+    <string name="more_topic">Subject:</string>
+    <string name="more_id">Number:</string>
+    <string name="more_host">Host:</string>
+    <string name="more_confpassword">Password:</string>
+    <string name="more_masterpasseord">Host pwd:</string>
+    <string name="about">About us</string>
+    <string name="about_exit">Leave meeting</string>
+    <string name="about_leave">sure to leave meeting？</string>
+    <string name="about_leave_host">sure to leave meeting？</string>
+
+    <!-- Conference Video -->
+    <string name="videoTitle">Video</string>
+    <string name="shareVideo">Share Video</string>
+    <string name="sharePre">Video Preview</string>
+    <string name="sharePreSmall">Video Preview：</string>
+    <string name="search">Search</string>
+    <string name="videoTip">Please click the icon to open video</string>
+    <string name="syncvideo">synchronize video</string>
+    <string name="syncthisvideo">Share to others</string>
+    <string name="stopsyncthisvideo">Stop sharing</string>
+    <string name="previewvideo">Open video</string>
+    <string name="closepreviewvideo">Close video</string>
+    <string name="previewvideohost">Watch alone</string>
+    <string name="disallowSync">Syncing video</string>
+    <string name="vs_closed">Video Closed</string>
+    <string name="vs_synced">Video Synced</string>
+    <!-- Conference Notice -->
+
+    <!-- ui.notice by Jack.Yan -->
+    <string name="notification_title">Meeting notice</string>
+    <string name="dialog_title">Notice</string>
+    <string name="dialog_enter">Enter</string>
+    <string name="dialog_delay">Pause</string>
+    <string name="dialog_cancel">Cancel</string>
+    <string name="confirm_dialog_delay">Will remind you 5 minutes later!</string>
+    <string name="delayTime">300000</string>
+    <string name="confirm_dialog_cancel">Reminder is canceled, you still can enter meeting!</string>
+
+    <string name="novoicepermission">Microphone is prohibited, please check the recording rights</string>
+    <string name="nocamerapermission">Camera is prohibited, please check the camera permission</string>
+    <string name="nosupport">Resolution or code flow over large</string>
+
+    <string name="socialize_1">Invitation mode</string>
+    <string name="socialize_2">Message</string>
+    <string name="socialize_3">Conference link</string>
+    <string name="socialize_4">Share to</string>
+    <string name="socialize_5">Wechat</string>
+    <string name="socialize_6">Moments</string>
+    <string name="socialize_7">QQ</string>
+    <string name="socialize_8">Sina</string>
+    <string name="socialize_9">DingDing</string>
+    <string name="socialize_10">Infowarelab meeting</string>
+    <string name="socialize_11">Share success</string>
+    <string name="socialize_12">Sharing failed:</string>
+    <string name="socialize_13">Cancel sharing</string>
+
+    <string name="setting_title">Setting</string>
+    <string name="setting_resolution">Video Resolution</string>
+    <string name="setting_nickname">Display Name</string>
+
+
+    <string name="index_1">Audio</string>
+    <string name="index_2">Video</string>
+    <string name="index_3">Share</string>
+    <string name="index_4">Attendee</string>
+    <string name="index_5">More</string>
+    <string name="index_5_1">Info</string>
+    <string name="index_5_2">Setting</string>
+    <string name="index_5_3">Record</string>
+    <string name="index_5_4">Stop</string>
+</resources>

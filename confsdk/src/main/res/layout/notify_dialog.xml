@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/fwv"
+    android:gravity="center"
+    android:paddingTop="@dimen/height_3_80"
+    android:paddingBottom="@dimen/height_3_80">
+
+    <TextView
+        android:id="@+id/notify_dialog_title"
+        style="@style/ww"
+        android:text="@string/notify_site_title"
+        android:textColor="@color/white"
+        android:textSize="@dimen/textSize_08" />
+
+    <TextView
+        android:id="@+id/notify_dialog_message"
+        style="@style/ww"
+        android:layout_marginTop="3dp"
+        android:text="@string/notify_site_message"
+        android:textColor="@color/white"
+        android:textSize="@dimen/textSize_06" />
+
+</LinearLayout>

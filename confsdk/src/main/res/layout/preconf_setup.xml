@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/ffv"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:background="@color/bg">
+
+    <RelativeLayout style="@style/styleActionBar">
+
+        <TextView
+            style="@style/styleActiobBar_mid"
+            android:text="@string/setup" />
+
+    </RelativeLayout>
+
+    <TextView
+        style="@style/styleLayout_leftItem"
+        android:layout_marginLeft="@dimen/width_11_80"
+        android:layout_marginTop="@dimen/height_6_80"
+        android:text="@string/preconf_setup_accountMsg" />
+
+    <RelativeLayout
+        style="@style/styleLayout_h"
+        android:layout_marginTop="5dp"
+        android:paddingLeft="@dimen/width_4_80">
+
+        <LinearLayout
+            android:id="@+id/preconf_setup_account"
+            style="@style/ww"
+            android:layout_centerVertical="true">
+
+            <TextView
+                android:id="@+id/preconf_setup_account_text"
+                style="@style/styleLayout_leftItem"
+                android:text="@string/preconf_setup_account" />
+
+            <TextView
+                android:id="@+id/preconf_setup_account_isLogin"
+                style="@style/styleLayout_rightItem" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/preconf_setup_account_default"
+            style="@style/styleLayout_rightItem"
+            android:layout_marginLeft="0dp"
+            android:layout_centerVertical="true"
+            android:text="@string/preconf_setup_accountDefault" />
+
+        <ImageView
+            android:id="@+id/preconf_setup_account_login"
+            style="@style/styleLayout_rightImg"
+            android:layout_marginTop="@dimen/height_1_80" />
+
+        <ImageView
+            android:id="@+id/preconf_setup_account_logout"
+            style="@style/styleLayout_rightImg"
+            android:layout_marginTop="@dimen/height_1_80" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/preconf_setup_nickname"
+        style="@style/styleLayout_h"
+        android:layout_marginTop="@dimen/height_2_80"
+        android:paddingLeft="@dimen/width_4_80">
+
+        <TextView
+            android:id="@+id/preconf_setup_nickname_text"
+            style="@style/styleLayout_leftItem"
+            android:layout_alignParentLeft="true"
+            android:text="@string/preconf_setup_nickname" />
+
+        <EditText
+            android:id="@+id/preconf_setup_nickname_edit"
+            style="@style/styleLayout_rightItem"
+            android:layout_toRightOf="@+id/preconf_setup_nickname_text"
+            android:maxLength="32" />
+
+    </RelativeLayout>
+
+    <TextView
+        style="@style/styleLayout_leftItem"
+        android:layout_marginLeft="@dimen/width_11_80"
+        android:layout_marginTop="@dimen/height_5_80"
+        android:text="@string/site" />
+
+    <RelativeLayout
+        android:id="@+id/preconf_setup_resite"
+        style="@style/styleInput"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/edit_foucs_on"
+        android:addStatesFromChildren="true">
+
+        <TextView
+            android:id="@+id/preconf_setup_site_default"
+            style="@style/styleLayout_rightItem"
+            android:layout_toLeftOf="@+id/preconf_setup_site_img"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/width_4_80" />
+
+        <ImageView
+            android:id="@+id/preconf_setup_site_img"
+            style="@style/stylePen"
+            android:layout_marginRight="@dimen/width_2_80"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/icon_renew" />
+
+    </RelativeLayout>
+
+</LinearLayout>

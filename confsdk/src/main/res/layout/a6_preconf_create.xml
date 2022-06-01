@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/ffv"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:id="@+id/act_home_rl_title"
+        style="@style/style_rl_titleBar">
+
+        <TextView
+            android:id="@+id/act_home_tv_title_create"
+            style="@style/style_tv_titleBar_mid"
+            android:text="@string/preconf_create_2" />
+
+        <ImageButton
+            android:id="@+id/btn_return_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_3"
+            android:background="@drawable/return_list">
+
+        </ImageButton>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        style="@style/fwv"
+        android:layout_marginTop="@dimen/height_5_80"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/view_frag_create_number_tv_1"
+            style="@style/ww"
+            android:text="@string/createhint"
+            android:textColor="@color/a6_txt_black2"
+            android:textSize="@dimen/textSize_07"
+            android:visibility="gone"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/view_frag_create_ll_1"
+        android:layout_height="@dimen/height_7_80"
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/height_3_80"
+        
+        
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/view_frag_create_tv_1"
+            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:textSize="@dimen/t_18"
+            android:gravity="center_vertical"
+            android:singleLine="true"
+            android:text="@string/confTitle"
+            android:layout_marginLeft="@dimen/dp_5"
+            android:layout_marginRight="@dimen/dp_5"/>
+
+        <EditText
+            android:id="@+id/view_frag_create_et_1"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:maxLength="64"
+            android:background="@null"
+            android:singleLine="true"
+            android:textColor="@color/black"
+            android:text="admin的会议"
+            android:layout_marginLeft="@dimen/dp_5"
+            android:textSize="@dimen/t_18"
+            />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        
+        
+        android:background="@color/a6_cuttingline5"
+        />
+
+    <LinearLayout
+        android:id="@+id/view_frag_create_ll_2"
+        android:layout_height="@dimen/height_7_80"
+        android:layout_width="match_parent"
+        
+        
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/tv_conf_member"
+            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:textSize="@dimen/t_18"
+            android:gravity="center_vertical"
+            android:singleLine="true"
+            android:text="@string/confMember"
+            android:layout_marginLeft="@dimen/dp_5"
+            android:layout_marginRight="@dimen/dp_5"/>
+
+        <EditText
+            android:id="@+id/et_conf_member"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:textAlignment="center"
+            android:maxLength="64"
+            android:background="@null"
+            android:singleLine="true"
+            android:layout_marginLeft="@dimen/dp_5"
+            android:textSize="@dimen/t_18"
+            />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        
+        
+        android:background="@color/a6_cuttingline5"
+        />
+
+    <LinearLayout
+        android:id="@+id/view_frag_create_ll_3"
+        android:layout_height="@dimen/height_7_80"
+        android:layout_width="match_parent"
+        
+        
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/view_frag_create_tv_3"
+            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:textSize="@dimen/t_18"
+            android:gravity="center_vertical"
+            android:singleLine="true"
+            android:text="@string/confTime"
+            android:layout_marginLeft="@dimen/dp_5"
+            android:layout_marginRight="@dimen/dp_5"/>
+
+        <RadioGroup
+            android:id="@+id/rg_conf_time"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/dp_5"
+            android:orientation="horizontal">
+            <RadioButton
+                android:id="@+id/instant_conf"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:checked="true"
+                android:paddingHorizontal="@dimen/dp_5"
+                android:button="@drawable/a6_btn_radio"
+                android:textSize="@dimen/t_18"
+                android:text="@string/instant_conf" />
+            <RadioButton
+                android:id="@+id/schedule_conf"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:checked="false"
+                android:paddingHorizontal="@dimen/dp_5"
+                android:button="@drawable/a6_btn_radio"
+                android:textSize="@dimen/t_18"
+                android:text="@string/schedule_conf" />
+        </RadioGroup>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        
+        
+        android:background="@color/a6_cuttingline5"
+        />
+
+    <LinearLayout
+        android:id="@+id/ll_start_time"
+        android:layout_height="@dimen/height_7_80"
+        android:layout_width="match_parent"
+        
+        
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/view_frag_create_tv_4"
+            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:textSize="@dimen/t_18"
+            android:gravity="center_vertical"
+            android:singleLine="true"
+            android:text="@string/confStartTime"
+            android:layout_marginLeft="@dimen/dp_5"
+            android:layout_marginRight="@dimen/dp_5"/>
+
+        <TextView
+            android:id="@+id/tv_start_time"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:background="@null"
+            android:maxLength="64"
+            android:singleLine="true"
+            android:layout_marginLeft="@dimen/dp_5"
+            android:text="2022-5-31 17:21"
+            android:textSize="@dimen/t_18" />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/v_start_time"
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        
+        
+        android:background="@color/a6_cuttingline5"
+        />
+
+    <LinearLayout
+        android:id="@+id/ll_end_time"
+        android:layout_height="@dimen/height_7_80"
+        android:layout_width="match_parent"
+        
+        
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/view_frag_create_tv_5"
+            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:textSize="@dimen/t_18"
+            android:gravity="center_vertical"
+            android:singleLine="true"
+            android:text="@string/confEndTime"
+            android:layout_marginLeft="@dimen/dp_5"
+            android:layout_marginRight="@dimen/dp_5"/>
+
+        <TextView
+            android:id="@+id/tv_end_time"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:maxLength="64"
+            android:background="@null"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="@dimen/dp_5"
+            android:text="2022-5-31 17:21"
+            android:singleLine="true"
+            android:textSize="@dimen/t_18"
+            />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/v_end_time"
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:background="@color/a6_cuttingline5"
+        />
+
+    <Button
+        android:id="@+id/view_frag_create_btn_org"
+        style="@style/style_btn_ok"
+        android:layout_marginTop="@dimen/height_101_80"
+        android:text="@string/preconf_org_title"
+        android:visibility="gone"/>
+
+    <Button
+        android:id="@+id/view_frag_create_btn"
+        android:layout_marginTop="@dimen/height_3_80"
+        style="@style/style_btn_ok"
+        android:text="@string/confirm" />
+
+    <TextView
+        style="@style/style_common_input_and_btn"
+        android:layout_gravity="center_vertical"
+        android:gravity="center_vertical"
+        android:layout_marginTop="@dimen/height_2_80"
+        android:textSize="@dimen/textSize_01"
+        android:textColor="@color/a6_txt_black1"
+        android:text="@string/preconf_create_notif"
+        android:visibility="gone" />
+
+    <LinearLayout
+        style="@style/style_common_input_and_btn"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/height_3_80">
+
+        <TextView
+            android:id="@+id/view_frag_create_tv_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/a6_txt_red1"
+            android:textSize="@dimen/textSize_04"
+            android:textStyle="bold"
+            android:text="@string/alert" />
+
+    </LinearLayout>
+
+</LinearLayout>

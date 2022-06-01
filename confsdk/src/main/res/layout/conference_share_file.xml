@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/wwv"
+    android:gravity="center_horizontal">
+
+    <LinearLayout
+        android:id="@+id/share_llroot"
+        android:layout_height="@dimen/height_9_80"
+        android:layout_width="@dimen/height_9_80"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/share_watchfile"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:layout_gravity="center"
+                android:scaleType="fitCenter"
+                android:src="@drawable/icon_file_normal" />
+
+            <ImageView
+                android:id="@+id/share_deletefile"
+                android:layout_height="@dimen/height_101_80"
+                android:layout_width="@dimen/height_101_80"
+                android:layout_gravity="right"
+                android:src="@drawable/delete"
+                android:visibility="invisible" />
+
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/share_filename"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="FileName"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/textSize_01"
+            android:ellipsize="end"
+            android:singleLine="true" />
+    </LinearLayout>
+</LinearLayout>

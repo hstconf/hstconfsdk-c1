@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:layout_gravity="bottom"
+    android:padding="@dimen/width_2_80"
+    android:focusable="false">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:focusable="false">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_104_80"
+            android:textSize="@dimen/textSize_02"
+            android:background="@drawable/bg_roundedrectangle_top_nor"
+            android:gravity="center"
+            android:textColor="#bbbbbb"
+            android:text="@string/addtitle" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/a6_cuttingline3" />
+
+        <Button
+            android:id="@+id/share_menu_camera"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_6_80"
+            android:background="@drawable/btn_roundedrectangle_middle"
+            android:textSize="@dimen/textSize_07"
+            android:textColor="#EB4D3D"
+            android:text="@string/addfilefromcamera" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/a6_cuttingline3" />
+
+        <Button
+            android:id="@+id/share_menu_photo"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_6_80"
+            android:background="@drawable/btn_roundedrectangle_middle"
+            android:textSize="@dimen/textSize_07"
+            android:textColor="@color/index_red"
+            android:text="@string/addfilefromphoto" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/a6_cuttingline3" />
+
+        <Button
+            android:id="@+id/share_menu_board"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_6_80"
+            android:background="@drawable/btn_roundedrectangle_middle"
+            android:textSize="@dimen/textSize_07"
+            android:textColor="@color/index_red"
+            android:text="@string/whiteboard" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/a6_cuttingline3" />
+
+        <Button
+            android:id="@+id/share_menu_shareBtn"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_6_80"
+            android:background="@drawable/btn_roundedrectangle_bottom"
+            android:textSize="@dimen/textSize_07"
+            android:textColor="@color/index_red"
+            android:text="桌面" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/share_menu_cancel"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_6_80"
+        android:background="@drawable/btn_roundedrectangle_complete"
+        android:textSize="@dimen/textSize_07"
+        android:textColor="@color/index_red"
+        android:text="@string/cancel"
+        android:layout_marginTop="@dimen/height_1_80" />
+</LinearLayout>
