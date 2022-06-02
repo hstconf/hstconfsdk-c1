@@ -68,14 +68,14 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-import permissions.dispatcher.NeedsPermission;
-import permissions.dispatcher.OnNeverAskAgain;
-import permissions.dispatcher.OnPermissionDenied;
-import permissions.dispatcher.OnShowRationale;
-import permissions.dispatcher.PermissionRequest;
-import permissions.dispatcher.RuntimePermissions;
+//import permissions.dispatcher.NeedsPermission;
+//import permissions.dispatcher.OnNeverAskAgain;
+//import permissions.dispatcher.OnPermissionDenied;
+//import permissions.dispatcher.OnShowRationale;
+//import permissions.dispatcher.PermissionRequest;
+//import permissions.dispatcher.RuntimePermissions;
 
-@RuntimePermissions
+//@RuntimePermissions
 public class ActHome2 extends BaseFragmentActivity implements BaseFragment.onSwitchPageListener {
     private static final String TAG = "InfowareLab.ActHome2";
     private FragmentManager fragManager;
@@ -195,8 +195,8 @@ public class ActHome2 extends BaseFragmentActivity implements BaseFragment.onSwi
             ConferenceApplication.setStatusBarColor(this, getColor(R.color.app_main_hue));
         }
 
-        if (!mReturnFromConf)
-            ActHome2PermissionsDispatcher.requestPermissionsWithPermissionCheck(this);
+        //if (!mReturnFromConf)
+        //    ActHome2PermissionsDispatcher.requestPermissionsWithPermissionCheck(this);
 
         if ((getIntent().getFlags() & Intent.FLAG_ACTIVITY_BROUGHT_TO_FRONT) != 0) {
             finish();
@@ -948,75 +948,75 @@ public class ActHome2 extends BaseFragmentActivity implements BaseFragment.onSwi
         }
     }
 
-    /**
-     * 请求权限
-     */
-    @NeedsPermission({Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.CAMERA,
-            Manifest.permission.RECORD_AUDIO, Manifest.permission.READ_CONTACTS, Manifest.permission.CALL_PHONE, Manifest.permission.READ_PHONE_STATE, Manifest.permission.RECEIVE_BOOT_COMPLETED})
-    public void requestPermissions() {
-        hasPermission = true;
-    }
-
-    /**
-     * 用户拒绝授权
-     */
-    @OnPermissionDenied({Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.CAMERA,
-            Manifest.permission.RECORD_AUDIO, Manifest.permission.READ_CONTACTS, Manifest.permission.CALL_PHONE})
-    public void onPermissionRefused() {
-        showSettingDialog();
-    }
-
-    /**
-     * 阐述App获取权限的目的
-     *
-     * @param request
-     */
-    @OnShowRationale({Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.CAMERA,
-            Manifest.permission.RECORD_AUDIO, Manifest.permission.READ_CONTACTS, Manifest.permission.CALL_PHONE})
-    public void showShowRationaleForPermission(final PermissionRequest request) {
-        if (dialog == null) {
-            dialog = new AlertDialog.Builder(this).create();
-            dialog.setMessage(getString(R.string.store_permission_message));
-            dialog.setButton(DialogInterface.BUTTON_POSITIVE, getString(R.string.string_allow), new DialogInterface
-                    .OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    request.proceed();
-                }
-            });
-            dialog.setButton(DialogInterface.BUTTON_NEGATIVE, getString(R.string.string_not_allow), new DialogInterface
-                    .OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    request.cancel();
-                }
-            });
-            dialog.setCancelable(false);
-            dialog.setCanceledOnTouchOutside(false);
-            dialog.show();
-        } else {
-            dialog.show();
-        }
-    }
-
-    /**
-     * 用户勾选了“不再提醒”
-     */
-    @OnNeverAskAgain({Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.CAMERA,
-            Manifest.permission.RECORD_AUDIO, Manifest.permission.READ_CONTACTS, Manifest.permission.CALL_PHONE})
-    public void showNeverAskForPermission() {
-        showSettingDialog();
-    }
-
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        ActHome2PermissionsDispatcher.onRequestPermissionsResult(this, requestCode, grantResults);
-        if (hasPermission) {
-            doAsReady();
-            initLog4j();
-        }
-    }
+//    /**
+//     * 请求权限
+//     */
+//    @NeedsPermission({Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.CAMERA,
+//            Manifest.permission.RECORD_AUDIO, Manifest.permission.READ_CONTACTS, Manifest.permission.CALL_PHONE, Manifest.permission.READ_PHONE_STATE, Manifest.permission.RECEIVE_BOOT_COMPLETED})
+//    public void requestPermissions() {
+//        hasPermission = true;
+//    }
+//
+//    /**
+//     * 用户拒绝授权
+//     */
+//    @OnPermissionDenied({Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.CAMERA,
+//            Manifest.permission.RECORD_AUDIO, Manifest.permission.READ_CONTACTS, Manifest.permission.CALL_PHONE})
+//    public void onPermissionRefused() {
+//        showSettingDialog();
+//    }
+//
+//    /**
+//     * 阐述App获取权限的目的
+//     *
+//     * @param request
+//     */
+//    @OnShowRationale({Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.CAMERA,
+//            Manifest.permission.RECORD_AUDIO, Manifest.permission.READ_CONTACTS, Manifest.permission.CALL_PHONE})
+//    public void showShowRationaleForPermission(final PermissionRequest request) {
+//        if (dialog == null) {
+//            dialog = new AlertDialog.Builder(this).create();
+//            dialog.setMessage(getString(R.string.store_permission_message));
+//            dialog.setButton(DialogInterface.BUTTON_POSITIVE, getString(R.string.string_allow), new DialogInterface
+//                    .OnClickListener() {
+//                @Override
+//                public void onClick(DialogInterface dialog, int which) {
+//                    request.proceed();
+//                }
+//            });
+//            dialog.setButton(DialogInterface.BUTTON_NEGATIVE, getString(R.string.string_not_allow), new DialogInterface
+//                    .OnClickListener() {
+//                @Override
+//                public void onClick(DialogInterface dialog, int which) {
+//                    request.cancel();
+//                }
+//            });
+//            dialog.setCancelable(false);
+//            dialog.setCanceledOnTouchOutside(false);
+//            dialog.show();
+//        } else {
+//            dialog.show();
+//        }
+//    }
+//
+//    /**
+//     * 用户勾选了“不再提醒”
+//     */
+//    @OnNeverAskAgain({Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.CAMERA,
+//            Manifest.permission.RECORD_AUDIO, Manifest.permission.READ_CONTACTS, Manifest.permission.CALL_PHONE})
+//    public void showNeverAskForPermission() {
+//        showSettingDialog();
+//    }
+//
+//    @Override
+//    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+//        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+//        //ActHome2PermissionsDispatcher.onRequestPermissionsResult(this, requestCode, grantResults);
+//        if (hasPermission) {
+//            doAsReady();
+//            initLog4j();
+//        }
+//    }
 
     private void showSettingDialog() {
         if (settingDialog == null) {

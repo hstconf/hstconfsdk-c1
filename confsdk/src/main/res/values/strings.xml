@@ -201,6 +201,7 @@
     <string name="confConflict">会议冲突</string>
     <string name="needLogin">该会议需要登录</string>
     <string name="overConf">会议不存在或已结束</string>
+    <string name="bcastNotExist">直播未开始或已结束</string>
     <string name="noConf">该会议号不存在，请确认</string>
     <string name="meetingInvalidate">会议不可用!</string>
     <string name="beyound_maxcount">达到会议最大人数限制</string>

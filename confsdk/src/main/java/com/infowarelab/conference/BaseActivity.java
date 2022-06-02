@@ -17,12 +17,10 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.infowarelab.conference.ui.activity.inconf.ConferenceActivity;
-import com.infowarelab.conference.ui.activity.preconf.ActHome;
 import com.infowarelab.conference.ui.view.LodingDialog;
 import com.infowarelab.hongshantongphone.R;
 import com.infowarelabsdk.conference.common.CommonFactory;
 import com.infowarelabsdk.conference.util.Constants;
-import com.umeng.analytics.MobclickAgent;
 
 public class BaseActivity extends AppCompatActivity {
 
@@ -44,14 +42,14 @@ public class BaseActivity extends AppCompatActivity {
     protected void onPause() {
         // TODO Auto-generated method stub
         super.onPause();
-        MobclickAgent.onPause(this);
+        //MobclickAgent.onPause(this);
     }
 
     @Override
     protected void onResume() {
         // TODO Auto-generated method stub
         super.onResume();
-        MobclickAgent.onResume(this);
+        //MobclickAgent.onResume(this);
     }
 
     /**

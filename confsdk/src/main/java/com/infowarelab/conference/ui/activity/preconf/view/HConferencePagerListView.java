@@ -3,13 +3,11 @@ package com.infowarelab.conference.ui.activity.preconf.view;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Handler;
 import android.os.Message;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -21,16 +19,11 @@ import android.widget.Toast;
 import androidx.annotation.RequiresApi;
 
 import com.infowarelab.conference.ui.activity.inconf.ConferenceActivity;
-import com.infowarelab.conference.ui.activity.preconf.ActHome;
-import com.infowarelab.conference.ui.activity.preconf.BaseFragmentActivity;
-import com.infowarelab.conference.ui.activity.preconf.LoginActivity;
-import com.infowarelab.conference.ui.activity.preconf.fragment.FragJoin;
-import com.infowarelab.conference.ui.adapter.BroadcastListAdapter4Frag;
-import com.infowarelab.conference.ui.adapter.BroadcastListAdapter4Frag;
-import com.infowarelab.conference.ui.adapter.BroadcastListAdapter4Frag;
-import com.infowarelab.conference.ui.view.BCastListRefreshView4Frag;
-import com.infowarelab.conference.ui.view.BCastListRefreshView4Frag;
-import com.infowarelab.conference.ui.view.BCastListRefreshView4Frag;
+import com.infowarelab.conference.ui.activity.preconf.fragment.FragHistory;
+import com.infowarelab.conference.ui.adapter.ConferenceListAdapter4Frag;
+import com.infowarelab.conference.ui.adapter.HConferenceListAdapter4Frag;
+import com.infowarelab.conference.ui.view.ConfListRefreshView4Frag;
+import com.infowarelab.conference.ui.view.HConfListRefreshView4Frag;
 import com.infowarelab.hongshantongphone.R;
 import com.infowarelabsdk.conference.common.CommonFactory;
 import com.infowarelabsdk.conference.common.impl.ConferenceCommonImpl;
@@ -42,7 +35,7 @@ import com.infowarelabsdk.conference.util.FileUtil;
 
 import java.util.List;
 
-public class BroadcastPagerListView extends ConferencePager {
+public class HConferencePagerListView extends ConferencePager {
 
     private View conferenceListView;
     // 没有数据时进行显示
@@ -53,8 +46,8 @@ public class BroadcastPagerListView extends ConferencePager {
     private ImageView ivLoading;
     private Animation animation;
     // 下拉刷新列表
-    private BCastListRefreshView4Frag lvRefresh;
-    private BroadcastListAdapter4Frag mConfAdapter;
+    private HConfListRefreshView4Frag lvRefresh;
+    private HConferenceListAdapter4Frag mConfAdapter;
 
     // 保存登录信息
     private SharedPreferences preferences;
@@ -62,7 +55,7 @@ public class BroadcastPagerListView extends ConferencePager {
     private List<ConferenceBean> conferences;
     private ConferenceBean conferenceBean;
     private Activity mActivity;
-    private FragJoin fragJoin;
+    private FragHistory fragHistory;
     private SharedPreferences mPreferences;
     private UserBean userBean = new UserBean();
 
@@ -73,10 +66,10 @@ public class BroadcastPagerListView extends ConferencePager {
     private int myConfsCount;
     private boolean isRefresh;
 
-    public BroadcastPagerListView(Activity activity, FragJoin fragJoin) {
+    public HConferencePagerListView(Activity activity, FragHistory fragHistory) {
         super(activity);
         this.mActivity = activity;
-        this.fragJoin = fragJoin;
+        this.fragHistory = fragHistory;
     }
 
     @Override
@@ -88,10 +81,10 @@ public class BroadcastPagerListView extends ConferencePager {
 
     private void init() {
 
-        conferenceListView = mInflater.inflate(R.layout.a6_preconf_join_bcast_list, null);
+        conferenceListView = mInflater.inflate(R.layout.a6_preconf_history_conf_list, null);
         llNoMetting = (LinearLayout) conferenceListView.findViewById(R.id.view_frag_join_list_ll_nomeetting);
         ivNoMetting = (ImageView) conferenceListView.findViewById(R.id.view_frag_join_list_iv_2);
-        lvRefresh = (BCastListRefreshView4Frag) conferenceListView.findViewById(R.id.view_frag_join_list_lv);
+        lvRefresh = (HConfListRefreshView4Frag) conferenceListView.findViewById(R.id.view_frag_join_list_lv);
         llLoading = (LinearLayout) conferenceListView.findViewById(R.id.view_frag_join_list_ll);
         ivLoading = (ImageView) conferenceListView.findViewById(R.id.view_frag_join_list_iv_1);
         animation = AnimationUtils.loadAnimation(mActivity, R.anim.a6_anim_loading);
@@ -167,7 +160,7 @@ public class BroadcastPagerListView extends ConferencePager {
                 mConfAdapter.setAdapterData(conferences);
             } else {
                 //这里需要创建一个adapter对象，不然addHeadView后将无法显示headView
-                mConfAdapter = new BroadcastListAdapter4Frag(mActivity, fragJoin, conferences, 0);
+                mConfAdapter = new HConferenceListAdapter4Frag(mActivity, fragHistory, conferences, 0);
             }
             //showShortToast(mActivity.getString(R.string.site_error_net));
         } else if (conferences.isEmpty()) {
@@ -176,14 +169,14 @@ public class BroadcastPagerListView extends ConferencePager {
                 mConfAdapter.setAdapterData(conferences);
             } else {
                 //这里需要创建一个adapter对象，不然addHeadView后将无法显示headView
-                mConfAdapter = new BroadcastListAdapter4Frag(mActivity, fragJoin, conferences, 0);
+                mConfAdapter = new HConferenceListAdapter4Frag(mActivity, fragHistory, conferences, 0);
             }
 
 
         } else {
             llNoMetting.setVisibility(View.GONE);
             if (mConfAdapter == null) {
-                mConfAdapter = new BroadcastListAdapter4Frag(mActivity, fragJoin, conferences, 0);
+                mConfAdapter = new HConferenceListAdapter4Frag(mActivity, fragHistory, conferences, 0);
             } else {
                 mConfAdapter.setAdapterData(conferences);
             }
@@ -195,8 +188,8 @@ public class BroadcastPagerListView extends ConferencePager {
         lvRefresh.setVisibility(View.VISIBLE);
     }
 
-    private void setListViewRefreshListener(final BCastListRefreshView4Frag listView) {
-        listView.setOnRefreshListener(new BCastListRefreshView4Frag.OnRefreshListener() {
+    private void setListViewRefreshListener(final HConfListRefreshView4Frag listView) {
+        listView.setOnRefreshListener(new HConfListRefreshView4Frag.OnRefreshListener() {
             public void onRefresh() {
                 isRefresh = true;
                 refreshData(listView, conferences);
@@ -207,7 +200,7 @@ public class BroadcastPagerListView extends ConferencePager {
     /**
      * 刷新列表数据
      */
-    public void refreshData(final BCastListRefreshView4Frag listView, final List<ConferenceBean> preConferences) {
+    public void refreshData(final HConfListRefreshView4Frag listView, final List<ConferenceBean> preConferences) {
         new AsyncTask<Void, Void, Void>() {
 
             @Override
@@ -217,6 +210,7 @@ public class BroadcastPagerListView extends ConferencePager {
                 super.onPreExecute();
             }
 
+            @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
             protected Void doInBackground(Void... params) {
                 if (preConferences == null || preConferences.isEmpty()) {
                     sortConference(userBean);
@@ -306,28 +300,8 @@ public class BroadcastPagerListView extends ConferencePager {
                 //mContext.startActivity(intent);
                 //mActivity.finish();
             } else {
-                fragJoin.enterFromItem(conferenceBean);
+                fragHistory.enterFromItem(conferenceBean);
             }
-            //log.info("conferenceId=" + conferenceBean.getId() + "needLogin=" + conferenceBean.getNeedLogin() + "password="
-            //	+ conferenceBean.getConfPassword());
-        }
-    }
-
-    public void setBCast(int position) {
-        if (!isRefresh) {
-            conferenceBean = (ConferenceBean) lvRefresh.getAdapter().getItem(position);
-//            if (conferenceBean.getNeedLogin() == 1 && !ConferenceActivity.isLogin) {
-//                Toast.makeText(mActivity, mActivity.getString(R.string.needLogin),
-//                        Toast.LENGTH_SHORT).show();
-//
-//                //Intent intent = new Intent(mContext, LoginActivity.class);
-//                //intent.putExtra("turnIndex", 2);
-//                //intent.putExtra("state", 1);
-//                //mContext.startActivity(intent);
-//                //mActivity.finish();
-//            } else {
-                fragJoin.bcastFromItem(conferenceBean);
-//            }
             //log.info("conferenceId=" + conferenceBean.getId() + "needLogin=" + conferenceBean.getNeedLogin() + "password="
             //	+ conferenceBean.getConfPassword());
         }

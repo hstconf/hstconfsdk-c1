@@ -1,42 +1,15 @@
 package com.infowarelab.conference.ui.activity.preconf.fragment;
 
 
-import java.util.LinkedList;
-import java.util.List;
-
-import com.infowarelab.conference.ui.action.JoinConfByIdAction4Frag;
-import com.infowarelab.conference.ui.activity.inconf.ConferenceActivity;
-import com.infowarelab.conference.ui.activity.preconf.view.BroadcastPagerListView;
-import com.infowarelab.conference.ui.view.UnderlineButton;
-import com.infowarelab.hongshantongphone.R;
-import com.infowarelab.conference.ui.activity.preconf.BaseFragment;
-import com.infowarelab.conference.ui.activity.preconf.BaseFragmentActivity;
-import com.infowarelab.conference.ui.activity.preconf.view.ConferencePagerListView;
-import com.infowarelab.conference.ui.activity.preconf.view.ConferencePagerNumber;
-import com.infowarelab.conference.ui.adapter.ConferencePagerAdapter;
-import com.infowarelabsdk.conference.common.CommonFactory;
-import com.infowarelabsdk.conference.common.impl.ConferenceCommonImpl;
-import com.infowarelabsdk.conference.confctrl.ConferenceCommon;
-import com.infowarelabsdk.conference.domain.ConferenceBean;
-import com.infowarelabsdk.conference.util.Constants;
-import com.infowarelabsdk.conference.util.FileUtil;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
-import android.graphics.Paint;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-
-import androidx.annotation.RequiresApi;
-import androidx.viewpager.widget.ViewPager;
-import androidx.viewpager.widget.ViewPager.OnPageChangeListener;
-
-import android.text.TextUtils;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -45,28 +18,48 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class FragJoin extends BaseFragment implements OnClickListener {
+import androidx.annotation.RequiresApi;
+import androidx.viewpager.widget.ViewPager;
+import androidx.viewpager.widget.ViewPager.OnPageChangeListener;
+
+import com.infowarelab.conference.ui.action.JoinConfByIdAction4FragH;
+import com.infowarelab.conference.ui.activity.inconf.ConferenceActivity;
+import com.infowarelab.conference.ui.activity.preconf.BaseFragment;
+import com.infowarelab.conference.ui.activity.preconf.view.BroadcastPagerListView;
+import com.infowarelab.conference.ui.activity.preconf.view.ConferencePagerListView;
+import com.infowarelab.conference.ui.activity.preconf.view.HConferencePagerListView;
+import com.infowarelab.conference.ui.adapter.ConferencePagerAdapter;
+import com.infowarelab.conference.ui.view.UnderlineButton;
+import com.infowarelab.hongshantongphone.R;
+import com.infowarelabsdk.conference.common.CommonFactory;
+import com.infowarelabsdk.conference.common.impl.ConferenceCommonImpl;
+import com.infowarelabsdk.conference.confctrl.ConferenceCommon;
+import com.infowarelabsdk.conference.domain.ConferenceBean;
+
+import java.util.LinkedList;
+import java.util.List;
+
+public class FragHistory extends BaseFragment implements OnClickListener {
     private static final String TAG = "InfowareLab.Debug";
     private static final int id = 10001;
     private View joinView;
     private ViewPager mConferencePager;
     private List<View> views;
     private ConferencePagerAdapter mPagerAdapter;
-    private ConferencePagerListView mConferencePagerListView;
-    private BroadcastPagerListView  mBroadcastPagerListView;
+    private HConferencePagerListView mConferencePagerListView;
+    //private BroadcastPagerListView  mBroadcastPagerListView;
     //private ConferencePagerNumber mConferencePagerNumber;
 
-    private TextView tvHistory;
+    //private TextView tvHistory;
 
     private boolean isEnterFromItem = false;
 
     private CommonFactory commonFactory = CommonFactory.getInstance();
     private ConferenceCommonImpl conferenceCommon = (ConferenceCommonImpl) commonFactory.getConferenceCommon();
-    private JoinConfByIdAction4Frag mAction;
+    private JoinConfByIdAction4FragH mAction;
     private Activity mActivity;
     private SharedPreferences preferences;
 
@@ -186,17 +179,15 @@ public class FragJoin extends BaseFragment implements OnClickListener {
         // TODO Auto-generated method stub
 
         if (landscape)
-            joinView = inflater.inflate(R.layout.a6_preconf_join_land, container, false);
+            joinView = inflater.inflate(R.layout.a6_preconf_history_land, container, false);
         else
-            joinView = inflater.inflate(R.layout.a6_preconf_join, container, false);
+            joinView = inflater.inflate(R.layout.a6_preconf_history, container, false);
 
         initView();
 
         setHandler();
 
-        mAction = new JoinConfByIdAction4Frag(mActivity, this, joinView);
-
-        //btnJoin.setOnClickListener(mAction);
+        mAction = new JoinConfByIdAction4FragH(mActivity, this, joinView);
 
         return joinView;
     }
@@ -228,10 +219,9 @@ public class FragJoin extends BaseFragment implements OnClickListener {
             doSelect(3);
         }else if (v.getId() == R.id.btn_conf_list){
             switchPage(0);
+
         }else if (v.getId() == R.id.btn_bcast_list){
             switchPage(1);
-        }else if (v.getId() == R.id.tv_history){
-            doSelect(5);
         }
     }
 
@@ -246,32 +236,32 @@ public class FragJoin extends BaseFragment implements OnClickListener {
         btnConfList = joinView.findViewById(R.id.btn_conf_list);
         btnBCastList = joinView.findViewById(R.id.btn_bcast_list);
 
-        btnConfList.setSelected(true);
-        btnBCastList.setSelected(false);
-
-        btnConfList.setOnClickListener(this);
-        btnBCastList.setOnClickListener(this);
-
-        if (!landscape) {
-            LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) llTopBar.getLayoutParams();
-            params.width = screenWidth;
-            params.height = (int) (params.width * topBarRatioPortrait);
-            llTopBar.setLayoutParams(params);
-        }
-        else
-        {
+//        btnConfList.setSelected(true);
+//        btnBCastList.setSelected(false);
+//
+//        btnConfList.setOnClickListener(this);
+//        btnBCastList.setOnClickListener(this);
+//
+//        if (!landscape) {
 //            LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) llTopBar.getLayoutParams();
-//            params.width = screenHeight;
-//            params.height = (int) (params.width * topBarRatioLandscape);
+//            params.width = screenWidth;
+//            params.height = (int) (params.width * topBarRatioPortrait);
 //            llTopBar.setLayoutParams(params);
-        }
-
-        btnOneKeyConf.setOnClickListener(this);
-        btnCreateConf.setOnClickListener(this);
-        btnJoinConf.setOnClickListener(this);
-
-        tvHistory = joinView.findViewById(R.id.tv_history);
-        tvHistory.setOnClickListener(this);
+//        }
+//        else
+//        {
+////            LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) llTopBar.getLayoutParams();
+////            params.width = screenHeight;
+////            params.height = (int) (params.width * topBarRatioLandscape);
+////            llTopBar.setLayoutParams(params);
+//        }
+//
+//        btnOneKeyConf.setOnClickListener(this);
+//        btnCreateConf.setOnClickListener(this);
+//        btnJoinConf.setOnClickListener(this);
+//
+//        tvHistory = joinView.findViewById(R.id.tv_history);
+//        tvHistory.setOnClickListener(this);
 
         initPageView();
     }
@@ -321,15 +311,15 @@ public class FragJoin extends BaseFragment implements OnClickListener {
     }
 
     private void initPageView() {
-        mConferencePagerListView = new ConferencePagerListView(getActivity(), this);
+        mConferencePagerListView = new HConferencePagerListView(getActivity(), this);
         //mConferencePagerNumber = new ConferencePagerNumber((BaseFragmentActivity) getActivity(), this);
-        mBroadcastPagerListView = new BroadcastPagerListView(getActivity(), this);
+        //mBroadcastPagerListView = new BroadcastPagerListView(getActivity(), this);
 
         views = new LinkedList<View>();
 
         views.add(mConferencePagerListView.getNewView());
         //views.add(mConferencePagerNumber.getNewView());
-        views.add(mBroadcastPagerListView.getNewView());
+        //views.add(mBroadcastPagerListView.getNewView());
 
         mPagerAdapter = new ConferencePagerAdapter(views);
         mConferencePager.setAdapter(mPagerAdapter);
@@ -365,16 +355,16 @@ public class FragJoin extends BaseFragment implements OnClickListener {
 //		if(index == 1){
 //			mConferencePagerNumber.resumeLayout();
 //		}
-        mConferencePager.setCurrentItem(position);
-
-        if (position == 0){
-            tvHistory.setText(getResources().getString(R.string.socialize_14));
-            tvHistory.setVisibility(View.VISIBLE);
-        }
-        else {
-            //tvHistory.setText(getResources().getString(R.string.socialize_15));
-            tvHistory.setVisibility(View.GONE);
-        }
+//        mConferencePager.setCurrentItem(position);
+//
+//        if (position == 0){
+//            tvHistory.setText(getResources().getString(R.string.socialize_14));
+//            tvHistory.setVisibility(View.VISIBLE);
+//        }
+//        else {
+//            //tvHistory.setText(getResources().getString(R.string.socialize_15));
+//            tvHistory.setVisibility(View.GONE);
+//        }
 
     }
 
@@ -421,52 +411,52 @@ public class FragJoin extends BaseFragment implements OnClickListener {
     }
 
     public void setBcast(int position) {
-        mBroadcastPagerListView.setBCast(position);
+        //mBroadcastPagerListView.setBCast(position);
     }
 
     private void checkPosition(int postion) {
-        if (postion == 0) {
-            if (getActivity().getCurrentFocus() != null) {
-                //切换到会议列表时总是关闭输入法
-//				InputMethodManager inputMethodManager = (InputMethodManager) 
-//						getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
-//				inputMethodManager.hideSoftInputFromWindow(
-//						getActivity().getCurrentFocus().getWindowToken(),
-//				InputMethodManager.HIDE_NOT_ALWAYS);
-            }
-            mConferencePagerListView.refreshAdapter();
-            btnConfList.setSelected(true);
-            btnBCastList.setSelected(false);
-
-            btnConfList.setTextColor(getResources().getColor(R.color.app_main_hue));
-            btnBCastList.setTextColor(getResources().getColor(R.color.grey));
-
-            btnConfList.invalidate();
-            btnBCastList.invalidate();
-
-            tvHistory.setText(getResources().getString(R.string.socialize_14));
-            tvHistory.setVisibility(View.VISIBLE);
-
-        } else if (postion == 1) {
-            //mConferencePagerNumber.resumeLayout();
-            mBroadcastPagerListView.refreshAdapter();
-
-            btnConfList.setSelected(false);
-            btnBCastList.setSelected(true);
-
-            btnConfList.setTextColor(getResources().getColor(R.color.grey));
-            btnBCastList.setTextColor(getResources().getColor(R.color.app_main_hue));
-
-            btnConfList.invalidate();
-            btnBCastList.invalidate();
-
-            tvHistory.setVisibility(View.GONE);
-            //tvHistory.setText(getResources().getString(R.string.socialize_15));
-        }
+//        if (postion == 0) {
+//            if (getActivity().getCurrentFocus() != null) {
+//                //切换到会议列表时总是关闭输入法
+////				InputMethodManager inputMethodManager = (InputMethodManager)
+////						getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+////				inputMethodManager.hideSoftInputFromWindow(
+////						getActivity().getCurrentFocus().getWindowToken(),
+////				InputMethodManager.HIDE_NOT_ALWAYS);
+//            }
+//            mConferencePagerListView.refreshAdapter();
+//            btnConfList.setSelected(true);
+//            btnBCastList.setSelected(false);
+//
+//            btnConfList.setTextColor(getResources().getColor(R.color.app_main_hue));
+//            btnBCastList.setTextColor(getResources().getColor(R.color.grey));
+//
+//            btnConfList.invalidate();
+//            btnBCastList.invalidate();
+//
+//            tvHistory.setText(getResources().getString(R.string.socialize_14));
+//            tvHistory.setVisibility(View.VISIBLE);
+//
+//        } else if (postion == 1) {
+//            //mConferencePagerNumber.resumeLayout();
+//            mBroadcastPagerListView.refreshAdapter();
+//
+//            btnConfList.setSelected(false);
+//            btnBCastList.setSelected(true);
+//
+//            btnConfList.setTextColor(getResources().getColor(R.color.grey));
+//            btnBCastList.setTextColor(getResources().getColor(R.color.app_main_hue));
+//
+//            btnConfList.invalidate();
+//            btnBCastList.invalidate();
+//
+//            tvHistory.setVisibility(View.GONE);
+//            //tvHistory.setText(getResources().getString(R.string.socialize_15));
+//        }
         //doSelect(postion);
     }
 
-    public ConferencePagerListView getmConferencePagerListView() {
+    public HConferencePagerListView getConferencePagerListView() {
         return mConferencePagerListView;
     }
 

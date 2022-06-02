@@ -3,27 +3,27 @@ package com.infowarelab.conference.ui.action;
 ////import org.apache.log4j.Logger;
 
 import android.app.Activity;
-        import android.content.Context;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
-        import android.os.Handler;
+import android.os.Handler;
 import android.os.Message;
 import android.text.TextUtils;
 import android.util.Log;
-        import android.view.View;
+import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.EditText;
 
-        import androidx.annotation.RequiresApi;
+import androidx.annotation.RequiresApi;
 
 import com.infowarelab.conference.ConferenceApplication;
 import com.infowarelab.conference.ui.activity.ActExoPlayer;
 import com.infowarelab.conference.ui.activity.inconf.ConferenceActivity;
+import com.infowarelab.conference.ui.activity.preconf.LoginActivity;
+import com.infowarelab.conference.ui.activity.preconf.fragment.FragHistory;
 import com.infowarelab.hongshantongphone.R;
-        import com.infowarelab.conference.ui.activity.preconf.LoginActivity;
-import com.infowarelab.conference.ui.activity.preconf.fragment.FragJoin;
 import com.infowarelabsdk.conference.common.CommonFactory;
 import com.infowarelabsdk.conference.common.impl.ConferenceCommonImpl;
 import com.infowarelabsdk.conference.confctrl.ConferenceCommon;
@@ -39,7 +39,7 @@ import com.infowarelabsdk.conference.util.FileUtil;
  * @Date 2013-9-11下午4:53:08
  * @Email joe.xiao@infowarelab.com
  */
-public class JoinConfByIdAction4Frag implements OnClickListener {
+public class JoinConfByIdAction4FragH implements OnClickListener {
     //private ConferencePagerNumber pagerNumber = null;
     //protected Logger log = Logger.getLogger(getClass());
 
@@ -88,13 +88,13 @@ public class JoinConfByIdAction4Frag implements OnClickListener {
     private boolean isNext = true;
 
     private Activity mActivity;
-    private FragJoin fragJoin;
+    private FragHistory fragHistory;
     private View conferenceNumberView;
     public boolean isChecked = false;
 
-    public JoinConfByIdAction4Frag(Activity activity, FragJoin fragJoin, View view) {
+    public JoinConfByIdAction4FragH(Activity activity, FragHistory fragHistory, View view) {
         this.mActivity = activity;
-        this.fragJoin = fragJoin;
+        this.fragHistory = fragHistory;
         this.conferenceNumberView = view;
         //this.pagerNumber = number;
         conferenceCommon = (ConferenceCommonImpl) commonFactory.getConferenceCommon();
@@ -127,9 +127,9 @@ public class JoinConfByIdAction4Frag implements OnClickListener {
             switch (msg.what) {
                 case NEED_LOGIN:
                     Log.d("InfowareLab.Debug", "JoinConfById4Frag: NEED_LOGIN");
-                    fragJoin.hideLoading();
+                    fragHistory.hideLoading();
 //				showLongToast(R.string.needLogin);
-                    fragJoin.showErrMsgNumber(R.string.needLogin);
+                    fragHistory.showErrMsgNumber(R.string.needLogin);
                     Intent intent = new Intent(mActivity, LoginActivity.class);
                     Bundle data = msg.getData();
                     intent.putExtra("id", data.getString("id"));
@@ -147,56 +147,56 @@ public class JoinConfByIdAction4Frag implements OnClickListener {
 //					conferenceCommon.setLogPath(mActivity.getCacheDir() + File.separator + "infowarelab");
 //				}
                     conferenceCommon.setLogPath(ConferenceApplication.getConferenceApp().getFilePath("Log"));
-                    if (fragJoin != null) fragJoin.setHandler();
+                    if (fragHistory != null) fragHistory.setHandler();
                     commonFactory.getConferenceCommon().initSDK();
                     joinConference();
                     break;
                 case NO_CONFERENCE:
                     Log.d("InfowareLab.Debug", "JoinConfById4Frag: NO_CONFERENCE");
-                    fragJoin.hideLoading();
-                    fragJoin.showErrMsgNumber(R.string.noConf);
+                    fragHistory.hideLoading();
+                    fragHistory.showErrMsgNumber(R.string.noConf);
                     break;
                 case GET_ERROR_MESSAGE:
                     Log.d("InfowareLab.Debug", "JoinConfById4Frag: GET_ERROR_MESSAGE");
-                    fragJoin.hideLoading();
-                    fragJoin.showErrMsgNumber(config.getConfigBean().getErrorMessage());
+                    fragHistory.hideLoading();
+                    fragHistory.showErrMsgNumber(config.getConfigBean().getErrorMessage());
                     break;
                 case MEETINGNOTJOINBEFORE:
                     Log.d("InfowareLab.Debug", "JoinConfById4Frag: MEETINGNOTJOINBEFORE");
-                    fragJoin.hideLoading();
-                    fragJoin.showErrMsgNumber(R.string.meetingNotJoinBefore);
+                    fragHistory.hideLoading();
+                    fragHistory.showErrMsgNumber(R.string.meetingNotJoinBefore);
                     break;
                 case HOSTERROR:
                     Log.d("InfowareLab.Debug", "JoinConfById4Frag: HOSTERROR");
-                    fragJoin.hideLoading();
-                    fragJoin.showErrMsgNumber(R.string.hostError);
+                    fragHistory.hideLoading();
+                    fragHistory.showErrMsgNumber(R.string.hostError);
                     break;
                 case SPELLERROR:
                     Log.d("InfowareLab.Debug", "JoinConfById4Frag: SPELLERROR");
-                    fragJoin.hideLoading();
-                    fragJoin.showErrMsgNumber(R.string.spellError);
+                    fragHistory.hideLoading();
+                    fragHistory.showErrMsgNumber(R.string.spellError);
                     break;
                 case LOGINFAILED:
                     Log.d("InfowareLab.Debug", "JoinConfById4Frag: LOGINFAILED");
-                    fragJoin.hideLoading();
-                    fragJoin.showErrMsgNumber(R.string.LoginFailed);
+                    fragHistory.hideLoading();
+                    fragHistory.showErrMsgNumber(R.string.LoginFailed);
                     break;
                 case CREATECONF_ERROR:
                     Log.d("InfowareLab.Debug", "JoinConfById4Frag: CREATECONF_ERROR");
-                    fragJoin.hideLoading();
-                    fragJoin.showErrMsgNumber(R.string.preconf_create_error);
+                    fragHistory.hideLoading();
+                    fragHistory.showErrMsgNumber(R.string.preconf_create_error);
                     break;
                 case MEETINGINVALIDATE:
                     Log.d("InfowareLab.Debug", "JoinConfById4Frag: MEETINGINVALIDATE");
-                    fragJoin.hideLoading();
-                    fragJoin.showErrMsgNumber(R.string.overConf);
+                    fragHistory.hideLoading();
+                    fragHistory.showErrMsgNumber(R.string.overConf);
                     //mActivity.showLongToast(R.string.overConf);
                     //mActivity.finish();
                     break;
                 case BCASTNOTEXIST:
                     Log.d("InfowareLab.Debug", "JoinConfById4Frag: BCASTNOTEXIST");
-                    fragJoin.hideLoading();
-                    fragJoin.showErrMsgNumber(R.string.bcastNotExist);
+                    fragHistory.hideLoading();
+                    fragHistory.showErrMsgNumber(R.string.bcastNotExist);
                     //mActivity.showLongToast(R.string.overConf);
                     //mActivity.finish();
                     break;
@@ -218,15 +218,15 @@ public class JoinConfByIdAction4Frag implements OnClickListener {
     public void onClick(View v) {
         Log.d("InfowareLab.Debug", "JoinConfByIdAction4Frag: onClick");
         /*if (v.getId() == R.id.view_frag_join_number_btn) {
-            fragJoin.hideInput(v);
-            fragJoin.showErrMsgNumber(-1);
+            fragHistory.hideInput(v);
+            fragHistory.showErrMsgNumber(-1);
             if (isInputNull()) {
                 return;
             }
             if (!isMatchShowname()) {
-                fragJoin.showErrMsgNumber(R.string.illegalCharacter);
+                fragHistory.showErrMsgNumber(R.string.illegalCharacter);
             } else {
-                fragJoin.showLoading();
+                fragHistory.showLoading();
                 if (ll1.getVisibility() == View.VISIBLE) {
                     meetingNum = mMeetingNumber.getText().toString().replace(" ", "");
                 } else if (ll2.getVisibility() == View.VISIBLE) {
@@ -304,7 +304,7 @@ public class JoinConfByIdAction4Frag implements OnClickListener {
     }
 
     public void missDislog() {
-        fragJoin.hideLoading();
+        fragHistory.hideLoading();
     }
 
     private LoginBean getLoginBean() {
@@ -321,9 +321,9 @@ public class JoinConfByIdAction4Frag implements OnClickListener {
      */
     public void doLogin(LoginBean login) {
         this.login = login;
-        if (fragJoin != null) {
+        if (fragHistory != null) {
             if (confBean == null) {
-                confBean = Config.getConferenceByNumber(mMeetingNumber);//fragJoin.getConfBean(meetingNum.trim());
+                confBean = Config.getConferenceByNumber(mMeetingNumber);//fragHistory.getConfBean(meetingNum.trim());
                 Log.d("InfowareLab.Debug", "===> Config.getConferenceByNumber = NULL");
             }
 
@@ -425,7 +425,7 @@ public class JoinConfByIdAction4Frag implements OnClickListener {
 
         if ("0".equals(result)) {
             conferenceCommon.setLogPath(ConferenceApplication.getConferenceApp().getFilePath("Log"));
-            if (fragJoin != null) fragJoin.setHandler();
+            if (fragHistory != null) fragHistory.setHandler();
             conferenceCommon.initSDK();
             Config config = conferenceCommon.getConfig();
             conferenceCommon.joinConference(conferenceCommon.getParam(login, true));
@@ -514,7 +514,7 @@ public class JoinConfByIdAction4Frag implements OnClickListener {
     }
 
     public void cancelDialog() {
-        fragJoin.hideLoading();
+        fragHistory.hideLoading();
     }
 
 
@@ -522,14 +522,14 @@ public class JoinConfByIdAction4Frag implements OnClickListener {
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public void startJoinConference(){
 
-        fragJoin.showErrMsgNumber(-1);
+        fragHistory.showErrMsgNumber(-1);
 
         if (confBean == null) {
-            //fragJoin.hideLoading();
+            //fragHistory.hideLoading();
             return;
         }
 
-        fragJoin.showLoading();
+        fragHistory.showLoading();
 
 //        meetingNum = confBean.getId();
 
@@ -579,14 +579,14 @@ public class JoinConfByIdAction4Frag implements OnClickListener {
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public void startBroadcast(){
 
-        fragJoin.showErrMsgNumber(-1);
+        fragHistory.showErrMsgNumber(-1);
 
         if (confBean == null) {
-            //fragJoin.hideLoading();
+            //fragHistory.hideLoading();
             return;
         }
 
-        fragJoin.showLoading();
+        fragHistory.showLoading();
 
         Log.d("InfowareLab.Debug", "startBroadcast: meetingNum = " + mMeetingNumber);
 
@@ -597,7 +597,7 @@ public class JoinConfByIdAction4Frag implements OnClickListener {
 
         String rtmpUrl = Config.getRtmpUrlByNumberEx(mMeetingNumber, null, null);
         if (rtmpUrl != null && false == TextUtils.isEmpty(rtmpUrl)){
-            fragJoin.hideLoading();
+            fragHistory.hideLoading();
             startBCast(rtmpUrl, mMeetingNumber);
 
         }else {

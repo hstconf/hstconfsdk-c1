@@ -16,8 +16,6 @@ import android.view.WindowManager;
 import androidx.core.view.ViewCompat;
 
 import com.tencent.bugly.crashreport.CrashReport;
-import com.umeng.socialize.PlatformConfig;
-import com.umeng.socialize.UMShareAPI;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -227,13 +225,13 @@ public class ConferenceApplication extends Application {
         }
     }
 
-    private void initUMSocial() {
-        UMShareAPI.get(this);
-        PlatformConfig.setWeixin("wx2017efaaa680d714", "ae08f2143151176991cb687f3ef1c147");
-        PlatformConfig.setQQZone("1104660765", "jD0TjQpWBtHd9v1q");
-//	     PlatformConfig.setSinaWeibo("3921700954", "04b48b094faeb16683c32669824ebdad", "http://sns.whalecloud.com");
-        PlatformConfig.setDing("dingoafikcirrde2bnzs32");
-    }
+//    private void initUMSocial() {
+//        UMShareAPI.get(this);
+//        PlatformConfig.setWeixin("wx2017efaaa680d714", "ae08f2143151176991cb687f3ef1c147");
+//        PlatformConfig.setQQZone("1104660765", "jD0TjQpWBtHd9v1q");
+////	     PlatformConfig.setSinaWeibo("3921700954", "04b48b094faeb16683c32669824ebdad", "http://sns.whalecloud.com");
+//        PlatformConfig.setDing("dingoafikcirrde2bnzs32");
+//    }
 
 
     private void initCrashHandler() {

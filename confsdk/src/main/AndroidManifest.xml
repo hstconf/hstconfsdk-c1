@@ -48,6 +48,11 @@
             android:theme="@style/dialog"></activity>
 
         <activity
+            android:name="com.infowarelab.conference.ui.activity.ActExoPlayer"
+            android:configChanges="orientation|screenSize"
+            android:hardwareAccelerated="true" />
+
+        <activity
             android:name="com.infowarelab.conference.ui.activity.LogoActivity"
             android:screenOrientation="portrait"
             android:theme="@style/MyFullScreenTheme">

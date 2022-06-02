@@ -10,7 +10,6 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -19,9 +18,7 @@ import android.widget.Toast;
 import androidx.annotation.RequiresApi;
 
 import com.infowarelab.conference.ui.activity.inconf.ConferenceActivity;
-import com.infowarelab.conference.ui.activity.preconf.ActHome;
-import com.infowarelab.conference.ui.activity.preconf.BaseFragmentActivity;
-import com.infowarelab.conference.ui.activity.preconf.fragment.FragJoin;
+import com.infowarelab.conference.ui.activity.preconf.fragment.FragHistory;
 import com.infowarelab.hongshantongphone.R;
 import com.infowarelabsdk.conference.domain.ConferenceBean;
 import com.infowarelabsdk.conference.transfer.Config;
@@ -37,12 +34,12 @@ import java.util.List;
  * @Date 2013-9-10下午1:46:13
  * @Email joe.xiao@infowarelab.com
  */
-public class BroadcastListAdapter4Frag extends BaseAdapter {
+public class HConferenceListAdapter4Frag extends BaseAdapter {
 
     private Context mContext;
-    private FragJoin fragJoin;
+    private FragHistory fragHistory;
 
-    //private static final Logger log = Logger.getLogger(BroadcastListAdapter4Frag.class);
+    //private static final Logger log = Logger.getLogger(ConferenceListAdapter4Frag.class);
 
     /**
      * 正在进行的会议列表
@@ -67,9 +64,9 @@ public class BroadcastListAdapter4Frag extends BaseAdapter {
     private String pre;
     private String end;
 
-    public BroadcastListAdapter4Frag(Context context, FragJoin fragJoin, List<ConferenceBean> confs, int defaultSelected) {
+    public HConferenceListAdapter4Frag(Context context, FragHistory fragHistory, List<ConferenceBean> confs, int defaultSelected) {
         this.mContext = context;
-        this.fragJoin = fragJoin;
+        this.fragHistory = fragHistory;
         this.selectItem = defaultSelected;
         titles = new String[]{mContext.getResources().getString(R.string.myconf),
                 mContext.getResources().getString(R.string.publicconf)};
@@ -128,27 +125,31 @@ public class BroadcastListAdapter4Frag extends BaseAdapter {
         ViewHolder mViewHolder = null;
         if (convertView == null) {
 
-            if (fragJoin.isLandscape())
-                convertView = mInflater.inflate(R.layout.a6_preconf_join_bcast_list_item, null);
+            if (fragHistory.isLandscape())
+                convertView = mInflater.inflate(R.layout.a6_preconf_join_page_list_item, null);
             else
-                convertView = mInflater.inflate(R.layout.a6_preconf_join_bcast_list_item_portrait, null);
+                convertView = mInflater.inflate(R.layout.a6_preconf_join_page_list_item_portrait, null);
 
             mViewHolder = new ViewHolder();
             mViewHolder.llType = (LinearLayout) convertView.findViewById(R.id.llmeetingType);
             mViewHolder.meetingType = (TextView) convertView.findViewById(R.id.meetingType);
             mViewHolder.meetingTitle = (TextView) convertView.findViewById(R.id.meetingTitle);
-            mViewHolder.meetingNumber = (TextView) convertView.findViewById(R.id.meetingNumber);
+			mViewHolder.meetingNumber = (TextView) convertView.findViewById(R.id.meetingNumber);
             mViewHolder.meetingHostName = (TextView) convertView.findViewById(R.id.meetingHostName);
             mViewHolder.meetingStartTime = (TextView) convertView.findViewById(R.id.meetingStartTime);
             mViewHolder.meetingState = (ImageView) convertView.findViewById(R.id.meetingState);
             mViewHolder.btnStartMeeting = convertView.findViewById(R.id.btn_start_conf);
+
+            mViewHolder.ivCopy = convertView.findViewById(R.id.iv_copy);
+            mViewHolder.ivPortrait = convertView.findViewById(R.id.iv_portrait);
+
 //			mViewHolder.startPublcMeeting = (ImageButton)convertView.findViewById(R.id.startMeeting_public);
             convertView.setTag(mViewHolder);
         } else {
             mViewHolder = (ViewHolder) convertView.getTag();
         }
         //setItemClick(convertView, (position + 1));
-        setItemClick(mViewHolder.btnStartMeeting, (position + 1));
+		setItemClick(mViewHolder.btnStartMeeting, (position + 1));
         contaionConfs(mViewHolder, position);
         Date starDate = confList.get(position).getStartDate();
         mViewHolder.meetingTitle.setText(confList.get(position).getName());
@@ -171,16 +172,27 @@ public class BroadcastListAdapter4Frag extends BaseAdapter {
         mViewHolder.meetingStartTime.setText(dateToString(confList.get(position).getStartDate()));
         mViewHolder.meetingNumber.setText(confList.get(position).getId());
 
-        setConfIdClick(mViewHolder.meetingNumber, position);
-//        setConfIdClick(mViewHolder.meetingHostName, position);
 //        setConfIdClick(mViewHolder.meetingNumber, position);
-//        setConfIdClick(mViewHolder.meetingNumber, position);
+//        setConfIdClick(mViewHolder.ivCopy, mViewHolder.meetingNumber.getText().toString(), position);
+//        setConfIdClick(mViewHolder.ivPortrait, mViewHolder.meetingNumber.getText().toString(), position);
+//        setConfIdClick(mViewHolder.meetingHostName, mViewHolder.meetingNumber.getText().toString(), position);
 
+        setConfIdClick(convertView, mViewHolder.meetingNumber.getText().toString(), position);
 
 //		//log.info("progresslist length:" + progressList.size() + " position=" + position + " conflist length="
 //				+ confList.size());
 
         return convertView;
+    }
+
+    private void setConfIdClick(View tvControl, String text, final int position) {
+        tvControl.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                copyStr(text);
+                Toast.makeText(mContext, text + "拷贝到剪贴板。", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     /**
@@ -207,7 +219,7 @@ public class BroadcastListAdapter4Frag extends BaseAdapter {
         convertView.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                fragJoin.setBcast(position);
+                fragHistory.setJoin(position);
 
             }
         });
@@ -217,20 +229,10 @@ public class BroadcastListAdapter4Frag extends BaseAdapter {
         tvConfId.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                //fragJoin.setJoin(position);
+                //fragHistory.setJoin(position);
                 String confId = tvConfId.getText().toString();
                 copyStr(confId);
                 Toast.makeText(mContext, confId + "拷贝到剪贴板。", Toast.LENGTH_SHORT).show();
-            }
-        });
-    }
-
-    private void setConfIdClick(TextView tvControl, String text, final int position) {
-        tvControl.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                copyStr(text);
-                Toast.makeText(mContext, text + "拷贝到剪贴板。", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -241,15 +243,17 @@ public class BroadcastListAdapter4Frag extends BaseAdapter {
         private TextView meetingType, meetingTitle, meetingHostName, meetingStartTime;
         private ImageView meetingState;
         private Button btnStartMeeting;
+        private ImageView ivCopy;
+        private ImageView ivPortrait;
         //private ImageButton startPublcMeeting;
     }
 
     public void setTitleText(View mHeader, int firstVisiblePosition) {
         String title = "";
-        if (fragJoin.getmConferencePagerListView().getMyConfsCount() == 0) {
+        if (fragHistory.getConferencePagerListView().getMyConfsCount() == 0) {
             title = titles[1];
         } else {
-            if (firstVisiblePosition > fragJoin.getmConferencePagerListView().getMyConfsCount()) {
+            if (firstVisiblePosition > fragHistory.getConferencePagerListView().getMyConfsCount()) {
                 title = titles[1];
             } else {
                 title = titles[0];
@@ -266,8 +270,8 @@ public class BroadcastListAdapter4Frag extends BaseAdapter {
             return 0;
         }
 
-        if (ConferenceActivity.isLogin && fragJoin.getmConferencePagerListView().getMyConfsCount() != 0
-                && position == fragJoin.getmConferencePagerListView().getMyConfsCount()) {
+        if (ConferenceActivity.isLogin && fragHistory.getConferencePagerListView().getMyConfsCount() != 0
+                && position == fragHistory.getConferencePagerListView().getMyConfsCount()) {
             return 2;
         }
         return 1;
@@ -298,7 +302,7 @@ public class BroadcastListAdapter4Frag extends BaseAdapter {
 //		viewHolder.startPublcMeeting.setVisibility(View.GONE);
 //		if(ConferenceActivity.isLogin){
 //			if(confList.get(position).getHostName().equals(userName)){
-//				if(position < fragJoin.getmConferencePagerListView().getMyConfsCount() && confList.get(position).getStatus().equals("0")){
+//				if(position < fragHistory.getmConferencePagerListView().getMyConfsCount() && confList.get(position).getStatus().equals("0")){
 //					viewHolder.startMeeting.setVisibility(View.VISIBLE);
 //					confList.get(position).setNeedStartConf(1);
 //				}else{
@@ -306,7 +310,7 @@ public class BroadcastListAdapter4Frag extends BaseAdapter {
 //				}
 //			}
 //		}else{
-//			if(position < fragJoin.getmConferencePagerListView().getMyConfsCount()){
+//			if(position < fragHistory.getmConferencePagerListView().getMyConfsCount()){
 //				viewHolder.startPublcMeeting.setVisibility(View.VISIBLE);
 //			}
 //		}
@@ -319,27 +323,27 @@ public class BroadcastListAdapter4Frag extends BaseAdapter {
         if (conferenceBean.getStatus().equals("1")) {
             if (conferenceBean.getType().equals(Config.MEETING)) {
 //				id = R.drawable.meetinglist_status_start;
-                id = R.drawable.bcast_on;
+                id = R.drawable.conf_on;
             } else {
 //				id = R.drawable.meetinglistlive_status_start;
-                id = R.drawable.bcast_on;
+                id = R.drawable.conf_on;
             }
 
             viewHolder.btnStartMeeting.setBackgroundResource(R.drawable.btn_sc_join);
             viewHolder.btnStartMeeting.setTextColor(mContext.getResources().getColor(R.color.white));
-            viewHolder.btnStartMeeting.setText(mContext.getResources().getString(R.string.joinbcastText));
+            viewHolder.btnStartMeeting.setText(mContext.getResources().getString(R.string.joinbuttonText2));
         } else {
             if (conferenceBean.getType().equals(Config.MEETING)) {
 //				id = R.drawable.meetinglist_status_nostarted;
-                id = R.drawable.bcast_off;
+                id = R.drawable.conf_off;
             } else {
 //				id = R.drawable.meetinglistlive_status_nostarted;
-                id = R.drawable.bcast_off;
+                id = R.drawable.conf_off;
             }
 
             viewHolder.btnStartMeeting.setBackgroundResource(R.drawable.btn_sc_start);
             viewHolder.btnStartMeeting.setTextColor(mContext.getResources().getColor(R.color.app_main_hue));
-            viewHolder.btnStartMeeting.setText(mContext.getResources().getString(R.string.joinbcastText));
+            viewHolder.btnStartMeeting.setText(mContext.getResources().getString(R.string.startbuttonText));
         }
 
         viewHolder.meetingState.setImageResource(id);
@@ -350,7 +354,7 @@ public class BroadcastListAdapter4Frag extends BaseAdapter {
         viewHolder.llType.setVisibility(View.GONE);
 
 //        if (ConferenceActivity.isLogin) {
-//            if (position == fragJoin.getmConferencePagerListView().getMyConfsCount()) {
+//            if (position == fragHistory.getmConferencePagerListView().getMyConfsCount()) {
 ////				viewHolder.meetingType.setVisibility(View.VISIBLE);
 //                viewHolder.llType.setVisibility(View.VISIBLE);
 //                viewHolder.meetingType.setText(titles[1]);
