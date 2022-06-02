@@ -71,7 +71,7 @@
 
                 <TextView
                     android:id="@+id/meetingTitle"
-                    android:layout_width="@dimen/width_28_80"
+                    android:layout_width="@dimen/width_27_80"
                     android:layout_height="wrap_content"
                     android:ellipsize="end"
                     android:singleLine="true"
@@ -82,7 +82,6 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/width_1_80"
                     android:background="@drawable/copy" />
 
                 <TextView
@@ -115,7 +114,7 @@
 
                 <TextView
                     android:id="@+id/meetingStartTime"
-                    android:layout_width="@dimen/width_28_80"
+                    android:layout_width="@dimen/width_27_80"
                     android:layout_height="wrap_content"
                     android:ellipsize="end"
                     android:ems="7"
@@ -127,7 +126,6 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/width_1_80"
                     android:background="@drawable/portrait" />
 
                 <TextView
