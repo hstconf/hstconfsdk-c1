@@ -17,6 +17,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -49,6 +50,7 @@ public class FragHistory extends BaseFragment implements OnClickListener {
     private ViewPager mConferencePager;
     private List<View> views;
     private ConferencePagerAdapter mPagerAdapter;
+    private ImageButton btnReturnList;
     private HConferencePagerListView mConferencePagerListView;
     //private BroadcastPagerListView  mBroadcastPagerListView;
     //private ConferencePagerNumber mConferencePagerNumber;
@@ -223,6 +225,9 @@ public class FragHistory extends BaseFragment implements OnClickListener {
         }else if (v.getId() == R.id.btn_bcast_list){
             switchPage(1);
         }
+        else if (v.getId() == R.id.btn_return_list){
+            doSelect(2);
+        }
     }
 
     private void initView() {
@@ -235,6 +240,9 @@ public class FragHistory extends BaseFragment implements OnClickListener {
 
         btnConfList = joinView.findViewById(R.id.btn_conf_list);
         btnBCastList = joinView.findViewById(R.id.btn_bcast_list);
+
+        btnReturnList = joinView.findViewById(R.id.btn_return_list);
+        btnReturnList.setOnClickListener(this);
 
 //        btnConfList.setSelected(true);
 //        btnBCastList.setSelected(false);
@@ -415,16 +423,16 @@ public class FragHistory extends BaseFragment implements OnClickListener {
     }
 
     private void checkPosition(int postion) {
-//        if (postion == 0) {
-//            if (getActivity().getCurrentFocus() != null) {
-//                //切换到会议列表时总是关闭输入法
-////				InputMethodManager inputMethodManager = (InputMethodManager)
-////						getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
-////				inputMethodManager.hideSoftInputFromWindow(
-////						getActivity().getCurrentFocus().getWindowToken(),
-////				InputMethodManager.HIDE_NOT_ALWAYS);
-//            }
-//            mConferencePagerListView.refreshAdapter();
+        if (postion == 0) {
+            if (getActivity().getCurrentFocus() != null) {
+                //切换到会议列表时总是关闭输入法
+//				InputMethodManager inputMethodManager = (InputMethodManager)
+//						getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+//				inputMethodManager.hideSoftInputFromWindow(
+//						getActivity().getCurrentFocus().getWindowToken(),
+//				InputMethodManager.HIDE_NOT_ALWAYS);
+            }
+            mConferencePagerListView.refreshAdapter();
 //            btnConfList.setSelected(true);
 //            btnBCastList.setSelected(false);
 //
@@ -436,9 +444,9 @@ public class FragHistory extends BaseFragment implements OnClickListener {
 //
 //            tvHistory.setText(getResources().getString(R.string.socialize_14));
 //            tvHistory.setVisibility(View.VISIBLE);
-//
-//        } else if (postion == 1) {
-//            //mConferencePagerNumber.resumeLayout();
+
+        } else if (postion == 1) {
+            //mConferencePagerNumber.resumeLayout();
 //            mBroadcastPagerListView.refreshAdapter();
 //
 //            btnConfList.setSelected(false);
@@ -451,8 +459,8 @@ public class FragHistory extends BaseFragment implements OnClickListener {
 //            btnBCastList.invalidate();
 //
 //            tvHistory.setVisibility(View.GONE);
-//            //tvHistory.setText(getResources().getString(R.string.socialize_15));
-//        }
+            //tvHistory.setText(getResources().getString(R.string.socialize_15));
+        }
         //doSelect(postion);
     }
 

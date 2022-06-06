@@ -2,6 +2,7 @@ package com.infowarelab.conference.ui.view;
 
 import android.content.Context;
 import android.graphics.Canvas;
+import android.os.Build;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -20,7 +21,10 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.infowarelab.conference.ui.adapter.ConferenceListAdapter4Frag;
+import androidx.annotation.RequiresApi;
+
+import com.infowarelab.conference.ui.adapter.HConferenceListAdapter4Frag;
+import com.infowarelab.conference.ui.adapter.HConferenceListAdapter4Frag;
 import com.infowarelab.hongshantongphone.R;
 
 import java.util.Date;
@@ -109,7 +113,7 @@ public class HConfListRefreshView4Frag extends ListView implements OnScrollListe
     private boolean visible;
     private int width;
     private int height;
-    private ConferenceListAdapter4Frag mAdapter;
+    private HConferenceListAdapter4Frag mAdapter;
 
     public HConfListRefreshView4Frag(Context context) {
         super(context);
@@ -222,11 +226,12 @@ public class HConfListRefreshView4Frag extends ListView implements OnScrollListe
         requestLayout();
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public void titleLayout(int firstVisiblePosition) {
         if (mTitle == null) {
             return;
         }
-        if (mAdapter == null || !(mAdapter instanceof ConferenceListAdapter4Frag)) {
+        if (mAdapter == null || !(mAdapter instanceof HConferenceListAdapter4Frag)) {
             return;
         }
         int state = 0;
@@ -268,8 +273,8 @@ public class HConfListRefreshView4Frag extends ListView implements OnScrollListe
     public void setAdapter(ListAdapter adapter) {
         lastUpdatedTextView.setText(getResources().getString(R.string.confupdate) +
                 new Date().toLocaleString());
-        if (adapter instanceof ConferenceListAdapter4Frag) {
-            mAdapter = (ConferenceListAdapter4Frag) adapter;
+        if (adapter instanceof HConferenceListAdapter4Frag) {
+            mAdapter = (HConferenceListAdapter4Frag) adapter;
             super.setAdapter(adapter);
         }
     }
