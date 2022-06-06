@@ -31,7 +31,8 @@
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
 
-    <application>
+    <application
+        android:usesCleartextTraffic="true">
 
         <activity
             android:name="com.infowarelab.conference.ui.activity.ActCustomDialog"

@@ -122,9 +122,11 @@ public class HConferencePagerListView extends ConferencePager {
         mPreferences = mActivity.getSharedPreferences(Constants.SHARED_PREFERENCES, Context.MODE_PRIVATE);
         int uid = mPreferences.getInt(Constants.USER_ID, 0);
         String username = mPreferences.getString(Constants.LOGIN_NAME, "");
+        String password = mPreferences.getString(Constants.LOGIN_PASS, "");
 
         userBean.setUid(uid);
         userBean.setUsername(username);
+        userBean.setPassword(password);
     }
 
     /**
@@ -246,7 +248,7 @@ public class HConferencePagerListView extends ConferencePager {
         Config.Site_URL = FileUtil.readSharedPreferences(mActivity, Constants.SHARED_PREFERENCES, Constants.SITE);
         Config.HAS_LIVE_SERVER = FileUtil.readSharedPreferences(mActivity, Constants.SHARED_PREFERENCES, Constants.HAS_LIVE_SERVER).equals("true");
         conferences = null;
-        conferences = Config.getConferenceList(userBean, handler, 1);
+        conferences = Config.getHistoryConferenceList(userBean, handler, 1);
         if (conferences != null) myConfsCount = conferences.size();
 //        conferences = Config.getConferenceList(userBean, handler, 1);
 //        if (ConferenceActivity.isLogin) {

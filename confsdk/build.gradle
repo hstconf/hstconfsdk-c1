@@ -202,11 +202,13 @@ dependencies {
     //桌面共享
     //implementation project(':screencapture')
     implementation 'com.google.android.material:material:1.0.0'
+
     //api files('libs/android-logging-log4j-1.0.3.jar')
-    api files('libs/asmack.jar')
+    implementation files('libs/asmack.jar')
     //api files('libs/gson-2.2.2.jar')
     //api files('libs/log4j-1.2.16.jar')
-    api files('libs/libwebrtc.jar')
+    //api files('libs/libwebrtc.jar')
+
     api 'org.jbundle.util.osgi.wrapped:org.jbundle.util.osgi.wrapped.org.apache.http.client:4.1.2'
     api 'org.greenrobot:eventbus:3.1.1'
     api 'com.tencent.bugly:crashreport:latest.release' //其中latest.release指代最新Bugly SDK版本号，也可以指定明确的版本号，例如2.1.9
