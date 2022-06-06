@@ -31,15 +31,7 @@
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
 
-    <application
-        android:allowBackup="true"
-        android:icon="@drawable/icon"
-        android:label="@string/app_name"
-        android:roundIcon="@drawable/icon"
-        android:supportsRtl="true"
-        android:theme="@style/AppTheme"
-        android:usesCleartextTraffic="true"
-        android:fitsSystemWindows="true">
+    <application>
 
         <activity
             android:name="com.infowarelab.conference.ui.activity.ActCustomDialog"
