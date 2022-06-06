@@ -59,15 +59,19 @@ allprojects {
             allowInsecureProtocol = true
         }
         maven {
-            url "https://mvn.mob.com/android"
+            url "http://mvn.mob.com/android"
+            allowInsecureProtocol = true
+        }
+        maven {
+            url "http://maven.rongcloud.cn/repository/maven-releases/"
             allowInsecureProtocol = true
         }
 //        maven {
-//            url "http://maven.rongcloud.cn/repository/maven-releases/"
+//            url "https://raw.githubusercontent.com/Pgyer/analytics/master"
 //            allowInsecureProtocol = true
 //        }
 //        maven {
-//            url "https://raw.githubusercontent.com/Pgyer/analytics/master"
+//            url 'http://developer.huawei.com/repo/'
 //            allowInsecureProtocol = true
 //        }
 
