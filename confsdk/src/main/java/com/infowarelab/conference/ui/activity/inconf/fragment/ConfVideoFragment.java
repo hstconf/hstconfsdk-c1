@@ -117,6 +117,7 @@ public class ConfVideoFragment extends BaseFragment implements OnClickListener {
 
     private float videoWindowRatio = 0.5625f;
     private int mTopMargin = 0;
+    private int mVideoCountOnePage = 9;
 
     public ConfVideoFragment(ICallParentView iCallParentView) {
         super(iCallParentView);
