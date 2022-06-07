@@ -20,6 +20,7 @@ import androidx.annotation.RequiresApi;
 
 import com.infowarelab.conference.ConferenceApplication;
 import com.infowarelab.conference.ui.activity.ActExoPlayer;
+import com.infowarelab.conference.ui.activity.ConfPlaybackActivity;
 import com.infowarelab.conference.ui.activity.inconf.ConferenceActivity;
 import com.infowarelab.conference.ui.activity.preconf.LoginActivity;
 import com.infowarelab.conference.ui.activity.preconf.fragment.FragHistory;
@@ -576,7 +577,55 @@ public class JoinConfByIdAction4FragH implements OnClickListener {
         mActivity.startActivity(intent);
     }
 
+    private void startPlayback(String httpUrl, String confId) {
+
+//        Intent intent = new Intent(mActivity, ActRtmpPlayer.class);
+//        intent.putExtra("rtmp_url", rtmpUrl);
+//        intent.putExtra("conf_id", confId);
+//        mActivity.startActivity(intent);
+
+//        Intent intent = new Intent(mActivity, ActExoPlayer.class);
+//        intent.putExtra("http_url", httpUrl);
+//        intent.putExtra("conf_id", confId);
+//        mActivity.startActivity(intent);
+
+        Intent intent = new Intent(mActivity, ConfPlaybackActivity.class);
+        intent.putExtra("http_url", httpUrl);
+        //intent.putExtra("conf_id", confId);
+        mActivity.startActivity(intent);
+    }
+
+
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+    public void startPlaybackConf(){
+
+        fragHistory.showErrMsgNumber(-1);
+
+        if (confBean == null) {
+            //fragHistory.hideLoading();
+            return;
+        }
+
+        fragHistory.showLoading();
+
+        Log.d("InfowareLab.Debug", "startPlaybackConf: meetingNum = " + mMeetingNumber);
+
+        if (conferenceCommon == null) {
+            commonFactory.setConferenceCommon(new ConferenceCommonImpl());
+            conferenceCommon = (ConferenceCommonImpl) commonFactory.getConferenceCommon();
+        }
+
+        String httpUrl = confBean.getViewUrl();
+        //Config.getRtmpUrlByNumberEx(mMeetingNumber, null, null);
+        if (httpUrl != null && false == TextUtils.isEmpty(httpUrl)){
+            fragHistory.hideLoading();
+            startPlayback(httpUrl, mMeetingNumber);
+
+        }else {
+            mHandler.sendEmptyMessage(MEETINGINVALIDATE);
+        }
+    }
+
     public void startBroadcast(){
 
         fragHistory.showErrMsgNumber(-1);
@@ -604,6 +653,4 @@ public class JoinConfByIdAction4FragH implements OnClickListener {
             mHandler.sendEmptyMessage(BCASTNOTEXIST);
         }
     }
-
-
 }

@@ -292,22 +292,14 @@ public class HConferencePagerListView extends ConferencePager {
     public void setJoin(int position) {
         if (!isRefresh) {
             conferenceBean = (ConferenceBean) lvRefresh.getAdapter().getItem(position);
-            if (conferenceBean.getNeedLogin() == 1 && !ConferenceActivity.isLogin) {
-                Toast.makeText(mActivity, mActivity.getString(R.string.needLogin),
-                        Toast.LENGTH_SHORT).show();
 
-                //Intent intent = new Intent(mContext, LoginActivity.class);
-                //intent.putExtra("turnIndex", 2);
-                //intent.putExtra("state", 1);
-                //mContext.startActivity(intent);
-                //mActivity.finish();
-            } else {
-                fragHistory.enterFromItem(conferenceBean);
-            }
-            //log.info("conferenceId=" + conferenceBean.getId() + "needLogin=" + conferenceBean.getNeedLogin() + "password="
-            //	+ conferenceBean.getConfPassword());
+            if (conferenceBean == null || conferenceBean.getStatus() == null || conferenceBean.getStatus().equals("1") || conferenceBean.getStatus().equals("2") || conferenceBean.getStatus().equals("4"))
+                return;
+
+            fragHistory.enterFromItem(conferenceBean);
         }
     }
+
 
     public int getMyConfsCount() {
         return myConfsCount;

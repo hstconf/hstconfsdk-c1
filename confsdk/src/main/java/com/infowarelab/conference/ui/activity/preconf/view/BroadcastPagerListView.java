@@ -252,7 +252,7 @@ public class BroadcastPagerListView extends ConferencePager {
         Config.Site_URL = FileUtil.readSharedPreferences(mActivity, Constants.SHARED_PREFERENCES, Constants.SITE);
         Config.HAS_LIVE_SERVER = FileUtil.readSharedPreferences(mActivity, Constants.SHARED_PREFERENCES, Constants.HAS_LIVE_SERVER).equals("true");
         conferences = null;
-        conferences = Config.getConferenceList(userBean, handler, 1);
+        conferences = Config.getConferenceList(userBean, handler, 1, Config.LIVE);
         if (conferences != null) myConfsCount = conferences.size();
 //        conferences = Config.getConferenceList(userBean, handler, 1);
 //        if (ConferenceActivity.isLogin) {
@@ -270,9 +270,9 @@ public class BroadcastPagerListView extends ConferencePager {
 //		conferences = new ArrayList<ConferenceBean>();
 //		conferences.addAll(confList);
 //		conferences.addAll(0, progressList);
-        if (commonFactory.getConferenceCommon() != null) {
-            ((ConferenceCommonImpl) commonFactory.getConferenceCommon()).setConfList(conferences);
-        }
+//        if (commonFactory.getConferenceCommon() != null) {
+//            ((ConferenceCommonImpl) commonFactory.getConferenceCommon()).setConfList(conferences);
+//        }
     }
 
     private Handler listHandler = new Handler() {

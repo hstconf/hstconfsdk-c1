@@ -4,6 +4,7 @@ import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
 import android.os.Build;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -172,15 +173,22 @@ public class HConferenceListAdapter4Frag extends BaseAdapter {
         mViewHolder.meetingStartTime.setText(dateToString(confList.get(position).getStartDate()));
         mViewHolder.meetingNumber.setText(confList.get(position).getId());
 
-//        setConfIdClick(mViewHolder.meetingNumber, position);
-//        setConfIdClick(mViewHolder.ivCopy, mViewHolder.meetingNumber.getText().toString(), position);
-//        setConfIdClick(mViewHolder.ivPortrait, mViewHolder.meetingNumber.getText().toString(), position);
-//        setConfIdClick(mViewHolder.meetingHostName, mViewHolder.meetingNumber.getText().toString(), position);
+        String hostName = mViewHolder.meetingHostName.getText().toString();
+        if (TextUtils.isEmpty(hostName)){
+            mViewHolder.meetingHostName.setVisibility(View.GONE);
+            mViewHolder.ivPortrait.setVisibility(View.GONE);
+        }
+        else {
+            mViewHolder.ivPortrait.setVisibility(View.VISIBLE);
+            mViewHolder.meetingHostName.setVisibility(View.VISIBLE);
+        }
+
+        setConfIdClick(mViewHolder.meetingNumber, position);
+        setConfIdClick(mViewHolder.ivCopy, mViewHolder.meetingNumber.getText().toString(), position);
+        setConfIdClick(mViewHolder.ivPortrait, mViewHolder.meetingNumber.getText().toString(), position);
+        setConfIdClick(mViewHolder.meetingHostName, mViewHolder.meetingNumber.getText().toString(), position);
 
         setConfIdClick(convertView, mViewHolder.meetingNumber.getText().toString(), position);
-
-//		//log.info("progresslist length:" + progressList.size() + " position=" + position + " conflist length="
-//				+ confList.size());
 
         return convertView;
     }
@@ -320,7 +328,7 @@ public class HConferenceListAdapter4Frag extends BaseAdapter {
         ConferenceBean conferenceBean = confList.get(position);
         int id = 0;
         //log.info("status = "+conferenceBean.getStatus()+" type = "+conferenceBean.getType());
-        if (conferenceBean.getStatus().equals("1")) {
+        if (conferenceBean.getStatus() != null && (conferenceBean.getStatus().equals("3") || conferenceBean.getStatus().equals("5") || conferenceBean.getStatus().equals("6"))) {
             if (conferenceBean.getType().equals(Config.MEETING)) {
 //				id = R.drawable.meetinglist_status_start;
                 id = R.drawable.conf_on;
@@ -331,7 +339,8 @@ public class HConferenceListAdapter4Frag extends BaseAdapter {
 
             viewHolder.btnStartMeeting.setBackgroundResource(R.drawable.btn_sc_join);
             viewHolder.btnStartMeeting.setTextColor(mContext.getResources().getColor(R.color.white));
-            viewHolder.btnStartMeeting.setText(mContext.getResources().getString(R.string.joinbuttonText2));
+            viewHolder.btnStartMeeting.setText(mContext.getResources().getString(R.string.playbuttonText2));
+
         } else {
             if (conferenceBean.getType().equals(Config.MEETING)) {
 //				id = R.drawable.meetinglist_status_nostarted;
@@ -341,9 +350,8 @@ public class HConferenceListAdapter4Frag extends BaseAdapter {
                 id = R.drawable.conf_off;
             }
 
-            viewHolder.btnStartMeeting.setBackgroundResource(R.drawable.btn_sc_start);
             viewHolder.btnStartMeeting.setTextColor(mContext.getResources().getColor(R.color.app_main_hue));
-            viewHolder.btnStartMeeting.setText(mContext.getResources().getString(R.string.startbuttonText));
+            viewHolder.btnStartMeeting.setText(mContext.getResources().getString(R.string.transcodebuttonText2));
         }
 
         viewHolder.meetingState.setImageResource(id);

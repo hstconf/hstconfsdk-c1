@@ -3,6 +3,7 @@ package com.infowarelab.conference.ui.activity;
 import android.app.Activity;
 import android.content.Context;
 import android.content.res.Configuration;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -23,6 +24,8 @@ import com.google.android.exoplayer2.source.MediaSource;
 import com.google.android.exoplayer2.source.ProgressiveMediaSource;
 import com.google.android.exoplayer2.ui.StyledPlayerView;
 import com.google.android.exoplayer2.upstream.DataSource;
+import com.google.android.exoplayer2.upstream.DefaultHttpDataSource;
+import com.google.android.exoplayer2.upstream.HttpDataSource;
 import com.infowarelab.conference.ui.view.LodingDialog;
 import com.infowarelab.hongshantongphone.R;
 import com.infowarelabsdk.conference.transfer.Config;
@@ -50,7 +53,8 @@ public class ActExoPlayer extends Activity {
     private static final int STATUS_BCAST_STOPPED = 9;
     private static final int STATUS_RESET = 10;
 
-    private String mFilePath;
+    private String mFilePath = null;
+    private String mHttpPath = null;
 
     private StyledPlayerView mVideoLayout = null;
     //private LibVLC libvlc;
@@ -317,6 +321,8 @@ public class ActExoPlayer extends Activity {
         setContentView(R.layout.act_exo_player);
 
         mFilePath = getIntent().getStringExtra("rtmp_url");
+        mHttpPath = getIntent().getStringExtra("http_url");
+
         mConfId = getIntent().getStringExtra("conf_id");
 
         mRTMPUrl = mFilePath;
@@ -394,18 +400,32 @@ public class ActExoPlayer extends Activity {
 //        MediaSource videoSource = new ExtractorMediaSource.Factory(rtmpDataSourceFactory)
 //                .createMediaSource(Uri.parse(mFilePath));
 
-        DataSource.Factory dataSourceFactory = new RtmpDataSource.Factory();
+        if (mFilePath != null) {
+            DataSource.Factory dataSourceFactory = new RtmpDataSource.Factory();
 
-        MediaSource mediaSource =
-                new ProgressiveMediaSource.Factory(dataSourceFactory)
-                        .createMediaSource(MediaItem.fromUri(mFilePath));
+            MediaSource mediaSource =
+                    new ProgressiveMediaSource.Factory(dataSourceFactory)
+                            .createMediaSource(MediaItem.fromUri(mFilePath));
 
 
-        //mMediaPlayer.addListener(this);
+            //mMediaPlayer.addListener(this);
 
-        // Prepare the player with the source.
-        mMediaPlayer.setRepeatMode(Player.REPEAT_MODE_ALL);
-        mMediaPlayer.setMediaSource(mediaSource);
+            // Prepare the player with the source.
+            mMediaPlayer.setRepeatMode(Player.REPEAT_MODE_ALL);
+            mMediaPlayer.setMediaSource(mediaSource);
+        }
+        else if (mHttpPath != null)
+        {
+            HttpDataSource.Factory dataSourceFactory = new DefaultHttpDataSource.Factory();
+
+            MediaSource mediaSource =
+                    new ProgressiveMediaSource.Factory(dataSourceFactory)
+                            //.setDrmSessionManagerProvider(unusedMediaItem -> drmSessionManager)
+                            .createMediaSource(MediaItem.fromUri(Uri.parse(mHttpPath)));
+
+            mMediaPlayer.setMediaSource(mediaSource);
+        }
+
         mMediaPlayer.prepare();
 
         mMediaPlayer.setPlayWhenReady(true);

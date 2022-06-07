@@ -44,7 +44,8 @@
         <ImageView
             android:id="@+id/view_frag_join_list_iv_2"
             style="@style/ww"
-            android:background="@drawable/icon_gestureleft" />
+            android:background="@drawable/icon_gestureleft"
+            android:visibility="gone"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -60,7 +61,7 @@
             android:layout_marginTop="@dimen/height_101_80"
             android:textColor="@color/a6_txt_black2"
             android:textSize="@dimen/textSize_02"
-            android:text="@string/slidetotheleft" />
+            android:text="@string/slidetothebottom" />
 
     </LinearLayout>
 

@@ -429,4 +429,13 @@
         <item name="android:backgroundDimAmount">0.6</item>
     </style>
 
+    <style name="Widget.Theme.HST_IMConf_SDK_ZHQL.ActionBar.Fullscreen" parent="Widget.AppCompat.ActionBar">
+        <item name="android:background">@color/black_overlay</item>
+    </style>
+
+    <style name="Widget.Theme.HST_IMConf_SDK_ZHQL.ButtonBar.Fullscreen" parent="">
+        <item name="android:background">@color/black_overlay</item>
+        <item name="android:buttonBarStyle">?android:attr/buttonBarStyle</item>
+    </style>
+
 </resources>

@@ -114,8 +114,10 @@ public class FragHistory extends BaseFragment implements OnClickListener {
                 case ENTERFROMITEM:
                     //checkResultIntent((ConferenceBean) msg.obj);
                     //checkJoinConf();
+                    //mAction.setConfBean((ConferenceBean) msg.obj);
+                    //mAction.startJoinConference();
                     mAction.setConfBean((ConferenceBean) msg.obj);
-                    mAction.startJoinConference();
+                    mAction.startPlaybackConf();
                     break;
                 case BCASTFROMITEM:
                     //checkResultIntent((ConferenceBean) msg.obj);
@@ -382,7 +384,7 @@ public class FragHistory extends BaseFragment implements OnClickListener {
 
         isEnterFromItem = true;
 
-        Log.d(TAG, "FragJoin: enterFromItem:" + conferenceBean.getId());
+        Log.d(TAG, "FragHistory: enterFromItem:" + conferenceBean.getId());
 
         //mConferencePager.setCurrentItem(1); //上次改错了
 
@@ -419,7 +421,7 @@ public class FragHistory extends BaseFragment implements OnClickListener {
     }
 
     public void setBcast(int position) {
-        //mBroadcastPagerListView.setBCast(position);
+        //mConferencePagerListView.setBCast(position);
     }
 
     private void checkPosition(int postion) {

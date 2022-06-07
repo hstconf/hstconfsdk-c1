@@ -55,6 +55,8 @@
     <string name="joinbuttonText">加入会议</string>
     <string name="joinbuttonText2">进入会议</string>
     <string name="startbuttonText">开启会议</string>
+    <string name="playbuttonText2">回看</string>
+    <string name="transcodebuttonText2">转码中</string>
     <string name="joinbcastText">进入直播</string>
     <string name="conflist_data_refresh">正在载入...</string>
     <string name="join_Conference">加会</string>
@@ -185,6 +187,7 @@
     <!-- JoinConf -->
     <string name="nomeetting">暂无会议</string>
     <string name="slidetotheleft">向左滑动，试试用会议号加会</string>
+    <string name="slidetothebottom">请尝试向下滑动刷新列表</string>
     <string name="joinbynumberhint">请输入会议号以加入会议</string>
     <string name="numbernull">会议号不能为空</string>
     <string name="nicknamenull">会议昵称不能为空</string>
@@ -405,9 +408,9 @@
     <string name="btn_txt_open_no_fw">打开新页面,不显示悬浮窗</string>
     <string name="tips_no_float_window">控制某个页面是否显示悬浮窗，只需要重写基类中isShowFloatWindow()方法，该页面返回false，所以不显示</string>
     <string name="system_win_message">系统弹窗形式显示悬浮窗，可以退出应用在桌面显示，需要开启悬浮窗权限，如果没有开启，点击开启</string>
-    <string name="callee_joining" >正在和对方建立连接...</string>
+    <string name="callee_joining">正在和对方建立连接...</string>
     <string name="confInSetup">视频通话正在建立中，请稍后退出。</string>
-    <string name="leaveConference" >对方已经离开视频通话。</string>
+    <string name="leaveConference">对方已经离开视频通话。</string>
     <string name="audioinprocess">音频设备正在处理中，请稍后再操作。</string>
 
     <string name="create_meeting_title">发起呼叫</string>
@@ -424,10 +427,13 @@
     <string name="regist_success">注册成功</string>
     <string name="regist_fail">注册失败</string>
     <string name="title_activity_act_custom_dialog">ActCustomDialog</string>
-    <string name="index_5_0" >管理视频</string>
+    <string name="index_5_0">管理视频</string>
 
     <string name="conf">会议</string>
     <string name="bcast">直播</string>
     <string name="instant_conf">立即会议</string>
     <string name="schedule_conf">预约会议</string>
+    <string name="title_activity_conf_playback">ConfPlaybackActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
 </resources>

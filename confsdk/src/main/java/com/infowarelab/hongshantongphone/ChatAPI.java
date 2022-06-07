@@ -466,19 +466,19 @@ public class ChatAPI {
         return mLoginBean;
     }
 
-    public List<ConferenceBean> getConferenceList(String url, String userName, String password, int confListType) {
+    public List<ConferenceBean> getConferenceList(String url, String userName, String password, int confListType, String type) {
 
         if (confListType == 1) {
             LoginBean loginBean = new LoginBean();
             loginBean.setUid(0);
             loginBean.setUsername(userName);
-            return Config.getConferenceList(mLoginBean, notifyHandler, confListType);
+            return Config.getConferenceList(mLoginBean, notifyHandler, confListType, type);
         } else {
             if (mLoginBean == null) {
                 mLoginBean = login(userName, password, userName);
             }
             if (mLoginBean == null) return null;
-            return Config.getConferenceList(mLoginBean, mConfHandler, confListType);
+            return Config.getConferenceList(mLoginBean, mConfHandler, confListType, type);
         }
     }
 

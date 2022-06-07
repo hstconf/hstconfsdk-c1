@@ -51,7 +51,7 @@
             android:layout_centerVertical="true"
             android:layout_marginRight="@dimen/dp_5"
             android:background="@drawable/btn_sc_join"
-            android:text="@string/joinbuttonText2"
+            android:text="@string/playbuttonText2"
             android:textColor="@color/white"
             android:textSize="@dimen/t_12" />
 

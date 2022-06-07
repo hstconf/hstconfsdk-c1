@@ -512,19 +512,20 @@ public class ConfAPI {
         mContext = context;
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public List<ConferenceBean> getConferenceList(String url, String userName, String password, int confListType) {
 
         if (confListType == 1) {
             LoginBean loginBean = new LoginBean();
             loginBean.setUid(0);
             loginBean.setUsername(userName);
-            return Config.getConferenceList(mLoginBean, notifyHandler, confListType);
+            return Config.getConferenceList(mLoginBean, notifyHandler, confListType, Config.MEETING);
         } else {
             if (mLoginBean == null) {
                 mLoginBean = login(userName, password);
             }
             if (mLoginBean == null) return null;
-            return Config.getConferenceList(mLoginBean, mConfHandler, confListType);
+            return Config.getConferenceList(mLoginBean, mConfHandler, confListType, Config.MEETING);
         }
     }
 
