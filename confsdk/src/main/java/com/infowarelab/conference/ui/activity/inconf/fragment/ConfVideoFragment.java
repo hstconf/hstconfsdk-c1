@@ -1406,7 +1406,7 @@ public class ConfVideoFragment extends BaseFragment implements OnClickListener {
                 if (total == 5) {
                     //total
                     left = rootW / 4;
-                    top = rootH / 3 + p;
+                    top = 2 * rootH / 3 + p;
                     right = rootW / 4;
                     bottom = 0;
                     w = rootW / 2;
