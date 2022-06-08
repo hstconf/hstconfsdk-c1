@@ -98,7 +98,13 @@ public class ConfVideoFragment extends BaseFragment implements OnClickListener {
     public final int VS_MODE_2 = 2;
     public final int VS_MODE_3 = 3;
     public final int VS_MODE_4 = 4;
-    public final int VS_MODE_0 = 6;
+    public final int VS_MODE_0 = 5;
+
+    public final int VS_MODE_6_P = 6;
+    public final int VS_MODE_6_L = 7;
+
+    public final int VS_MODE_9 = 9;
+
     private Set<Integer> localPreviewSet = new HashSet<Integer>();
     private Map<Integer, String> multideviceMap = new HashMap<>();
     private Set<Integer> existingVideos;
@@ -128,6 +134,7 @@ public class ConfVideoFragment extends BaseFragment implements OnClickListener {
         view = inflater.inflate(R.layout.video_fragment, container, false);
         initView();
         initVideo();
+
         return view;
     }
 
@@ -416,7 +423,7 @@ public class ConfVideoFragment extends BaseFragment implements OnClickListener {
         if (isShow) {
             if (isTile) {//多画面
                 Map<Integer, Integer> videos = getSyncMaps(12);
-                updateSyncVideosTile(videos, false);
+                updateSyncVideosTileEx(videos, false);
             } else {//单画面
                 Map<Integer, Integer> videos = getSyncMaps(0);
                 updateSyncVideoSingle(videos, false);
@@ -871,6 +878,159 @@ public class ConfVideoFragment extends BaseFragment implements OnClickListener {
 
     }
 
+    private void updateSyncVideosTileEx(Map<Integer, Integer> syncMap, boolean isHidden) {
+
+        if (!ConferenceApplication.isVideoMeeting) {
+            llClose.setVisibility(View.VISIBLE);
+        } else {
+            llClose.setVisibility(View.GONE);
+        }
+        activeChannel.lastChannel = 0;
+        activeChannel.nextChannel = 0;
+        if (!syncMap.containsKey(activeChannel.curChannel)) activeChannel.curChannel = 0;
+
+        setBottomList(false, false);
+
+        //获取屏幕的宽度
+        int rootW = getParentW();
+        int rootH = getParentH();
+
+        Log.d("InfowareLab.SDK", "updateSyncVideosTileEx.getParentSize: " + rootW + "x" + rootH);
+
+        RelativeLayout.LayoutParams rlp = (RelativeLayout.LayoutParams) rlVideoDecoder.getLayoutParams();
+        int num;
+
+        if (isP2PConf)
+            removeUselessViewForP2P(syncMap);
+
+        isP2PConf = false;
+
+        if (userCommon.getSelf() == null){
+            num = syncMap.size() + 1;
+            remoteSyncNum = syncMap.size();
+            localSyncNum = 0;
+        }else if (syncMap.containsValue(userCommon.getSelf().getUid())) {
+            //如果包含了本地同步
+            num = syncMap.size();
+            remoteSyncNum = num - 1;
+            localSyncNum = 1;
+
+            if (remoteSyncNum == 1) isP2PConf = true;
+        } else {
+            //如果不包含本地同步
+            num = syncMap.size() + 1;
+            remoteSyncNum = syncMap.size();
+            localSyncNum = 0;
+        }
+
+        isLocalShare = isHidden ? false : true;
+        if (num < 2) {
+            tileMode = VS_MODE_1;
+            rlp.width = rootW;
+            rlp.setMargins(0,mTopMargin,0,0);
+        } else if (num == 2) {
+            tileMode = VS_MODE_2;
+            rlp.width = rootW;
+            rlp.setMargins(0,mTopMargin,0,0);
+            isP2PConf = true;
+        } else if (num == 3 && orientationState == Configuration.ORIENTATION_PORTRAIT) {
+            tileMode = VS_MODE_3;
+            rlp.setMargins(0,mTopMargin,0,0);
+            rlp.width = rootW;
+        } else if (num <= 4){
+            tileMode = VS_MODE_4;
+            rlp.setMargins(0,mTopMargin,0,0);
+            rlp.width = rootW * ((num - 1) / 4 + 1);
+        } else if (num <= 6){
+
+            if (orientationState == Configuration.ORIENTATION_PORTRAIT)
+                tileMode = VS_MODE_6_P;
+            else
+                tileMode = VS_MODE_6_L;
+
+            rlp.setMargins(0,mTopMargin,0,0);
+            rlp.width = rootW * ((num - 1) / 6 + 1);
+        } else if (num <= 9){
+            tileMode = VS_MODE_9;
+            rlp.setMargins(0,mTopMargin,0,0);
+            rlp.width = rootW * ((num - 1) / 9 + 1);
+        } else {
+            tileMode = VS_MODE_9;
+            rlp.setMargins(0,mTopMargin,0,0);
+            rlp.width = rootW * ((num - 1) / 9 + 1);
+        }
+
+        removeUselessView(syncMap);
+
+        rlVideoDecoderFront.setVisibility(View.GONE);
+        rlVideoDecoder.setLayoutParams(rlp);
+        if (syncMap.size() <= 0)
+            rlVideoDecoder.setVisibility(View.GONE);
+        else
+            rlVideoDecoder.setVisibility(View.VISIBLE);
+
+        //设置页数
+        pvVideos.setScreenWidth(rootW, (num - 1) / 9 + 1);
+
+        int count = 1;
+
+        int curP = 1;
+        for (Integer key : syncMap.keySet()) {
+            if (userCommon.getSelf().getUid() == syncMap.get(key)) {
+                continue;
+            }
+            int uid = syncMap.get(key);
+            addVideoEx(orientationState, num, count, key, uid, true);
+            if (key == activeChannel.curChannel) {
+                if (num > 8) curP = (count - 1) / 9 + 1;
+
+            }
+            count++;
+        }
+
+        if (tileMode == VS_MODE_1) {
+            callLocalCamera(getLocalPositionEx(VS_MODE_1, count, orientationState), true);
+        } else if (isLocalShare) {
+
+            if (tileMode == VS_MODE_2){
+                if (localCamera.isEnabled() && localCamera.getCamera()) {
+                    callLocalCamera(getLocalPositionEx(tileMode, count, orientationState), true);
+                    rlVideoEncoder.setVisibility(View.VISIBLE);
+                    localCamera.setVisibility(View.VISIBLE);
+                    //btnCameraRotate.setVisibility(View.GONE);
+                    //getActivity().findViewById(R.id.tv_inconf_camerame).setVisibility(View.GONE);
+
+                }
+                else {
+
+                    localCamera.setVisibility(View.GONE);
+                    llNopermission.setVisibility(View.GONE);
+                    rlVideoEncoder.setVisibility(View.GONE);
+                }
+            }
+            else {
+                callLocalCamera(getLocalPositionEx(tileMode, count, orientationState), true);
+                rlVideoEncoder.setVisibility(View.VISIBLE);
+            }
+
+            count++;
+        } else {
+            callLocalCamera(getLocalPositionEx(0, count, orientationState), true);
+        }
+
+        if (activeChannel.curChannel != 0) {
+            pvVideos.setCurPage(curP);
+            activeChannel.curChannel = 0;
+        } else {
+            pvVideos.setCurPage(-1);
+        }
+
+        setDots((num - 1) / 4 + 1, curP);
+        if (!isHidden())
+            doTransChannel();
+
+    }
+
     private void updateSyncVideoSingle(Map<Integer, Integer> syncMap, int selId) {
         activeChannel.setT2S(selId);
         updateSyncVideoSingle(syncMap, false);
@@ -1161,6 +1321,153 @@ public class ConfVideoFragment extends BaseFragment implements OnClickListener {
         }
     }
 
+    private LocalCameraPosition getLocalPositionEx(int mode, int total, int orientationState) {
+
+        int rootW = getParentW();
+        int rootH = getParentH();
+        float ratio = 16f / 9f;
+
+        LocalCameraPosition local = new LocalCameraPosition();
+
+        if (mode == 0 || !isVisible() || isHidden()) {
+            //隐藏掉
+            local.setLeft(0);
+            local.setTop(0);
+            local.setWidth(1);
+            local.setHeight(1);
+        } else if (mode == VS_MODE_1){
+            local.setWidth(rootW);
+            local.setHeight(rootH);
+            //Log.d("InfowareLab.Debug", "ConfVideoView(VS_MODE_1).LocalCameraPosition: " + local.getWidth() + "x" + local.getHeight());
+        } else if (mode == VS_MODE_2) { //1对1的情况
+
+            if (!localCamera.isEnabled()) {
+                local.setLeft(0);
+                local.setTop(0);
+                local.setWidth(1);
+                local.setHeight(1);
+            } else {
+                int paddingTop = getResources().getDimensionPixelOffset(R.dimen.dp_10);
+                int paddingRight = getResources().getDimensionPixelOffset(R.dimen.dp_10);
+                local.setWidth((int) (rootW * smallVideoRatio));
+                if (orientationState == Configuration.ORIENTATION_PORTRAIT) {
+                    local.setHeight((int) (rootW * smallVideoRatio * ratio/*localCamera.getCameraWidth() / localCamera.getCameraHeight()*/));
+                } else
+                    local.setHeight((int) (rootW * smallVideoRatio / ratio/*localCamera.getCameraHeight() / localCamera.getCameraWidth()*/));
+                local.setTop(paddingTop);
+                local.setRight(paddingRight);
+                local.setLeft((int) (rootW - rootW * smallVideoRatio - paddingRight));
+                //Log.d("InfowareLab.Debug", "ConfVideoView(VS_MODE_2).LocalCameraPosition: " + local.getWidth() + "x" + local.getHeight());
+
+            }
+        }
+        else if (total >= 3 && total <= 4){
+            int p = mTopMargin;//getResources().getDimensionPixelOffset(R.dimen.dp_15);
+            int left = 0, right = 0, top = 0, bottom = 0, w = 0, h = 0;
+
+            if (total == 3) {
+                //total
+                left = rootW/4;
+                top = rootH/2 + p;
+                right = rootW/4;
+                bottom = 0;
+                w = rootW/2;
+                h = rootH/2;
+            } else if (total == 4) {
+                //total
+                left = rootW/2;
+                top = rootH/2 + p;
+                right = 0;
+                bottom = 0;
+                w = rootW/2;
+                h = rootH/2;
+            }
+            else {
+                left = (total - 1) % 2 * rootW / 2 + ((total - 1) / 4) * rootW;
+                top = ((total - 1) % 4 / 2) * (rootH / 2) + p;
+                right = 0;
+                bottom = 0;
+                w = rootW / 2;
+                h = rootH / 2;
+            }
+
+            local.setLeft(left);
+            local.setTop(top);
+            local.setRight(right);
+            local.setBottom(bottom);
+            local.setWidth(w);
+            local.setHeight(h);
+        }
+        else if (total <= 6){
+            int p = mTopMargin;//getResources().getDimensionPixelOffset(R.dimen.dp_15);
+            int left = 0, right = 0, top = 0, bottom = 0, w = 0, h = 0;
+
+            if (orientationState == Configuration.ORIENTATION_PORTRAIT) {
+                if (total == 5) {
+                    //total
+                    left = rootW / 4;
+                    top = rootH / 3 + p;
+                    right = rootW / 4;
+                    bottom = 0;
+                    w = rootW / 2;
+                    h = rootH / 3;
+                } else {
+                    left = rootW / 2;
+                    top = 2 * (rootH / 3) + p;
+                    right = 0;
+                    bottom = 0;
+                    w = rootW / 2;
+                    h = rootH / 3;
+                }
+            }
+            else {
+                 if (total == 5) {
+                    //total
+                    left = rootW / 3;
+                    top = rootH / 2 + p;
+                    right = rootW / 3;
+                    bottom = 0;
+                    w = rootW / 3;
+                    h = rootH / 2;
+                } else {
+                    left = 2 * rootW / 3;
+                    top = rootH / 2 + p;
+                    right = 0;
+                    bottom = 0;
+                    w = rootW / 3;
+                    h = rootH / 2;
+                }
+            }
+
+            local.setLeft(left);
+            local.setTop(top);
+            local.setRight(right);
+            local.setBottom(bottom);
+            local.setWidth(w);
+            local.setHeight(h);
+        }
+        else {
+            int p = mTopMargin;//getResources().getDimensionPixelOffset(R.dimen.dp_15);
+            int left = 0, right = 0, top = 0, bottom = 0, w = 0, h = 0;
+
+            left = (total - 1) % 3 * rootW / 3 + ((total - 1) / 9) * rootW;
+            top = ((total - 1) % 9 / 3) * (rootH / 3) + p;
+            right = 0;
+            bottom = 0;
+            w = rootW / 3;
+            h = rootH / 3;
+
+            local.setLeft(left);
+            local.setTop(top);
+            local.setRight(right);
+            local.setBottom(bottom);
+            local.setWidth(w);
+            local.setHeight(h);
+        }
+
+        return local;
+    }
+
     private LocalCameraPosition getLocalPosition(int mode, int total, int orientationState) {
 
         int rootW = getParentW();
@@ -1230,19 +1537,6 @@ public class ConfVideoFragment extends BaseFragment implements OnClickListener {
                 w = rootW / 2;
                 h = rootH / 2;
             }
-//            else if (total <= 9){
-//
-//                int col = (total-1)%3;
-//                int row = (total-1)/3 ;
-//
-//                left = rootW/3 * col;
-//                top = p + (row)* rootW/3;
-//                right = rootW/3 * (2-col);
-//                bottom = 0;
-//                w = rootW / 3;
-//                h = rootW / 3;
-//
-//            }
 
             local.setLeft(left);
             local.setTop(top);
@@ -1252,49 +1546,6 @@ public class ConfVideoFragment extends BaseFragment implements OnClickListener {
             local.setHeight(h);
         }
         return local;
-//        int rootW = getParentW();
-//        int rootH = getParentH();
-//        LocalCameraPosition local = new LocalCameraPosition();
-//        if (mode == 0) {
-//            local.setLeft(0);
-//            local.setTop(0);
-//            local.setWidth(1);
-//            local.setHeight(1);
-//        } else if (mode == VS_MODE_1) {
-//            local.setWidth(rootW);
-//            local.setHeight(rootH);
-//        } else if (mode == VS_MODE_2) {
-//            if (orientationState == Configuration.ORIENTATION_PORTRAIT) {
-//                local.setTop((count - 1) * rootH / 2);
-//                local.setWidth(rootW);
-//                local.setHeight(rootH / 2);
-//            } else {
-//                local.setLeft((count - 1) * rootW / 2);
-//                local.setWidth(rootW / 2);
-//                local.setHeight(rootH);
-//            }
-//        } else if (mode == VS_MODE_3) {
-//            if (orientationState == Configuration.ORIENTATION_PORTRAIT) {
-//                local.setTop((count - 1) * rootH / 3);
-//                local.setWidth(rootW);
-//                local.setHeight(rootH / 3);
-//            } else {
-//                local.setLeft((count - 1) * rootW / 3);
-//                local.setWidth(rootW / 3);
-//                local.setHeight(rootH);
-//            }
-//        } else if (mode == VS_MODE_4) {
-//            local.setLeft((count - 1) % 2 * rootW / 2);
-//            local.setTop((count - 1) / 2 * rootH / 2);
-//            local.setWidth(rootW / 2);
-//            local.setHeight(rootH / 2);
-//        } else if (mode == VS_MODE_0) {
-//            local.setLeft(0);
-//            local.setTop(0);
-//            local.setWidth(rootW);
-//            local.setHeight(rootH);
-//        }
-//        return local;
     }
 
     private void callLocalCamera(LocalCameraPosition localCameraPosition, boolean clickable) {
@@ -1920,6 +2171,238 @@ public class ConfVideoFragment extends BaseFragment implements OnClickListener {
 //            video.changeStatus(channelid, true);
 //            existingVideos.add(channelid);
 //        }
+    }
+
+    private void addVideoEx(int orientation, int total, int count, int channelid, int uid, boolean clickable) {
+
+        if (count > total) return;
+
+        Log.d("InfowareLab.Debug", "ConfVideoView.addVideoEx total =" + total + "；count=" + count);
+
+        int p = mTopMargin; //getResources().getDimensionPixelOffset(R.dimen.dp_15);
+        int rootW = getParentW();
+        int rootH = getParentH();
+        int left = 0, right = 0, top = 0, bottom = 0, w = 0, h = 0;
+
+        //如果只有一个远程视频，全屏显示
+        if (total == 1 || total == 2) {
+
+            left = 0;
+            top = 0 + p;
+            right = 0;
+            bottom = 0;
+            w = rootW;
+            h = rootH;
+        }
+        else if (total == 3) {
+            //total
+            left = rootW/2 * (count - 1);
+            top = p;//(count - 1) * rootH / 3;
+            right = 0;
+            bottom = 0;
+            w = rootW/2;
+            h = rootH/2;
+        } else if (total == 4) {
+            //total
+            if (count <= 2) {
+                left = rootW / 2 * (count - 1);
+                top = p;//(count - 1) * rootH / 3;
+                right = 0;
+                bottom = 0;
+                w = rootW / 2;
+                h = rootH / 2;
+            }
+            else
+            {
+                left = rootW/2 * (count - 3);
+                top = rootH/2 + p;//(count - 1) * rootH / 3;
+                right = 0;
+                bottom = 0;
+                w = rootW / 2;
+                h = rootH / 2;
+
+            }
+        } else if (total <= 6) {
+
+            if (orientation == Configuration.ORIENTATION_PORTRAIT) {
+                //total
+                if (count <= 2) {
+                    left = rootW / 2 * (count - 1);
+                    top = p;//(count - 1) * rootH / 3;
+                    right = 0;
+                    bottom = 0;
+                    w = rootW / 2;
+                    h = rootH / 3;
+                } else if (count <= 4) {
+                    left = rootW / 2 * (count - 3);
+                    top = p + rootH / 3;
+                    right = 0;
+                    bottom = 0;
+                    w = rootW / 2;
+                    h = rootH / 3;
+                }else {
+                    left = rootW / 2 * (count - 5);
+                    top = p + 2 * rootH / 3;
+                    right = 0;
+                    bottom = 0;
+                    w = rootW / 2;
+                    h = rootH / 3;
+
+                }
+            }
+            else if (orientation == Configuration.ORIENTATION_LANDSCAPE){
+                if (count <= 3) {
+                    left = rootW / 3 * (count - 1);
+                    top = p;//(count - 1) * rootH / 3;
+                    right = 0;
+                    bottom = 0;
+                    w = rootW / 3;
+                    h = rootH / 2;
+                } else {
+                    left = rootW / 3 * (count - 4);
+                    top = rootH / 2 + p;//(count - 1) * rootH / 3;
+                    right = 0;
+                    bottom = 0;
+                    w = rootW / 3;
+                    h = rootH / 2;
+
+                }
+            }
+        }
+        else if (total <= 9){
+            if (count <= 3) {
+                left = rootW / 3 * (count - 1);
+                top = p;//(count - 1) * rootH / 3;
+                right = 0;
+                bottom = 0;
+                w = rootW / 3;
+                h = rootH / 3;
+            } else if (count <= 6) {
+                left = rootW / 3 * (count - 4);
+                top = p + rootH / 3;
+                right = 0;
+                bottom = 0;
+                w = rootW / 3;
+                h = rootH / 3;
+            }else {
+                left = rootW / 3 * (count - 7);
+                top = p + 2 * rootH / 3;
+                right = 0;
+                bottom = 0;
+                w = rootW / 3;
+                h = rootH / 3;
+            }
+        }
+        else
+        {
+            left = (count - 1) % 3 * rootW / 3 + ((count - 1) / 9) * rootW;
+            top = ((count - 1) % 9 / 3) * (rootH / 3) + p;
+            right = 0;
+            bottom = 0;
+            w = rootW / 3;
+            h = rootH / 3;
+        }
+
+        UserBean user = userCommon.getUser(uid);
+
+        String name = "";
+        if(multideviceMap!=null&&!multideviceMap.isEmpty()&&multideviceMap.containsKey(channelid)){
+            name = multideviceMap.get(channelid);
+        }else{
+            name = user.getUsername();
+        }
+
+        Log.d("InfowareLab.Debug","ConfVideoView.multideviceMap size = " + multideviceMap.size());
+
+        boolean isHost = false;
+        if (user.getRole() == UserCommon.ROLE_SPEAKER || user.getRole() == UserCommon.ROLE_HOST) {
+            isHost = true;
+        } else {
+            isHost = false;
+        }
+        View v = rlVideoDecoder.findViewWithTag(channelid);
+        if (v != null) {
+
+            Log.d("InfowareLab.Debug", "VideoDecoderView exist!");
+
+            v.setClickable(clickable);
+            RelativeLayout.LayoutParams lp = (RelativeLayout.LayoutParams) v.getLayoutParams();
+            lp.setMargins(left, top, right, bottom);
+            lp.width = w;
+            lp.height = h;
+            v.setLayoutParams(lp);
+//            if (isHost) {
+//                v.setBackgroundResource(R.drawable.bg_item_video_host);
+//            } else {
+            v.setBackgroundResource(R.drawable.bg_item_video_nor);
+//            }
+            VideoDecodeView video = (VideoDecodeView) v.findViewById(R.id.video_item_video);
+            //video.setCurSVCLvl(lp.width - 2 * p, lp.height - 2 * p);
+            if (video.getChannelId() == 0) {
+                video.changeStatus(channelid, true);
+            }
+
+            video.resetSizeWithScreenSize(w, h);
+
+            String name1 = name;
+            if (isHost)
+                name1 += "(主持人)";
+
+            TextView tv = (TextView) v.findViewById(R.id.tv_item_video);
+            tv.setText(name1);
+            tv.setVisibility(View.VISIBLE);
+            setCutVideoClick(v, channelid);
+
+            TextView tv2= (TextView) v.findViewById(R.id.tv_item_video_center);
+            String name2 = "连接中：" + name;
+            tv2.setText(name2);
+            tv2.setVisibility(View.VISIBLE);
+        } else {
+
+            Log.d("InfowareLab.Debug", "VideoDecodeView NOT exist!!!!!!!!!:" + channelid);
+
+            RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+            lp.setMargins(left, top, right, bottom);
+            lp.width = w;
+            lp.height = h;
+
+            LayoutInflater inflater3 = LayoutInflater.from(getActivity());
+            FrameLayout fl = (FrameLayout) inflater3.inflate(R.layout.view_item_video, null);
+
+            fl.setClickable(clickable);
+            fl.setLayoutParams(lp);
+            fl.setTag(channelid);
+            setVideoViewTouch(fl);
+//            if (isHost) {
+//                fl.setBackgroundResource(R.drawable.bg_item_video_host);
+//            } else {
+            fl.setBackgroundResource(R.drawable.bg_item_video_nor);
+//            }
+
+            String name1 = name;
+            if (isHost)
+                name1 += "(主持人)";
+
+            TextView tv = (TextView) fl.findViewById(R.id.tv_item_video);
+            tv.setText(name1);
+            tv.setVisibility(View.VISIBLE);
+
+            TextView tv2= (TextView) fl.findViewById(R.id.tv_item_video_center);
+            String name2 = "连接中：" + name;
+            tv2.setText(name2);
+            tv2.setVisibility(View.VISIBLE);
+
+            setCutVideoClick(fl, channelid);
+            rlVideoDecoder.addView(fl);
+            VideoDecodeView video = (VideoDecodeView) fl.findViewById(R.id.video_item_video);
+
+            video.setSvc(isSupportSvc);
+            video.changeStatus(channelid, true);
+            video.resetSizeWithScreenSize(w, h);
+
+            existingVideos.add(channelid);
+
+        }
     }
 
     private void addVideoSingle(int count, int channelid, int uid, boolean clickable) {
@@ -2715,6 +3198,10 @@ public class ConfVideoFragment extends BaseFragment implements OnClickListener {
         if (orientationState == Configuration.ORIENTATION_PORTRAIT) {
             return ConferenceApplication.Root_W;
         } else {
+
+            if (ConferenceApplication.VIEW_ROOT_WIDTH == ConferenceApplication.Screen_H)
+                return ConferenceApplication.Screen_H;
+
             if (!ConferenceApplication.Keep_16_9)
                 return ConferenceApplication.Screen_H - ConferenceApplication.StateBar_H - ConferenceApplication.NavigationBar_H;
             else

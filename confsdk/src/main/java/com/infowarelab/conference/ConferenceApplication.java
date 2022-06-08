@@ -57,6 +57,9 @@ public class ConferenceApplication extends Application {
     public static int MAIN_VIDEO_W = 0;
     public static int MAIN_VIDEO_H = 0;
 
+    public static int VIEW_ROOT_WIDTH = 0;
+    public static int VIEW_ROOT_HEIGHT = 0;
+
     public static int Top_H = 0;
     public static int Bottom_H = 0;
 

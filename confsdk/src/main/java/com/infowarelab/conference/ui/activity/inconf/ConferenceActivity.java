@@ -5,6 +5,7 @@ import static android.bluetooth.BluetoothProfile.GATT_SERVER;
 import android.animation.Animator;
 import android.annotation.SuppressLint;
 import android.app.ActivityManager;
+import android.app.Application;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothManager;
@@ -653,6 +654,17 @@ public class ConferenceActivity extends BaseActivity implements ConfDsFragment.F
         setmRequestPermissionCallBack(this);
     }
 
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+
+        if (hasFocus){
+            ConferenceApplication.VIEW_ROOT_WIDTH = viewRoot.getMeasuredWidth();
+            ConferenceApplication.VIEW_ROOT_HEIGHT = viewRoot.getMeasuredHeight();
+        }
+
+        super.onWindowFocusChanged(hasFocus);
+    }
+
     private void initHandler() {
         initConfHandler();
         initAudioHandler();
@@ -1054,6 +1066,14 @@ public class ConferenceActivity extends BaseActivity implements ConfDsFragment.F
         restartHideBarTimer();
 
         PublicWay.setConfActivity(this);
+
+        viewRoot.post(new Runnable() {
+            @Override
+            public void run() {
+                ConferenceApplication.VIEW_ROOT_HEIGHT =viewRoot.getMeasuredHeight();
+                ConferenceApplication.VIEW_ROOT_WIDTH=viewRoot.getMeasuredWidth();
+            }
+        });
     }
 
     public static int getStatusBarHeight(Context context) {
@@ -1129,6 +1149,7 @@ public class ConferenceActivity extends BaseActivity implements ConfDsFragment.F
 
         ConferenceApplication.Root_W = ConferenceApplication.Screen_W;
         ConferenceApplication.Root_H = ConferenceApplication.Screen_H - ConferenceApplication.StateBar_H - ConferenceApplication.NavigationBar_H;
+
         //ConferenceApplication.Root_H = llRoot.getHeight()>0?llRoot.getHeight():ConferenceApplication.Screen_H;
         //ConferenceApplication.Root_W = llRoot.getWidth()>0?llRoot.getWidth():ConferenceApplication.Screen_W;
 
