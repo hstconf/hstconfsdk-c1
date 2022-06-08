@@ -393,7 +393,8 @@ public class ConfVideoFragment extends BaseFragment implements OnClickListener {
                         int key = item.getKey();
                         int value = item.getValue();
                         if (value == userBean.getUid()) {
-                            multideviceMap.put(key, cutName(userBean.getUsername(), 6) + "_" + c);
+                            multideviceMap.put(key, cutName(userBean.getUsername(), 6) + "_" + videoCommon.getDeviceName(key));
+                            //multideviceMap.put(key, videoCommon.getDeviceName(key));
                             c++;
                         }
                     }
