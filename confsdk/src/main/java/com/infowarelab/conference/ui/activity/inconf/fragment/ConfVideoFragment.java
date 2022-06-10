@@ -228,6 +228,10 @@ public class ConfVideoFragment extends BaseFragment implements OnClickListener {
         llNopermission.setClickable(true);
         setVideoViewTouch(llNopermission);
 
+        llClose.setTag(0);
+        llClose.setClickable(true);
+        setVideoViewTouch(llClose);
+
         rlVideoEncoder.setVisibility(View.VISIBLE);
         rlVideoDecoder.setVisibility(View.VISIBLE);
 

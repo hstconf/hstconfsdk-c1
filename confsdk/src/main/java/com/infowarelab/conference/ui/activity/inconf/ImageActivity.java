@@ -292,9 +292,12 @@ public class ImageActivity extends Activity {
      * @return
      */
     private Uri getUriForFile(Context mContext, File file) {
+
+        String packageName = getApplicationContext().getPackageName();
+
         Uri fileUri = null;
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            fileUri = FileProvider.getUriForFile(mContext, "com.infowarelab.hongshantongphone.sdk.fileprovider", file);
+            fileUri = FileProvider.getUriForFile(mContext, packageName + ".fileprovider", file);
         } else {
             fileUri = Uri.fromFile(file);
         }
