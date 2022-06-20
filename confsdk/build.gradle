@@ -2,6 +2,7 @@ plugins {
     id 'com.android.library'
     id 'maven-publish'
 }
+apply plugin: 'kotlin-android'
 
 group='com.github.hstconfsdk'
 
@@ -153,6 +154,7 @@ repositories {
     flatDir {
         dirs 'libs'
     }
+    mavenCentral()
 }
 
 afterEvaluate {
@@ -224,4 +226,21 @@ dependencies {
 
     compile'com.google.android.exoplayer:exoplayer:2.17.1'
     compile'com.google.android.exoplayer:extension-rtmp:2.17.1'
+
+    implementation 'com.github.QDong415:QLiveMessageHelper:v1.0'
+    implementation "androidx.core:core-ktx:+"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+
+    // Retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-moshi:2.9.0'
+
+    compile 'com.github.ctiao:DanmakuFlameMaster:0.9.25'
+    compile 'com.github.ctiao:ndkbitmap-armv7a:0.9.21'
+
+    compile 'com.github.ctiao:ndkbitmap-armv5:0.9.21'
+    compile 'com.github.ctiao:ndkbitmap-x86:0.9.21'
+    compile 'com.koushikdutta.async:androidasync:2.+'
+
+    implementation 'io.crossbar.autobahn:autobahn-android:21.7.1'
 }

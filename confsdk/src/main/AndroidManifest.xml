@@ -135,6 +135,10 @@
             </intent-filter>
         </activity>
         <activity
+            android:name="com.infowarelab.conference.live.LiveActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:configChanges="orientation|keyboardHidden|screenSize"/>
+        <activity
             android:name="com.umeng.qq.tencent.AssistActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait"

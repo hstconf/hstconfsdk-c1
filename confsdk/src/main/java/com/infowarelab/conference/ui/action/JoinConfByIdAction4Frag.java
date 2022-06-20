@@ -19,6 +19,7 @@ import android.widget.EditText;
         import androidx.annotation.RequiresApi;
 
 import com.infowarelab.conference.ConferenceApplication;
+import com.infowarelab.conference.live.LiveActivity;
 import com.infowarelab.conference.ui.activity.ActExoPlayer;
 import com.infowarelab.conference.ui.activity.inconf.ConferenceActivity;
 import com.infowarelab.hongshantongphone.R;
@@ -570,7 +571,12 @@ public class JoinConfByIdAction4Frag implements OnClickListener {
 //        intent.putExtra("conf_id", confId);
 //        mActivity.startActivity(intent);
 
-        Intent intent = new Intent(mActivity, ActExoPlayer.class);
+//        Intent intent = new Intent(mActivity, ActExoPlayer.class);
+//        intent.putExtra("rtmp_url", rtmpUrl);
+//        intent.putExtra("conf_id", confId);
+//        mActivity.startActivity(intent);
+
+        Intent intent = new Intent(mActivity, LiveActivity.class);
         intent.putExtra("rtmp_url", rtmpUrl);
         intent.putExtra("conf_id", confId);
         mActivity.startActivity(intent);

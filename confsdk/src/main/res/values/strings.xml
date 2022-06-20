@@ -56,6 +56,7 @@
     <string name="joinbuttonText2">进入会议</string>
     <string name="startbuttonText">开启会议</string>
     <string name="playbuttonText2">回看</string>
+    <string name="sendbuttonText2">发送</string>
     <string name="transcodebuttonText2">转码中</string>
     <string name="joinbcastText">进入直播</string>
     <string name="conflist_data_refresh">正在载入...</string>

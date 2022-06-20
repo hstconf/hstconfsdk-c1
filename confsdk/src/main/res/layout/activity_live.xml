@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/body_ll"
+    android:layout_width="match_parent"
+    android:background="@drawable/live_background"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/background_dark"
+        >
+
+        <com.google.android.exoplayer2.ui.StyledPlayerView
+            android:id="@+id/video_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="false"/>
+
+        <master.flame.danmaku.ui.widget.DanmakuView
+            android:id="@+id/sv_danmaku"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/tvMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="#00000000"
+            android:text="正在打开直播，请稍候..."
+            android:textAlignment="center"
+            android:textColor="#ffffff"
+            android:textSize="24sp"
+            android:visibility="visible" />
+
+        <LinearLayout
+            android:id="@+id/appbar_l"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_2"
+            android:layout_marginRight="@dimen/dp_2"
+            android:layout_marginBottom="@dimen/dp_4"
+            android:layout_gravity="bottom"
+            android:background="@android:color/transparent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/et_message_l"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="@dimen/height_5_80"
+                android:background="@drawable/bg_sc_txt"
+                android:layout_marginRight="@dimen/dp_2"
+                android:ellipsize="end"
+                android:ems="11"
+                android:focusable="true"
+                android:imeOptions="actionSend"
+                android:maxLines="1"
+                android:paddingLeft="@dimen/dp_10"
+                android:paddingTop="@dimen/dp_5"
+                android:paddingRight="@dimen/dp_5"
+                android:paddingBottom="@dimen/dp_5"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                android:textSize="@dimen/t_14" />
+
+            <Button
+                android:id="@+id/insert_tv_l"
+                android:layout_width="@dimen/height_12_80"
+                android:layout_height="@dimen/height_5_80"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/btn_sc_join"
+                android:text="@string/sendbuttonText2"
+                android:textColor="@color/white"
+                android:textSize="@dimen/t_14" />
+
+        </LinearLayout>
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/fl_live_chat"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:requiresFadingEdge="vertical"
+            android:overScrollMode="never" />
+
+        <TextView
+            android:id="@+id/unread_tv"
+            android:paddingLeft="14dp"
+            android:paddingRight="14dp"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:textColor="@color/black"
+            android:text=""
+            android:background="@drawable/live_unread_tips_background"
+            android:drawableEnd="@drawable/live_unread_tips_arrow"
+            android:drawablePadding="2dp"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_height="40dp"
+            android:elevation="8dp"
+            android:visibility="gone" >
+
+        </TextView>
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_2"
+        android:layout_marginRight="@dimen/dp_2"
+        android:layout_marginBottom="@dimen/dp_4"
+        android:layout_below="@id/fl_live_chat"
+        android:background="@android:color/transparent"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/dialog_join_et_pwd"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="@dimen/height_5_80"
+            android:background="@drawable/bg_sc_txt"
+            android:layout_marginRight="@dimen/dp_2"
+            android:ellipsize="end"
+            android:ems="11"
+            android:focusable="true"
+            android:imeOptions="actionSend"
+            android:maxLines="1"
+            android:paddingLeft="@dimen/dp_10"
+            android:paddingTop="@dimen/dp_5"
+            android:paddingRight="@dimen/dp_5"
+            android:paddingBottom="@dimen/dp_5"
+            android:singleLine="true"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:textSize="@dimen/t_14" />
+
+        <Button
+            android:id="@+id/insert_tv"
+            android:layout_width="@dimen/height_12_80"
+            android:layout_height="@dimen/height_5_80"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/btn_sc_join"
+            android:text="@string/sendbuttonText2"
+            android:textColor="@color/white"
+            android:textSize="@dimen/t_14" />
+
+        <Button
+            android:id="@+id/insert_infinite_tv"
+            android:layout_width="@dimen/height_12_80"
+            android:layout_height="@dimen/height_5_80"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/btn_sc_join"
+            android:text="@string/sendbuttonText2"
+            android:textColor="@color/white"
+            android:textSize="@dimen/t_14"
+            android:visibility="gone"/>
+
+        <Button
+            android:id="@+id/stop_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="18dp"
+            android:textColor="#000"
+            android:gravity="center_vertical"
+            android:visibility="gone"
+            android:text="停止"></Button>
+    </LinearLayout>
+
+</LinearLayout>

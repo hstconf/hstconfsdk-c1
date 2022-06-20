@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/body_ll"
     android:layout_width="match_parent"
@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:layout_height="match_parent">
 
-    <RelativeLayout
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@android:color/background_dark"
@@ -18,6 +18,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fitsSystemWindows="false"/>
+
+        <master.flame.danmaku.ui.widget.DanmakuView
+            android:id="@+id/sv_danmaku"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
         <TextView
             android:id="@+id/tvMessage"
@@ -30,17 +35,17 @@
             android:textColor="#ffffff"
             android:textSize="24sp"
             android:visibility="visible" />
-    </RelativeLayout>
-
+    </FrameLayout>
 
     <FrameLayout
+        android:id="@+id/fl_live_chat"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:visibility="gone">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_view"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="96dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:requiresFadingEdge="vertical"
@@ -72,27 +77,58 @@
         android:id="@+id/appbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/white"
+        android:layout_marginLeft="@dimen/dp_2"
+        android:layout_marginRight="@dimen/dp_2"
+        android:layout_marginBottom="@dimen/dp_4"
+        android:layout_gravity="bottom"
+        android:layout_below="@id/fl_live_chat"
+        android:background="@android:color/transparent"
         android:gravity="center_vertical"
         android:orientation="horizontal">
 
+        <EditText
+            android:id="@+id/et_message"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="@dimen/height_5_80"
+            android:background="@drawable/bg_sc_txt"
+            android:layout_marginRight="@dimen/dp_2"
+            android:ellipsize="end"
+            android:ems="11"
+            android:focusable="true"
+            android:imeOptions="actionSend"
+            android:maxLines="1"
+            android:paddingLeft="@dimen/dp_10"
+            android:paddingTop="@dimen/dp_5"
+            android:paddingRight="@dimen/dp_5"
+            android:paddingBottom="@dimen/dp_5"
+            android:singleLine="true"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:textSize="@dimen/t_14" />
+
         <Button
             android:id="@+id/insert_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="18dp"
-            android:textColor="#000"
-            android:gravity="center_vertical"
-            android:text="开始插入"></Button >
+            android:layout_width="@dimen/height_12_80"
+            android:layout_height="@dimen/height_5_80"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/btn_sc_join"
+            android:text="@string/sendbuttonText2"
+            android:textColor="@color/white"
+            android:textSize="@dimen/t_14" />
 
         <Button
             android:id="@+id/insert_infinite_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="18dp"
-            android:textColor="#000"
-            android:gravity="center_vertical"
-            android:text="自动每秒插入2条"></Button >
+            android:layout_width="@dimen/height_12_80"
+            android:layout_height="@dimen/height_5_80"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/btn_sc_join"
+            android:text="@string/sendbuttonText2"
+            android:textColor="@color/white"
+            android:textSize="@dimen/t_14"
+            android:visibility="gone"/>
 
         <Button
             android:id="@+id/stop_tv"
@@ -101,8 +137,8 @@
             android:layout_marginLeft="18dp"
             android:textColor="#000"
             android:gravity="center_vertical"
+            android:visibility="gone"
             android:text="停止"></Button>
     </LinearLayout>
 
-</LinearLayout>
-
+</FrameLayout>
