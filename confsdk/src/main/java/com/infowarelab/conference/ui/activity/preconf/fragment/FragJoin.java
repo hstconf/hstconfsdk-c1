@@ -61,6 +61,7 @@ public class FragJoin extends BaseFragment implements OnClickListener {
     //private ConferencePagerNumber mConferencePagerNumber;
 
     private TextView tvHistory;
+    private TextView tvFaceSignIn;
 
     private boolean isEnterFromItem = false;
 
@@ -172,6 +173,7 @@ public class FragJoin extends BaseFragment implements OnClickListener {
     private UnderlineButton btnConfList;
     private UnderlineButton btnBCastList;
 
+
     public int getFragmentId() { return id; }
     public boolean isLandscape() { return landscape; }
 
@@ -232,6 +234,8 @@ public class FragJoin extends BaseFragment implements OnClickListener {
             switchPage(1);
         }else if (v.getId() == R.id.tv_history){
             doSelect(5);
+        }else if (v.getId() == R.id.tv_face_sign_in){
+            doSelect(6);
         }
     }
 
@@ -272,6 +276,10 @@ public class FragJoin extends BaseFragment implements OnClickListener {
 
         tvHistory = joinView.findViewById(R.id.tv_history);
         tvHistory.setOnClickListener(this);
+
+        tvFaceSignIn = joinView.findViewById(R.id.tv_face_sign_in);
+        tvFaceSignIn.setOnClickListener(this);
+
 
         initPageView();
     }

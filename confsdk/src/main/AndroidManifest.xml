@@ -143,7 +143,11 @@
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-
+        <activity
+            android:name="com.infowarelab.conference.face.RegisterAndRecognizeActivity"
+            android:configChanges="orientation|screenSize|mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|fontScale"
+            android:screenOrientation="sensorLandscape"
+            android:launchMode="singleTop" />
         <meta-data
             android:name="UMENG_APPKEY"
             android:value="573d54b8e0f55a42ae0021d9" />

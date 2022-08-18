@@ -91,5 +91,7 @@
     <dimen name="dpx_49">49dp</dimen>
     <dimen name="dpx_50">50dp</dimen>
 
-
+    <dimen name="dialog_padding_size">12dp</dimen>
+    <dimen name="btn_close_margin_size">6dp</dimen>
+    <dimen name="common_bottom_margin">20dp</dimen>
 </resources>

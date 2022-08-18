@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <SurfaceView
+            android:id="@+id/single_camera_texture_preview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <com.infowarelab.conference.face.widget.FaceRectView
+            android:id="@+id/single_camera_face_rect_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+
+        <ImageView
+            android:id="@+id/scan_line"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|top"
+            android:layout_marginRight="371px"
+            android:layout_marginTop="80dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/scan_line" />
+
+        <ImageView
+            android:id="@+id/background_frame"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_frame_face" />
+
+        <TextView
+            android:id="@+id/sign_in_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="405px"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:background="@color/white"
+            android:text="@string/face_sign_in_title"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="32sp"
+            android:textStyle="bold"></TextView>
+
+        <LinearLayout
+            android:id="@+id/ll_sign_in_message"
+            android:layout_gravity="bottom"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="405px"
+            android:background="@color/white"
+            android:gravity="center"
+            android:layout_marginBottom="20dp"
+            >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/sign_in_success"
+                />
+
+            <TextView
+                android:id="@+id/sign_in_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:textSize="25sp"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:paddingTop="@dimen/dp_8"
+                android:paddingBottom="@dimen/dp_8"
+                android:text="@string/face_sign_in_message"></TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="475px"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:background="@color/white"
+            android:gravity="left|center_vertical"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/et_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/dp_20"
+                android:background="@drawable/bg_sc_register_input"
+                android:ellipsize="end"
+                android:ems="11"
+                android:focusable="true"
+                android:gravity="center"
+                android:hint="@string/item_input_face_name"
+                android:imeOptions="actionDone"
+                android:maxLines="1"
+                android:paddingTop="@dimen/dp_4"
+                android:paddingBottom="@dimen/dp_4"
+                android:singleLine="true"
+                android:textColor="#000000"
+                android:textColorHint="@color/black"
+                android:textSize="14sp"/>
+
+            <Button
+                android:id="@+id/btn_confirm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="@dimen/dp_20"
+                android:background="@drawable/btn_sc_register_2"
+                android:gravity="center"
+                android:minEms="5"
+                android:onClick="onConfirm"
+                android:text="@string/comm_confirm"
+                android:textColor="@color/white"
+                android:minHeight="@dimen/dp_16"
+                android:textSize="14sp"/>
+
+            <Button
+                android:id="@+id/btn_delete"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="@dimen/dp_20"
+                android:background="@drawable/btn_sc_register_2"
+                android:gravity="center"
+                android:minEms="5"
+                android:onClick="onDeleteAll"
+                android:text="@string/item_delete_all_face_name"
+                android:textColor="@color/white"
+                android:minHeight="@dimen/dp_16"
+                android:textSize="14sp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_sign_in_listview"
+            android:layout_gravity="right"
+            android:orientation="vertical"
+            android:layout_width="371px"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/sign_in_list_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#EE0B19"
+                android:textSize="16sp"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:paddingTop="@dimen/dp_4"
+                android:paddingBottom="@dimen/dp_4"
+                android:text="@string/face_sign_in_title"></TextView>
+
+            <ListView
+                android:id="@+id/sign_in_listview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="right"
+                android:background="#D63333"
+                android:divider="@null"
+                android:drawSelectorOnTop="false"
+                android:fadingEdge="none"
+                android:listSelector="#D63333"
+                android:overScrollMode="never"
+                android:scrollbars="none"
+                android:scrollingCache="false"></ListView>
+        </LinearLayout>
+    </FrameLayout>
+
+    <Switch
+        android:id="@+id/single_camera_switch_liveness_detect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_margin="@dimen/common_bottom_margin"
+        android:text="@string/liveness_detect"
+        android:visibility="gone"/>
+
+    <LinearLayout
+        android:layout_margin="@dimen/common_bottom_margin"
+        android:layout_gravity="bottom|start"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="register"
+            android:background="@drawable/record_bg"
+            android:paddingLeft="@dimen/dp_30"
+            android:paddingRight="@dimen/dp_30"
+            android:visibility="gone"
+            android:text="@string/register" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="switchCamera"
+            android:text="@string/switch_camera"
+            android:visibility="gone"/>
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/single_camera_recycler_view_person"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        />
+
+</FrameLayout>

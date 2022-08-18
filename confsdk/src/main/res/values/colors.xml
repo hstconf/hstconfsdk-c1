@@ -31,6 +31,7 @@
     <color name="app_main_hue_down">#FC0916</color>
     <color name="app_inconf_hue">#232227</color>
     <color name="app_main_hint">#DC0916</color>
+    <color name="app_sign_in_red">#EE0B19</color>
     <color name="app_main_hint_old">#EFEFF4</color>
     <color name="app_main_input_bg">#FDFEFF</color>
     <color name="app_main_input_stroke">#D7D8D9</color>
@@ -69,4 +70,7 @@
     <color name="light_blue_A400">#FF00B0FF</color>
     <color name="black_overlay">#66000000</color>
     <color name="color_black_59">#59000000</color>
+
+    <color name="color_bg_notification">#80000000</color>
+    <color name="color_bg_name">#80000000</color>
 </resources>

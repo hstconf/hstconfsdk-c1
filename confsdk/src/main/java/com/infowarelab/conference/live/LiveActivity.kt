@@ -334,13 +334,14 @@ class LiveActivity : AppCompatActivity(), SocketManager.ConnectListener, Analyti
             WindowManager.LayoutParams.FLAG_FULLSCREEN
         )
 
+        initView()
+
         socketManager = SocketManager()
 
         socketManager.mConnectListener = this
 
-        socketManager.start()
+        mConfId?.let { socketManager.start(it) }
 
-        initView()
     }
 
     private fun getOrientationState(): Int {
@@ -767,7 +768,7 @@ class LiveActivity : AppCompatActivity(), SocketManager.ConnectListener, Analyti
         if (mDanmakuView != null && mDanmakuView!!.isPrepared && mDanmakuView!!.isPaused) {
             mDanmakuView!!.resume()
         }
-        socketManager.start()
+        mConfId?.let { socketManager.start(it) }
     }
 
     override fun onPause() {

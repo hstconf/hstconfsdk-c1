@@ -12,6 +12,17 @@
         style="@style/style_rl_titleBar">
 
         <TextView
+            android:id="@+id/tv_face_sign_in"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:text="@string/socialize_16"
+            android:textColor="@color/white"
+            android:textSize="@dimen/t_18" />
+
+        <TextView
             android:id="@+id/act_home_tv_title_create"
             style="@style/style_tv_titleBar_mid"
             android:text="@string/socialize_10"

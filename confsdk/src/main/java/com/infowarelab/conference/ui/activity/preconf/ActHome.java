@@ -37,6 +37,7 @@ public class ActHome extends BaseFragmentActivity implements BaseFragment.onSwit
     private FragCreate fragCreate;
     private FragJoin fragJoin;
     private FragSet fragSet;
+    private FragSet fragSignIn;
     private Button btnCreate;
     private Button btnJoin;
     private Button btnSet;

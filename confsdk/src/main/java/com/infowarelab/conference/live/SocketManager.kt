@@ -1,27 +1,33 @@
 package com.infowarelab.conference.live
 
+import android.net.Uri
 import android.os.Handler
 import android.os.Looper
 import android.os.Message
 import android.util.Log
+import com.infowarelab.conference.utils.DESUtil
+import com.infowarelabsdk.conference.domain.LiveServiceBean
+import com.infowarelabsdk.conference.transfer.Config
+import com.infowarelabsdk.conference.util.StringUtil
 import com.squareup.moshi.JsonAdapter
 import com.squareup.moshi.Moshi
+import io.crossbar.autobahn.websocket.WebSocketConnection
+import io.crossbar.autobahn.websocket.WebSocketConnectionHandler
+import io.crossbar.autobahn.websocket.exceptions.WebSocketException
+import io.crossbar.autobahn.websocket.interfaces.IWebSocket
+import io.crossbar.autobahn.websocket.types.WebSocketOptions
 import okio.Buffer
 import java.lang.ref.WeakReference
+import java.net.URLEncoder
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.math.abs
-import io.crossbar.autobahn.websocket.WebSocketConnection
-import io.crossbar.autobahn.websocket.interfaces.IWebSocket
-import io.crossbar.autobahn.websocket.exceptions.WebSocketException
-
-import io.crossbar.autobahn.websocket.WebSocketConnectionHandler
-import io.crossbar.autobahn.websocket.types.WebSocketOptions
 
 
 class SocketManager {
 
-    private var mNeedToStop: Boolean? = false;
+    private var liveServiceBean: LiveServiceBean? = null
+    private var mNeedToStop: Boolean? = false
 
     //json解析
     private val jsonAdapter: JsonAdapter<LiveMessageModel> = Moshi.Builder().build().adapter<LiveMessageModel>(LiveMessageModel::class.java)
@@ -59,22 +65,40 @@ class SocketManager {
         }
     }
 
-    public fun start() {
-        var hostname = mHostname!!
-        if (!hostname.startsWith("ws://") && !hostname.startsWith("wss://")) {
-            hostname = "ws://$hostname"
-        }
-        val port = mPort!!
-        val wsuri: String
-        wsuri = if (port.isNotEmpty()) {
-            "$hostname:$port"
-        } else {
-            hostname
-        }
+    public fun start(confId: String): Boolean {
+
+        liveServiceBean = Config.getLiveServiceInfo(confId) ?: return false
+
+        var msgStr = "{\"ip\":$(liveServiceBean.ip),\"uid\":\$(liveServiceBean.visitUid)}"
+
+        //var msgStr = JSON.stringify(msgJson);
+
+        msgStr = Uri.encode(msgStr)
+
+        var enmsgStr: String? = DESUtil.encryption(msgStr, liveServiceBean!!.token)
+        var timestamp =  liveServiceBean!!.timestamp
+        var signature = DESUtil.MD5(liveServiceBean!!.token + enmsgStr).toString()
+        enmsgStr = URLEncoder.encode(enmsgStr);
+
+        var url = liveServiceBean!!.liveChatUrl+ liveServiceBean!!.liveChatContextPath+"/chat/" + liveServiceBean!!.confId+"/"+ liveServiceBean!!.nickname+"?timestamp="+timestamp+"&encryptmsg="+enmsgStr+"&signature="+signature+"&appId="+ liveServiceBean!!.appId+"&visitUid="+ liveServiceBean!!.visitUid +"&nickType="+ liveServiceBean!!.nickType
+
+        Log.d(TAG, "SocketManager: start: url =" + url)
+
+//        var hostname = mHostname!!
+//        if (!hostname.startsWith("ws://") && !hostname.startsWith("wss://")) {
+//            hostname = "ws://$hostname"
+//        }
+//        val port = mPort!!
+//        val wsuri: String
+//        wsuri = if (port.isNotEmpty()) {
+//            "$hostname:$port"
+//        } else {
+//            hostname
+//        }
         val connectOptions = WebSocketOptions()
         connectOptions.reconnectInterval = 5000
         try {
-            mConnection.connect(wsuri, object : WebSocketConnectionHandler() {
+            mConnection.connect(url, object : WebSocketConnectionHandler() {
                 override fun onOpen() {
                     Log.d(TAG, "SocketManager: onOpen")
 
@@ -97,7 +121,10 @@ class SocketManager {
         } catch (e: WebSocketException) {
             Log.d(TAG, e.toString())
         }
+
+        return true
     }
+
 
     public fun stop(){
         mNeedToStop = true;
@@ -106,10 +133,29 @@ class SocketManager {
         }
     }
 
-    public fun sendMessage(message: String): Boolean{
+    public fun sendMessage(message: String): Boolean {
 
         if (mConnection.isConnected) {
-            mConnection.sendMessage(message)
+
+            if(message.length > 4000){
+                //pubFun.alert(platform.messagetoolong)
+                return false
+            }
+
+            var method="boardcast"
+            var msgStr = "{\"uid\":${liveServiceBean?.visitUid},\"method\":${method},\"data\":${Uri.encode(message)},\"nickType\":${liveServiceBean?.nickType}"
+
+            msgStr = Uri.encode(msgStr);
+            var enmsgStr: String? = DESUtil.encryption(msgStr, liveServiceBean!!.token)
+            //var timestamp =  liveServiceBean!!.timestamp
+            var signature = DESUtil.MD5(liveServiceBean!!.token + enmsgStr).toString()
+            enmsgStr = URLEncoder.encode(enmsgStr);
+
+            var requestStr = "{\"appId\":${liveServiceBean!!.token},\"timestamp\":${liveServiceBean!!.timestamp},\"signature\":${signature},\"encryptmsg\":${enmsgStr}"
+
+            //var requestStr = JSON.stringify(requestJson);
+
+            mConnection.sendMessage(requestStr)
             return true
         }
         else

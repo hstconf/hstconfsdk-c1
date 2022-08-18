@@ -6,7 +6,7 @@ import android.content.SharedPreferences.Editor;
 
 import com.infowarelab.conference.ConferenceApplication;
 
-//import com.infowarelab.tvbox.base.BaseApplication;
+//import com.infowarelab.conference.base.BaseApplication;
 
 /**
  * SharedPreferences存储数据方式工具类
