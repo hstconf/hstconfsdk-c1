@@ -1495,4 +1495,9 @@ public class RegisterAndRecognizeActivity extends BaseActivity implements ViewTr
 
         ToastUtil.showMessage(this,"录入人脸数据全部清除。",2000);
     }
+
+    public void onReturn(View view) {
+
+        onBackPressed();
+    }
 }

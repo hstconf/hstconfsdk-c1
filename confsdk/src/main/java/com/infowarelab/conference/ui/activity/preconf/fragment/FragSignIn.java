@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
@@ -34,7 +35,7 @@ public class FragSignIn extends BaseFragment {
     private View signInView;
     private  Button btnSignIn;
     private Button btnRegister;
-    private TextView tvReturn;
+    private ImageButton btnReturn;
     private Activity mActivity;
     private boolean landscape = false;
     private int screenWidth = 0;
@@ -124,8 +125,8 @@ public class FragSignIn extends BaseFragment {
             }
         });
 
-        tvReturn = (TextView) signInView.findViewById(R.id.tv_return);
-        tvReturn.setOnClickListener(new View.OnClickListener() {
+        btnReturn = (ImageButton) signInView.findViewById(R.id.btn_return);
+        btnReturn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (Utils.isFastClick())return;
