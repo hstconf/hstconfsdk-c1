@@ -26,13 +26,14 @@ import com.infowarelabsdk.conference.util.FileUtil;
 import com.infowarelabsdk.conference.util.Utils;
 
 import me.jessyan.autosize.AutoSizeConfig;
+import me.jessyan.autosize.internal.CustomAdapt;
 
 /**
  * Created by sdvye on 2019/6/10.
  */
 
 @SuppressLint("ValidFragment")
-public class FragSignIn extends BaseFragment {
+public class FragSignIn extends BaseFragment implements CustomAdapt {
 
     private View signInView;
     private  Button btnSignIn;
@@ -185,4 +186,13 @@ public class FragSignIn extends BaseFragment {
         }
     }
 
+    @Override
+    public boolean isBaseOnWidth() {
+        return true;
+    }
+
+    @Override
+    public float getSizeInDp() {
+        return 853.33f;
+    }
 }

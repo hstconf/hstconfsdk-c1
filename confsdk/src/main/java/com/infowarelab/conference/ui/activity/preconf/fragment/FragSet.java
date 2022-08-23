@@ -28,8 +28,9 @@ import java.io.File;
 import java.text.DecimalFormat;
 
 import me.jessyan.autosize.AutoSizeConfig;
+import me.jessyan.autosize.internal.CustomAdapt;
 
-public class FragSet extends BaseFragment implements OnClickListener {
+public class FragSet extends BaseFragment implements OnClickListener, CustomAdapt {
     private View setView;
     private TextView tvCache;
     private LinearLayout ll1, ll2, ll3, ll4, ll5;
@@ -262,6 +263,16 @@ public class FragSet extends BaseFragment implements OnClickListener {
                 e.printStackTrace();
             }
         }
+    }
+
+    @Override
+    public boolean isBaseOnWidth() {
+        return true;
+    }
+
+    @Override
+    public float getSizeInDp() {
+        return 853.33f;
     }
 
     public class MyThread1 implements Runnable {      // thread

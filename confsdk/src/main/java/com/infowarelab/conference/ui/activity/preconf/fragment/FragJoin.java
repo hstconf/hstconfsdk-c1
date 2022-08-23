@@ -565,7 +565,7 @@ public class FragJoin extends BaseFragment implements OnClickListener, CustomAda
 
     @Override
     public float getSizeInDp() {
-        return 853;
+        return 853.33f;
     }
 
 //    public boolean isFromItem() {

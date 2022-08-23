@@ -64,8 +64,9 @@ import java.util.Calendar;
 import java.util.Date;
 
 import me.jessyan.autosize.AutoSizeConfig;
+import me.jessyan.autosize.internal.CustomAdapt;
 
-public class FragCreate extends BaseFragment implements OnClickListener, OnFocusChangeListener, RadioGroup.OnCheckedChangeListener, CompoundButton.OnCheckedChangeListener {
+public class FragCreate extends BaseFragment implements OnClickListener, OnFocusChangeListener, RadioGroup.OnCheckedChangeListener, CompoundButton.OnCheckedChangeListener, CustomAdapt {
     private View createView;
 
     private static final int id = 10002;
@@ -954,5 +955,15 @@ public class FragCreate extends BaseFragment implements OnClickListener, OnFocus
 //            calendar.add( Calendar.HOUR, 2);
 //            tvEndTime.setText(getTime(calendar.getTime()));
 //        }
+    }
+
+    @Override
+    public boolean isBaseOnWidth() {
+        return true;
+    }
+
+    @Override
+    public float getSizeInDp() {
+        return 853.33f;
     }
 }

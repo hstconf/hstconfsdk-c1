@@ -43,9 +43,10 @@ import com.infowarelabsdk.conference.util.FileUtil;
 import android.widget.ImageButton;
 
 import me.jessyan.autosize.AutoSizeConfig;
+import me.jessyan.autosize.internal.CustomAdapt;
 
 public class FragJoinById extends BaseFragment implements View.OnFocusChangeListener,
-        OnClickListener, TextWatcher {
+        OnClickListener, TextWatcher, CustomAdapt {
 
     private static final int id = 10003;
 
@@ -487,4 +488,13 @@ public class FragJoinById extends BaseFragment implements View.OnFocusChangeList
         }
     }
 
+    @Override
+    public boolean isBaseOnWidth() {
+        return true;
+    }
+
+    @Override
+    public float getSizeInDp() {
+        return 853.33f;
+    }
 }

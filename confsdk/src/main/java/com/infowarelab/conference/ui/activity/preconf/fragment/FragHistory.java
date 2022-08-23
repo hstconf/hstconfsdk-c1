@@ -44,8 +44,9 @@ import java.util.LinkedList;
 import java.util.List;
 
 import me.jessyan.autosize.AutoSizeConfig;
+import me.jessyan.autosize.internal.CustomAdapt;
 
-public class FragHistory extends BaseFragment implements OnClickListener {
+public class FragHistory extends BaseFragment implements OnClickListener, CustomAdapt {
     private static final String TAG = "InfowareLab.Debug";
     private static final int id = 10001;
     private View joinView;
@@ -547,6 +548,16 @@ public class FragHistory extends BaseFragment implements OnClickListener {
             //if (mConferencePagerListView != null) mConferencePagerListView.refreshAdapter();
             //if (mConferencePagerNumber != null) mConferencePagerNumber.resumeLayout();
         }
+    }
+
+    @Override
+    public boolean isBaseOnWidth() {
+        return true;
+    }
+
+    @Override
+    public float getSizeInDp() {
+        return 853.33f;
     }
 
 //    public boolean isFromItem() {
