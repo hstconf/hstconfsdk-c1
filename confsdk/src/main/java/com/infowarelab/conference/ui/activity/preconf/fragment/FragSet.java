@@ -27,6 +27,8 @@ import com.infowarelab.hongshantongphone.R;
 import java.io.File;
 import java.text.DecimalFormat;
 
+import me.jessyan.autosize.AutoSizeConfig;
+
 public class FragSet extends BaseFragment implements OnClickListener {
     private View setView;
     private TextView tvCache;
@@ -46,6 +48,8 @@ public class FragSet extends BaseFragment implements OnClickListener {
     public View onCreateView(LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         // TODO Auto-generated method stub
+        AutoSizeConfig.getInstance().setCustomFragment(true);
+
         setView = inflater.inflate(R.layout.a6_preconf_set, container, false);
         initView();
         return setView;

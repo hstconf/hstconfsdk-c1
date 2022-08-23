@@ -6,15 +6,20 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <SurfaceView
             android:id="@+id/single_camera_texture_preview"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_width="568.89dp"
+            android:layout_height="320dp"
+            android:layout_gravity="left|center_vertical"
+            android:layout_marginLeft="71.11dp"/>
 
         <com.infowarelab.conference.face.widget.FaceRectView
             android:id="@+id/single_camera_face_rect_view"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="568.89dp"
+            android:layout_height="320dp"
+            android:layout_gravity="left|center_vertical"
+            android:layout_marginLeft="71.11dp"/>
             />
 
         <ImageView
@@ -22,15 +27,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="left|top"
-            android:layout_marginRight="371px"
-            android:layout_marginTop="80dp"
+            android:layout_marginRight="71.11dp"
+            android:layout_marginTop="100dp"
             android:scaleType="centerCrop"
             android:src="@drawable/scan_line" />
 
         <ImageView
             android:id="@+id/background_frame"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="853.33dp"
+            android:layout_height="533.33dp"
+            android:layout_gravity="left|center_vertical"
             android:background="@drawable/bg_frame_face" />
 
         <Button
@@ -53,25 +59,24 @@
 
         <TextView
             android:id="@+id/sign_in_title"
-            android:layout_width="match_parent"
+            android:layout_width="568.89dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:layout_marginRight="338px"
             android:background="@color/white"
             android:gravity="center"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="71.11dp"
             android:text="@string/face_sign_in_title"
             android:textAlignment="center"
             android:textColor="@color/black"
-            android:textSize="32sp"
-            android:textStyle="bold"></TextView>
+            android:textSize="32sp"></TextView>
 
         <LinearLayout
             android:id="@+id/ll_sign_in_message"
-            android:layout_width="match_parent"
+            android:layout_width="568.89dp"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
-            android:layout_marginRight="338px"
-            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="71.11dp"
+            android:layout_marginBottom="15dp"
             android:background="@color/white"
             android:gravity="center"
             android:orientation="horizontal">
@@ -86,8 +91,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@color/white"
-                android:paddingTop="@dimen/dp_8"
-                android:paddingBottom="@dimen/dp_8"
                 android:text="@string/face_sign_in_message"
                 android:textAlignment="center"
                 android:textColor="@color/black"
@@ -96,19 +99,19 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="475px"
+            android:layout_width="217dp"
             android:layout_height="match_parent"
             android:layout_gravity="right"
             android:background="@color/white"
-            android:layout_marginRight="@dimen/dp_20"
-            android:gravity="left|center_vertical"
+            android:gravity="center"
             android:orientation="vertical">
 
             <EditText
                 android:id="@+id/et_name"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="@dimen/dp_20"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
                 android:background="@drawable/bg_sc_register_input"
                 android:ellipsize="end"
                 android:ems="11"
@@ -129,7 +132,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
-                android:layout_marginRight="@dimen/dp_20"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
                 android:background="@drawable/btn_sc_register_2"
                 android:gravity="center"
                 android:minEms="5"
@@ -144,7 +148,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
-                android:layout_marginRight="@dimen/dp_20"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
                 android:background="@drawable/btn_sc_register_2"
                 android:gravity="center"
                 android:minEms="5"
@@ -160,7 +165,7 @@
             android:id="@+id/ll_sign_in_listview"
             android:layout_gravity="right"
             android:orientation="vertical"
-            android:layout_width="371px"
+            android:layout_width="200dp"
             android:layout_height="match_parent"
             android:visibility="gone">
 

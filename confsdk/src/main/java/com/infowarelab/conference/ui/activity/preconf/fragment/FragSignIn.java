@@ -25,6 +25,8 @@ import com.infowarelabsdk.conference.util.Constants;
 import com.infowarelabsdk.conference.util.FileUtil;
 import com.infowarelabsdk.conference.util.Utils;
 
+import me.jessyan.autosize.AutoSizeConfig;
+
 /**
  * Created by sdvye on 2019/6/10.
  */
@@ -148,6 +150,8 @@ public class FragSignIn extends BaseFragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        AutoSizeConfig.getInstance().setCustomFragment(true);
+
         mActivity = getActivity();
 
         initOrientation();

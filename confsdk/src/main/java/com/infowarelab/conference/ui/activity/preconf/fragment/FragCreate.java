@@ -63,6 +63,8 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
+import me.jessyan.autosize.AutoSizeConfig;
+
 public class FragCreate extends BaseFragment implements OnClickListener, OnFocusChangeListener, RadioGroup.OnCheckedChangeListener, CompoundButton.OnCheckedChangeListener {
     private View createView;
 
@@ -268,6 +270,8 @@ public class FragCreate extends BaseFragment implements OnClickListener, OnFocus
     @Override
     public View onCreateView(LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
+
+        AutoSizeConfig.getInstance().setCustomFragment(true);
 
         mActivity = getActivity();
 

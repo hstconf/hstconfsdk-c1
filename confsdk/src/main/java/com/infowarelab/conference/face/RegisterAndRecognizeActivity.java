@@ -100,8 +100,9 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
+import me.jessyan.autosize.internal.CustomAdapt;
 
-public class RegisterAndRecognizeActivity extends BaseActivity implements ViewTreeObserver.OnGlobalLayoutListener {
+public class RegisterAndRecognizeActivity extends BaseActivity implements ViewTreeObserver.OnGlobalLayoutListener, CustomAdapt {
     private static final String TAG = "InfowareLab.Face";
     private static final int MAX_DETECT_NUM = 10;
     private static final int MIN_DETECT_SIZE = 32;
@@ -510,6 +511,9 @@ public class RegisterAndRecognizeActivity extends BaseActivity implements ViewTr
             getWindowManager().getDefaultDisplay().getMetrics(dm);
         }
         ConferenceApplication.DENSITY = dm.density;
+        ConferenceApplication.X_DPI = dm.xdpi;
+        ConferenceApplication.Y_DPI = dm.ydpi;
+
         if (dm.widthPixels > dm.heightPixels) {
             ConferenceApplication.SCREEN_WIDTH = dm.widthPixels;
             ConferenceApplication.SCREEN_HEIGHT = dm.heightPixels;
@@ -561,6 +565,8 @@ public class RegisterAndRecognizeActivity extends BaseActivity implements ViewTr
                 + " StateH=" + ConferenceApplication.StateBar_H
                 + " KeyH=" + ConferenceApplication.NavigationBar_H
                 + " Density=" + ConferenceApplication.DENSITY
+                + " XDPI = " + ConferenceApplication.X_DPI
+                + " YDPI = " + ConferenceApplication.Y_DPI
                 + " Top_H=" + ConferenceApplication.Top_H
                 + " Bottom_H=" + ConferenceApplication.Bottom_H);
 
@@ -574,25 +580,25 @@ public class RegisterAndRecognizeActivity extends BaseActivity implements ViewTr
 
         previewView = findViewById(R.id.single_camera_texture_preview);
 
-        float ratioX = ConferenceApplication.SCREEN_WIDTH / 1920.0f;
-        float ratioY = ConferenceApplication.SCREEN_HEIGHT / 1200.0f;
-
-        int left = (int) ((mCenterX - mVideoWidth/2) * ratioX);
-        int right = (int) ((ConferenceApplication.SCREEN_WIDTH - mCenterX - mVideoWidth/2) * ratioX);
-        int top = (int) ((mCenterY - mVideoHeight/2) * ratioY);
-        int bottom = (int) ((ConferenceApplication.SCREEN_HEIGHT - mCenterY - mVideoHeight/2) * ratioY);
-
-        FrameLayout.LayoutParams params = (FrameLayout.LayoutParams) previewView.getLayoutParams();
-        params.setMargins(left, top, right, bottom);
-        params.width = mVideoWidth;
-        params.height = mVideoHeight;
-        previewView.setLayoutParams(params);
+//        float ratioX = ConferenceApplication.SCREEN_WIDTH / 1920.0f;
+//        float ratioY = ConferenceApplication.SCREEN_HEIGHT / 1200.0f;
+//
+//        int left = (int) ((mCenterX - mVideoWidth/2) * ratioX);
+//        int right = (int) ((ConferenceApplication.SCREEN_WIDTH - mCenterX - mVideoWidth/2) * ratioX);
+//        int top = (int) ((mCenterY - mVideoHeight/2) * ratioY);
+//        int bottom = (int) ((ConferenceApplication.SCREEN_HEIGHT - mCenterY - mVideoHeight/2) * ratioY);
+//
+//        FrameLayout.LayoutParams params = (FrameLayout.LayoutParams) previewView.getLayoutParams();
+//        params.setMargins(left, top, right, bottom);
+//        params.width = mVideoWidth;
+//        params.height = mVideoHeight;
+//        previewView.setLayoutParams(params);
 
         //在布局结束后才做初始化操作
         previewView.getViewTreeObserver().addOnGlobalLayoutListener(this);
 
         faceRectView = findViewById(R.id.single_camera_face_rect_view);
-        faceRectView.setLayoutParams(params);
+        //faceRectView.setLayoutParams(params);
 
         switchLivenessDetect = findViewById(R.id.single_camera_switch_liveness_detect);
         switchLivenessDetect.setChecked(livenessDetect);
@@ -1499,5 +1505,16 @@ public class RegisterAndRecognizeActivity extends BaseActivity implements ViewTr
     public void onReturn(View view) {
 
         onBackPressed();
+    }
+
+
+    @Override
+    public boolean isBaseOnWidth() {
+        return true;
+    }
+
+    @Override
+    public float getSizeInDp() {
+        return 853;
     }
 }

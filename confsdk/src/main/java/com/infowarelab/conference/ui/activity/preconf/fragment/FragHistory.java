@@ -43,6 +43,8 @@ import com.infowarelabsdk.conference.domain.ConferenceBean;
 import java.util.LinkedList;
 import java.util.List;
 
+import me.jessyan.autosize.AutoSizeConfig;
+
 public class FragHistory extends BaseFragment implements OnClickListener {
     private static final String TAG = "InfowareLab.Debug";
     private static final int id = 10001;
@@ -175,6 +177,8 @@ public class FragHistory extends BaseFragment implements OnClickListener {
     @Override
     public View onCreateView(LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
+
+        AutoSizeConfig.getInstance().setCustomFragment(true);
 
         mActivity = getActivity();
 

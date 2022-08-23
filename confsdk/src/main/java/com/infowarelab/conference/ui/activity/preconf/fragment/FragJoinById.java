@@ -41,6 +41,9 @@ import com.infowarelabsdk.conference.util.Constants;
 import com.infowarelabsdk.conference.util.FileUtil;
 
 import android.widget.ImageButton;
+
+import me.jessyan.autosize.AutoSizeConfig;
+
 public class FragJoinById extends BaseFragment implements View.OnFocusChangeListener,
         OnClickListener, TextWatcher {
 
@@ -127,6 +130,9 @@ public class FragJoinById extends BaseFragment implements View.OnFocusChangeList
     public View onCreateView(LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         // TODO Auto-generated method stub
+
+        AutoSizeConfig.getInstance().setCustomFragment(true);
+
         mActivity = getActivity();
         initOrientation();
         if (!landscape)

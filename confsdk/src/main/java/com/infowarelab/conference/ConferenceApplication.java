@@ -38,6 +38,9 @@ public class ConferenceApplication extends Application {
     public static int SCREEN_WIDTH = 0;
     public static int SCREEN_HEIGHT = 0;
     public static float DENSITY = 0;
+    public static float X_DPI = 0;
+    public static float Y_DPI = 0;
+
     public static Handler mConfIdHandler = null;
 
     public static int Screen_W = 0;

@@ -49,7 +49,10 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class FragJoin extends BaseFragment implements OnClickListener {
+import me.jessyan.autosize.AutoSizeConfig;
+import me.jessyan.autosize.internal.CustomAdapt;
+
+public class FragJoin extends BaseFragment implements OnClickListener, CustomAdapt {
     private static final String TAG = "InfowareLab.Debug";
     private static final int id = 10001;
     private View joinView;
@@ -180,6 +183,8 @@ public class FragJoin extends BaseFragment implements OnClickListener {
     @Override
     public View onCreateView(LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
+
+        AutoSizeConfig.getInstance().setCustomFragment(true);
 
         mActivity = getActivity();
 
@@ -551,6 +556,16 @@ public class FragJoin extends BaseFragment implements OnClickListener {
             //if (mConferencePagerListView != null) mConferencePagerListView.refreshAdapter();
             //if (mConferencePagerNumber != null) mConferencePagerNumber.resumeLayout();
         }
+    }
+
+    @Override
+    public boolean isBaseOnWidth() {
+        return true;
+    }
+
+    @Override
+    public float getSizeInDp() {
+        return 853;
     }
 
 //    public boolean isFromItem() {
