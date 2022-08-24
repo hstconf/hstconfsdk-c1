@@ -19,8 +19,11 @@ import com.infowarelabsdk.conference.common.impl.UserCommonImpl;
 import com.infowarelabsdk.conference.confctrl.UserCommon;
 import com.infowarelabsdk.conference.transfer.Config;
 
+import me.jessyan.autosize.internal.CancelAdapt;
+import me.jessyan.autosize.internal.CustomAdapt;
 
-public class ConfInfoView extends BaseFragment implements View.OnClickListener {
+
+public class ConfInfoView extends BaseFragment implements View.OnClickListener, CancelAdapt {
     private View infoView;
 
     private TextView tvTopic, tvId, tvHost, tvPwd, tvHostpwd;
@@ -146,4 +149,14 @@ public class ConfInfoView extends BaseFragment implements View.OnClickListener {
     public boolean getOnBackPressed() {
         return true;
     }
+
+//    @Override
+//    public boolean isBaseOnWidth() {
+//        return true;
+//    }
+//
+//    @Override
+//    public float getSizeInDp() {
+//        return 853.33f;
+//    }
 }

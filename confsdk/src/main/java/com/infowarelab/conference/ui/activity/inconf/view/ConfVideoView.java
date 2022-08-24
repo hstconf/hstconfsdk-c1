@@ -51,7 +51,9 @@ import java.util.LinkedList;
 import java.util.Map;
 import java.util.Set;
 
-public class ConfVideoView extends BaseFragment implements OnClickListener {
+import me.jessyan.autosize.internal.CancelAdapt;
+
+public class ConfVideoView extends BaseFragment implements OnClickListener, CancelAdapt {
     private View view;
     private boolean isSupportSvc = false;
     private boolean isTile = false;

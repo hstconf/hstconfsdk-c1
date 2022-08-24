@@ -31,7 +31,11 @@ import com.infowarelabsdk.conference.common.CommonFactory;
 import com.infowarelabsdk.conference.common.impl.ShareDtCommonImpl;
 import com.infowarelabsdk.conference.shareDt.ShareDtCommon;
 
-public class ConfASFragment extends BaseFragment implements OnClickListener {
+import me.jessyan.autosize.AutoSizeConfig;
+import me.jessyan.autosize.internal.CancelAdapt;
+import me.jessyan.autosize.internal.CustomAdapt;
+
+public class ConfASFragment extends BaseFragment implements OnClickListener, CancelAdapt {
     private ShareDtCommonImpl asCommon = (ShareDtCommonImpl) commonFactory.getSdCommon();
 
     private View view;
@@ -59,6 +63,9 @@ public class ConfASFragment extends BaseFragment implements OnClickListener {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         Log.d("InfowareLab.Debug", "ConfASView.onCreateView isAdded=" + isAdded() + " isVisibleToUser=" + getUserVisibleHint());
+
+        AutoSizeConfig.getInstance().setCustomFragment(true);
+
         view = inflater.inflate(R.layout.conference_ds_phone, container, false);
         initView();
         initHandler();
@@ -600,4 +607,14 @@ public class ConfASFragment extends BaseFragment implements OnClickListener {
             }
         }
     };
+
+//    @Override
+//    public boolean isBaseOnWidth() {
+//        return true;
+//    }
+//
+//    @Override
+//    public float getSizeInDp() {
+//        return 853.33f;
+//    }
 }

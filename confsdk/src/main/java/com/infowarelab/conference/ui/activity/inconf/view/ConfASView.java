@@ -31,7 +31,9 @@ import com.infowarelabsdk.conference.common.CommonFactory;
 import com.infowarelabsdk.conference.common.impl.ShareDtCommonImpl;
 import com.infowarelabsdk.conference.shareDt.ShareDtCommon;
 
-public class ConfASView extends BaseFragment implements OnClickListener {
+import me.jessyan.autosize.internal.CancelAdapt;
+
+public class ConfASView extends BaseFragment implements OnClickListener, CancelAdapt {
     private ShareDtCommonImpl asCommon = (ShareDtCommonImpl) commonFactory.getSdCommon();
 
     private View view;

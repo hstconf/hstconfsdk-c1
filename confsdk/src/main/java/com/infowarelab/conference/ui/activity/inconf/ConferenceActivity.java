@@ -117,11 +117,12 @@ import java.util.Set;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import me.jessyan.autosize.internal.CancelAdapt;
 import me.jessyan.autosize.internal.CustomAdapt;
 
 @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
 public class ConferenceActivity extends BaseActivity implements ConfDsFragment.FragmentInteraction
-        , ScreenCaptureStreamCallback, BaseActivity.RequestPermissionCallBack, CustomAdapt {
+        , ScreenCaptureStreamCallback, BaseActivity.RequestPermissionCallBack, CancelAdapt {
 
     private static final String TAG = "InfowareLab.Debug";
     public static boolean isLogin = false;
@@ -2068,15 +2069,15 @@ public class ConferenceActivity extends BaseActivity implements ConfDsFragment.F
 
     }
 
-    @Override
-    public boolean isBaseOnWidth() {
-        return true;
-    }
-
-    @Override
-    public float getSizeInDp() {
-        return 853;
-    }
+//    @Override
+//    public boolean isBaseOnWidth() {
+//        return true;
+//    }
+//
+//    @Override
+//    public float getSizeInDp() {
+//        return 853.33f;
+//    }
 
     class VideoSyncStop extends Thread {
         public void run() {

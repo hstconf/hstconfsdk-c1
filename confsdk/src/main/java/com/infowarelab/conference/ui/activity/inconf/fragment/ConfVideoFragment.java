@@ -54,7 +54,11 @@ import java.util.Set;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class ConfVideoFragment extends BaseFragment implements OnClickListener {
+import me.jessyan.autosize.AutoSizeConfig;
+import me.jessyan.autosize.internal.CancelAdapt;
+import me.jessyan.autosize.internal.CustomAdapt;
+
+public class ConfVideoFragment extends BaseFragment implements OnClickListener, CancelAdapt {
     private TimerTask task = null;
     private View view;
     private boolean isSupportSvc = false;
@@ -131,6 +135,9 @@ public class ConfVideoFragment extends BaseFragment implements OnClickListener {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
+        AutoSizeConfig.getInstance().setCustomFragment(true);
+
         view = inflater.inflate(R.layout.video_fragment, container, false);
         initView();
         initVideo();
@@ -3376,6 +3383,16 @@ public class ConfVideoFragment extends BaseFragment implements OnClickListener {
             updateVideoShow(true);
         }
     };
+
+//    @Override
+//    public boolean isBaseOnWidth() {
+//        return true;
+//    }
+//
+//    @Override
+//    public float getSizeInDp() {
+//        return 853.33f;
+//    }
 
     private class ActiveChannel {
         int lastChannel;

@@ -46,7 +46,9 @@ import org.json.JSONObject;
 import java.util.LinkedHashMap;
 import java.util.List;
 
-public class ConfDsView extends BaseFragment implements OnClickListener, OnTouchListener {
+import me.jessyan.autosize.internal.CancelAdapt;
+
+public class ConfDsView extends BaseFragment implements OnClickListener, OnTouchListener, CancelAdapt {
     private View view;
 
     private RelativeLayout rlRoot;

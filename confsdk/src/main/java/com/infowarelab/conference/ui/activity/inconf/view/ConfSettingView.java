@@ -21,8 +21,11 @@ import com.infowarelabsdk.conference.util.Constants;
 import com.infowarelabsdk.conference.util.FileUtil;
 import com.infowarelabsdk.conference.util.StringUtil;
 
+import me.jessyan.autosize.internal.CancelAdapt;
+import me.jessyan.autosize.internal.CustomAdapt;
 
-public class ConfSettingView extends BaseFragment implements View.OnClickListener {
+
+public class ConfSettingView extends BaseFragment implements View.OnClickListener, CancelAdapt {
     private View settingView;
 
     private ImageView iv1, iv2, iv3, ivClear;
@@ -252,4 +255,14 @@ public class ConfSettingView extends BaseFragment implements View.OnClickListene
         }
         return s;
     }
+
+//    @Override
+//    public boolean isBaseOnWidth() {
+//        return true;
+//    }
+//
+//    @Override
+//    public float getSizeInDp() {
+//        return 853.33f;
+//    }
 }

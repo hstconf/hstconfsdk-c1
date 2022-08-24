@@ -47,7 +47,11 @@ import org.json.JSONObject;
 import java.util.LinkedHashMap;
 import java.util.List;
 
-public class ConfDsFragment extends BaseFragment implements OnClickListener, OnTouchListener {
+import me.jessyan.autosize.AutoSizeConfig;
+import me.jessyan.autosize.internal.CancelAdapt;
+import me.jessyan.autosize.internal.CustomAdapt;
+
+public class ConfDsFragment extends BaseFragment implements OnClickListener, OnTouchListener, CancelAdapt {
     private View view;
 
     private RelativeLayout rlRoot;
@@ -97,6 +101,8 @@ public class ConfDsFragment extends BaseFragment implements OnClickListener, OnT
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         Log.d("InfowareLab.Debug", "ConfDsView.onCreateView isAdded=" + isAdded() + " isVisibleToUser=" + getUserVisibleHint());
+        AutoSizeConfig.getInstance().setCustomFragment(true);
+
         view = inflater.inflate(R.layout.conference_shareview_phone, container, false);
         initView();
         docCommon.setHandler(docHandler);
@@ -1088,6 +1094,16 @@ public class ConfDsFragment extends BaseFragment implements OnClickListener, OnT
             tvDel.setVisibility(View.INVISIBLE);
         }
     }
+
+//    @Override
+//    public boolean isBaseOnWidth() {
+//        return true;
+//    }
+//
+//    @Override
+//    public float getSizeInDp() {
+//        return 853.33f;
+//    }
 
 
     private class ActiveDocid {

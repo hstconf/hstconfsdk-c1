@@ -82,8 +82,11 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
+import me.jessyan.autosize.internal.CancelAdapt;
+import me.jessyan.autosize.internal.CustomAdapt;
+
 public class ConfAttendersView extends BaseFragment implements
-        OnClickListener {
+        OnClickListener, CancelAdapt {
     public static final int EMAIL_FAILED_NOLOGIN = 60002;
     private View attendersView;
     private FrameLayout flRoot;
@@ -905,6 +908,16 @@ public class ConfAttendersView extends BaseFragment implements
             return true;
         }
     }
+
+//    @Override
+//    public boolean isBaseOnWidth() {
+//        return true;
+//    }
+//
+//    @Override
+//    public float getSizeInDp() {
+//        return 853.33f;
+//    }
 
     public class MainFrameTask extends AsyncTask<Integer, String, Integer> {
 
