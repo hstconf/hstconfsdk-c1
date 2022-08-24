@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="textSize_00">15px</dimen>
+    <dimen name="textSize_01">18px</dimen>
+    <dimen name="textSize_02">21px</dimen>
+    <dimen name="textSize_03">22.5px</dimen>
+    <dimen name="textSize_04">24px</dimen>
+    <dimen name="textSize_05">25px</dimen>
+    <dimen name="textSize_06">26px</dimen>
+    <dimen name="textSize_07">28px</dimen>
+    <dimen name="textSize_08">30px</dimen>
+    <dimen name="textSize_09">38px</dimen>
+
+</resources>
