@@ -283,8 +283,8 @@ public class FragJoin extends BaseFragment implements OnClickListener, CustomAda
         tvHistory.setOnClickListener(this);
 
         tvFaceSignIn = joinView.findViewById(R.id.tv_face_sign_in);
-        tvFaceSignIn.setOnClickListener(this);
-
+        if (tvFaceSignIn != null)
+            tvFaceSignIn.setOnClickListener(this);
 
         initPageView();
     }

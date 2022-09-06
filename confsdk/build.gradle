@@ -106,8 +106,8 @@ android {
     }
     defaultConfig {
         //applicationId "com.infowarelab.hongshantongphone"
-        minSdkVersion 16
-        targetSdkVersion 28
+        minSdkVersion 21
+        targetSdkVersion 29
 
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
         ndk {
@@ -257,10 +257,12 @@ dependencies {
     //RxAndroid的依赖包
     implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
     implementation 'com.github.bumptech.glide:glide:3.4.+'
-    implementation 'io.crossbar.autobahn:autobahn-android:21.7.1'
+    //implementation 'io.crossbar.autobahn:autobahn-android:21.7.1'
 
     implementation 'android.arch.persistence.room:runtime:1.1.1'
     annotationProcessor 'android.arch.persistence.room:compiler:1.1.1'
 
     implementation 'com.github.JessYanCoding:AndroidAutoSize:v1.2.1'
+    implementation "org.reactivestreams:reactive-streams:1.0.2"
+
 }

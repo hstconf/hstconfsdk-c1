@@ -11,11 +11,11 @@ import com.infowarelabsdk.conference.transfer.Config
 import com.infowarelabsdk.conference.util.StringUtil
 import com.squareup.moshi.JsonAdapter
 import com.squareup.moshi.Moshi
-import io.crossbar.autobahn.websocket.WebSocketConnection
-import io.crossbar.autobahn.websocket.WebSocketConnectionHandler
-import io.crossbar.autobahn.websocket.exceptions.WebSocketException
-import io.crossbar.autobahn.websocket.interfaces.IWebSocket
-import io.crossbar.autobahn.websocket.types.WebSocketOptions
+//import io.crossbar.autobahn.websocket.WebSocketConnection
+//import io.crossbar.autobahn.websocket.WebSocketConnectionHandler
+//import io.crossbar.autobahn.websocket.exceptions.WebSocketException
+//import io.crossbar.autobahn.websocket.interfaces.IWebSocket
+//import io.crossbar.autobahn.websocket.types.WebSocketOptions
 import okio.Buffer
 import java.lang.ref.WeakReference
 import java.net.URLEncoder
@@ -33,7 +33,7 @@ class SocketManager {
     private val jsonAdapter: JsonAdapter<LiveMessageModel> = Moshi.Builder().build().adapter<LiveMessageModel>(LiveMessageModel::class.java)
     private var jsonBuffer: Buffer = Buffer()
 
-    private val mConnection: IWebSocket = WebSocketConnection()
+    //private val mConnection: IWebSocket = WebSocketConnection()
     private val mHostname: String? = "rtcbeta.hongshantong.cn"
     private val mPort: String? = "9012"
     private val TAG: String ? = "InfowareLab.WebSocket"
@@ -95,7 +95,7 @@ class SocketManager {
 //        } else {
 //            hostname
 //        }
-        val connectOptions = WebSocketOptions()
+        /*val connectOptions = WebSocketOptions()
         connectOptions.reconnectInterval = 5000
         try {
             mConnection.connect(url, object : WebSocketConnectionHandler() {
@@ -120,7 +120,7 @@ class SocketManager {
             }, connectOptions)
         } catch (e: WebSocketException) {
             Log.d(TAG, e.toString())
-        }
+        }*/
 
         return true
     }
@@ -128,12 +128,12 @@ class SocketManager {
 
     public fun stop(){
         mNeedToStop = true;
-        if (mConnection.isConnected) {
-            mConnection.sendClose()
-        }
+//        if (mConnection.isConnected) {
+//            mConnection.sendClose()
+//        }
     }
 
-    public fun sendMessage(message: String): Boolean {
+    /*public fun sendMessage(message: String): Boolean {
 
         if (mConnection.isConnected) {
 
@@ -163,7 +163,7 @@ class SocketManager {
             reconnect()
             return false
         }
-    }
+    }*/
 
     private fun initFakeBeanJson(): String{
         val message = LiveMessageModel()
@@ -191,7 +191,7 @@ class SocketManager {
     }
 
     fun reconnect(){
-        if (mConnection != null){
+        /*if (mConnection != null){
             //把刚收到的消息json回调给LiveActivity。
             // 本库作者DQ建议：其实这里用两种做法：
             //1，如果这个消息通道里只有"文字消息" 没有礼物。那么我建议回调原始json给Activity。因为这样可以视情况屏蔽过多的消息（压根就不解析json，减少内存和cpu损耗）
@@ -237,7 +237,7 @@ class SocketManager {
             } catch (e: WebSocketException) {
                 Log.d(TAG, e.toString())
             }
-        }
+        }*/
     }
 
     //模拟收到直播间的《弹幕消息》，注意这里是弹幕消息。直播间其他消息注意区分：比如pk、主播下播
