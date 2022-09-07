@@ -249,7 +249,7 @@ public class ConferencePagerListView extends ConferencePager {
         Config.Site_URL = FileUtil.readSharedPreferences(mActivity, Constants.SHARED_PREFERENCES, Constants.SITE);
         Config.HAS_LIVE_SERVER = FileUtil.readSharedPreferences(mActivity, Constants.SHARED_PREFERENCES, Constants.HAS_LIVE_SERVER).equals("true");
         conferences = null;
-        conferences = Config.getConferenceList(userBean, handler, 1, Config.MEETING);
+        conferences = Config.getConferenceList(userBean, handler, 0, Config.MEETING);
         if (conferences != null) myConfsCount = conferences.size();
 //        conferences = Config.getConferenceList(userBean, handler, 1);
 //        if (ConferenceActivity.isLogin) {

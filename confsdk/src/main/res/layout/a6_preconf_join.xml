@@ -15,7 +15,7 @@
             android:id="@+id/act_home_tv_title_create"
             style="@style/style_tv_titleBar_mid"
             android:text="@string/socialize_10"
-            android:textSize="@dimen/t_20" />
+            android:textSize="50dp" />
 
         <TextView
             android:id="@+id/tv_history"
@@ -26,7 +26,7 @@
             android:layout_marginRight="@dimen/dp_10"
             android:text="@string/socialize_14"
             android:textColor="@color/white"
-            android:textSize="@dimen/t_18" />
+            android:textSize="40dp" />
 
     </RelativeLayout>
 

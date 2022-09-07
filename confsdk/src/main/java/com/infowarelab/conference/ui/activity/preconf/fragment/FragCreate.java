@@ -715,11 +715,24 @@ public class FragCreate extends BaseFragment implements OnClickListener, OnFocus
             }
             else if (rbInstantConf.isChecked())
             {
+                Date curDate = new Date(System.currentTimeMillis() + 10 * 60 * 1000);
+
+                conferenceBean.setStartTime(StringUtil.dateToStrInLocale(curDate, "yyyy-MM-dd HH:mm:ss"));
+
+                duration = 120;
+
+                conferenceBean.setDuration("" + duration);
+
                 if (attIds != null && !attIds.equals("")) {
-                    confId = Config.getConfIdCovert(uid, userName, siteId, conferenceBean, attIds, attNames, attEmails);
+                    confId = Config.getFixedConfIdCovert(uid, userName, siteId, conferenceBean, attIds, attNames, attEmails);
                 } else {
-                    confId = Config.getConfId(uid, userName, siteId, conferenceBean);
+                    confId = Config.getFixedConfId(uid, userName, siteId, conferenceBean);
                 }
+//                if (attIds != null && !attIds.equals("")) {
+//                    confId = Config.getConfIdCovert(uid, userName, siteId, conferenceBean, attIds, attNames, attEmails);
+//                } else {
+//                    confId = Config.getConfId(uid, userName, siteId, conferenceBean);
+//                }
             }
             else
             {
