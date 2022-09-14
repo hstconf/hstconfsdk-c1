@@ -15,7 +15,7 @@
             android:id="@+id/act_home_tv_title_create"
             style="@style/style_tv_titleBar_mid"
             android:text="@string/socialize_14"
-            android:textSize="@dimen/t_20" />
+            android:textSize="@dimen/textSize_07" />
 
         <TextView
             android:id="@+id/tv_history"
@@ -26,7 +26,7 @@
             android:layout_marginRight="@dimen/dp_10"
             android:text="@string/socialize_14"
             android:textColor="@color/white"
-            android:textSize="@dimen/t_18"
+            android:textSize="@dimen/textSize_07"
             android:visibility="gone"/>
 
         <ImageButton
@@ -35,7 +35,7 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginLeft="@dimen/dp_3"
-            android:background="@drawable/return_list"/>
+            android:background="@drawable/return_list" />
 
     </RelativeLayout>
 

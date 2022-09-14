@@ -350,6 +350,7 @@ public class HConferenceListAdapter4Frag extends BaseAdapter {
                 id = R.drawable.conf_off;
             }
 
+            viewHolder.btnStartMeeting.setBackgroundResource(R.drawable.btn_sc_start);
             viewHolder.btnStartMeeting.setTextColor(mContext.getResources().getColor(R.color.app_main_hue));
             viewHolder.btnStartMeeting.setText(mContext.getResources().getString(R.string.transcodebuttonText2));
         }

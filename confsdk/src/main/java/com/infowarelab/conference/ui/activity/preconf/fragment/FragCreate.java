@@ -63,6 +63,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
+import me.jessyan.autosize.AutoSizeCompat;
 import me.jessyan.autosize.AutoSizeConfig;
 import me.jessyan.autosize.internal.CustomAdapt;
 
@@ -604,6 +605,7 @@ public class FragCreate extends BaseFragment implements OnClickListener, OnFocus
             pvTime.setDate(calendar);
 
             /* pvTime.show(); //show timePicker*/
+            AutoSizeCompat.autoConvertDensity(getResources(), 853.33f, true);
             pvTime.show(v);//弹出时间选择器，传递参数过去，回调的时候则可以绑定此view
         }else if (id == R.id.tv_end_time) {
 
@@ -728,11 +730,6 @@ public class FragCreate extends BaseFragment implements OnClickListener, OnFocus
                 } else {
                     confId = Config.getFixedConfId(uid, userName, siteId, conferenceBean);
                 }
-//                if (attIds != null && !attIds.equals("")) {
-//                    confId = Config.getConfIdCovert(uid, userName, siteId, conferenceBean, attIds, attNames, attEmails);
-//                } else {
-//                    confId = Config.getConfId(uid, userName, siteId, conferenceBean);
-//                }
             }
             else
             {

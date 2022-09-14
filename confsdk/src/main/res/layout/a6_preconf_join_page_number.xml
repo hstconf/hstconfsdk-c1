@@ -11,7 +11,8 @@
         <TextView
             android:id="@+id/act_home_tv_title_create"
             style="@style/style_tv_titleBar_mid"
-            android:text="@string/preconf_join" />
+            android:text="@string/preconf_join"
+            android:textSize="@dimen/textSize_07" />
 
         <ImageButton
             android:id="@+id/btn_return_list"

@@ -99,7 +99,7 @@
                  android:text="@string/conf"
                  android:textColor="@color/app_main_hue"
                  android:textAlignment="center"
-                 android:textSize="@dimen/t_16" />
+                 android:textSize="@dimen/textSize_07" />
 
             <com.infowarelab.conference.ui.view.UnderlineButton
                 android:id="@+id/btn_bcast_list"
@@ -107,7 +107,7 @@
                 style="@style/style_btn_titleBar_midbutton"
                 android:background="@drawable/a6_btn_right_topcircle_normal"
                 android:onClick="onBcastList"
-                android:textSize="@dimen/t_16"
+                android:textSize="@dimen/textSize_07"
                 android:textAlignment="center"
                 android:text="@string/bcast"
                 android:textColor="@color/grey" />

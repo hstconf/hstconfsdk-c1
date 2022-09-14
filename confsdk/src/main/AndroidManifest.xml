@@ -53,11 +53,7 @@
                 <data
                     android:host="info.meeting"
                     android:scheme="infowarelab" />
-
                 <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
             </intent-filter>
         </activity>
         <activity
@@ -127,10 +123,6 @@
             android:noHistory="true">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-
                 <data android:scheme="tencent1104660765" />
             </intent-filter>
         </activity>
@@ -174,16 +166,16 @@
             </intent-filter>
         </service>
 
-        <receiver
-            android:name=".BootBroadcastReceiver"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED" />
-                <action android:name="android.intent.action.USER_PRESENT" />
-                <action android:name="android.intent.action.PACKAGE_RESTARTED" />
-                <action android:name="com.infowarelab.hongshantongphone.destroy" />
-            </intent-filter>
-        </receiver>
+<!--        <receiver-->
+<!--            android:name=".BootBroadcastReceiver"-->
+<!--            android:exported="true">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.BOOT_COMPLETED" />-->
+<!--                <action android:name="android.intent.action.USER_PRESENT" />-->
+<!--                <action android:name="android.intent.action.PACKAGE_RESTARTED" />-->
+<!--                <action android:name="com.infowarelab.hongshantongphone.destroy" />-->
+<!--            </intent-filter>-->
+<!--        </receiver>-->
     </application>
 
 </manifest>

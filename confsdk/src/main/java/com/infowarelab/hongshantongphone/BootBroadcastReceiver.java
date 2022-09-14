@@ -25,13 +25,13 @@ public class BootBroadcastReceiver extends BroadcastReceiver {
 //        Intent intent2 = context.getPackageManager().getLaunchIntentForPackage(packageName);
 //        context.startActivity(intent2);
 
-        if (intent.getAction().equals(action_boot)) {
-            // 开机启动的Activity
-            Intent activityIntent = new Intent(context, LogoActivity.class);
-            activityIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            // 启动Activity
-            context.startActivity(activityIntent);
-        }
+//        if (intent.getAction().equals(action_boot)) {
+//            // 开机启动的Activity
+//            Intent activityIntent = new Intent(context, LogoActivity.class);
+//            activityIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//            // 启动Activity
+//            context.startActivity(activityIntent);
+//        }
 
         // 开机启动的Service
 //        Intent serviceIntent = new Intent(context, StartOnBootService.class);

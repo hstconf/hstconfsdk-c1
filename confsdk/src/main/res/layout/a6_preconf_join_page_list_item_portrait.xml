@@ -35,8 +35,8 @@
 
         <ImageView
             android:id="@+id/meetingState"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/height_5_80"
+            android:layout_height="@dimen/height_5_80"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
             android:layout_marginLeft="@dimen/dp_5"
@@ -53,7 +53,7 @@
             android:background="@drawable/btn_sc_join"
             android:text="@string/playbuttonText2"
             android:textColor="@color/white"
-            android:textSize="@dimen/t_12" />
+            android:textSize="@dimen/textSize_04" />
 
         <LinearLayout
             android:layout_width="wrap_content"

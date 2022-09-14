@@ -12,12 +12,13 @@
         <TextView
             android:id="@+id/act_home_tv_title_create"
             style="@style/style_tv_titleBar_mid"
+            android:textSize="@dimen/textSize_07"
             android:text="@string/preconf_create_2" />
 
         <ImageButton
             android:id="@+id/btn_return_list"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/height_5_80"
+            android:layout_height="@dimen/height_5_80"
             android:layout_centerVertical="true"
             android:layout_marginLeft="@dimen/dp_3"
             android:background="@drawable/return_list">
@@ -56,7 +57,7 @@
             android:id="@+id/view_frag_create_tv_1"
             android:layout_height="match_parent"
             android:layout_width="wrap_content"
-            android:textSize="@dimen/t_18"
+            android:textSize="@dimen/textSize_07"
             android:gravity="center_vertical"
             android:singleLine="true"
             android:text="@string/confTitle"
@@ -73,7 +74,7 @@
             android:textColor="@color/black"
             android:text="admin的会议"
             android:layout_marginLeft="@dimen/dp_5"
-            android:textSize="@dimen/t_18"
+            android:textSize="@dimen/textSize_07"
             />
 
     </LinearLayout>
@@ -98,7 +99,7 @@
             android:id="@+id/tv_conf_member"
             android:layout_height="match_parent"
             android:layout_width="wrap_content"
-            android:textSize="@dimen/t_18"
+            android:textSize="@dimen/textSize_07"
             android:gravity="center_vertical"
             android:singleLine="true"
             android:text="@string/confMember"
@@ -114,7 +115,7 @@
             android:background="@null"
             android:singleLine="true"
             android:layout_marginLeft="@dimen/dp_5"
-            android:textSize="@dimen/t_18"
+            android:textSize="@dimen/textSize_07"
             />
 
     </LinearLayout>
@@ -139,7 +140,7 @@
             android:id="@+id/view_frag_create_tv_3"
             android:layout_height="match_parent"
             android:layout_width="wrap_content"
-            android:textSize="@dimen/t_18"
+            android:textSize="@dimen/textSize_07"
             android:gravity="center_vertical"
             android:singleLine="true"
             android:text="@string/confTime"
@@ -159,7 +160,7 @@
                 android:checked="true"
                 android:paddingHorizontal="@dimen/dp_5"
                 android:button="@drawable/a6_btn_radio"
-                android:textSize="@dimen/t_18"
+                android:textSize="@dimen/textSize_07"
                 android:text="@string/instant_conf" />
             <RadioButton
                 android:id="@+id/schedule_conf"
@@ -168,7 +169,7 @@
                 android:checked="false"
                 android:paddingHorizontal="@dimen/dp_5"
                 android:button="@drawable/a6_btn_radio"
-                android:textSize="@dimen/t_18"
+                android:textSize="@dimen/textSize_07"
                 android:text="@string/schedule_conf" />
         </RadioGroup>
 
@@ -194,7 +195,7 @@
             android:id="@+id/view_frag_create_tv_4"
             android:layout_height="match_parent"
             android:layout_width="wrap_content"
-            android:textSize="@dimen/t_18"
+            android:textSize="@dimen/textSize_07"
             android:gravity="center_vertical"
             android:singleLine="true"
             android:text="@string/confStartTime"
@@ -211,7 +212,7 @@
             android:singleLine="true"
             android:layout_marginLeft="@dimen/dp_5"
             android:text="2022-5-31 17:21"
-            android:textSize="@dimen/t_18" />
+            android:textSize="@dimen/textSize_07" />
 
     </LinearLayout>
 
@@ -236,7 +237,7 @@
             android:id="@+id/view_frag_create_tv_5"
             android:layout_height="match_parent"
             android:layout_width="wrap_content"
-            android:textSize="@dimen/t_18"
+            android:textSize="@dimen/textSize_07"
             android:gravity="center_vertical"
             android:singleLine="true"
             android:text="@string/confEndTime"
@@ -253,7 +254,7 @@
             android:layout_marginLeft="@dimen/dp_5"
             android:text="2022-5-31 17:21"
             android:singleLine="true"
-            android:textSize="@dimen/t_18"
+            android:textSize="@dimen/textSize_07"
             />
 
     </LinearLayout>
